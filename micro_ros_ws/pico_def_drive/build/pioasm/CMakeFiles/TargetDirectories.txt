@@ -1,0 +1,3 @@
+/home/antonio/antonio_ws/Antonio/micro_ros_ws/pico_def_drive/build/pioasm/CMakeFiles/pioasm.dir
+/home/antonio/antonio_ws/Antonio/micro_ros_ws/pico_def_drive/build/pioasm/CMakeFiles/edit_cache.dir
+/home/antonio/antonio_ws/Antonio/micro_ros_ws/pico_def_drive/build/pioasm/CMakeFiles/rebuild_cache.dir

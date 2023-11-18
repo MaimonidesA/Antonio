@@ -1,7 +1,7 @@
 if (DEFINED MICRO_ROS_PATH)
 	message("Using Given MICRO_ROS_PATH '${MICRO_ROS_PATH}')")
 else ()
-	set(MICRO_ROS_PATH "${CMAKE_CURRENT_LIST_DIR}lib/micro_ros_raspberrypi_pico_sdk/")
+	set(MICRO_ROS_PATH "${CMAKE_CURRENT_LIST_DIR}/../include/micro_ros_raspberrypi_pico_sdk/")
     message("Using local MICRO_ROS_PATH '${MICRO_ROS_PATH}')")
 endif ()
 
