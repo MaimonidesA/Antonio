@@ -1,0 +1,22 @@
+[5.523s] DEBUG:colcon:Command line arguments: ['/usr/bin/colcon', 'list', '-p', '--base-paths', '/home/amir/antonio_ws/Antonio/micro_ros_ws/pico_def_drive']
+[5.523s] DEBUG:colcon:Parsed command line arguments: Namespace(log_base=None, log_level=None, verb_name='list', build_base='build', ignore_user_meta=False, metas=['./colcon.meta'], base_paths=['/home/amir/antonio_ws/Antonio/micro_ros_ws/pico_def_drive'], packages_ignore=None, packages_ignore_regex=None, paths=None, packages_up_to=None, packages_up_to_regex=None, packages_above=None, packages_above_and_dependencies=None, packages_above_depth=None, packages_select_by_dep=None, packages_skip_by_dep=None, packages_skip_up_to=None, packages_select_build_failed=False, packages_skip_build_finished=False, packages_select_test_failures=False, packages_skip_test_passed=False, packages_select=None, packages_skip=None, packages_select_regex=None, packages_skip_regex=None, packages_start=None, packages_end=None, allow_overriding=[], topological_order=False, names_only=False, paths_only=True, topological_graph=False, topological_graph_dot=False, topological_graph_density=False, topological_graph_legend=False, topological_graph_dot_cluster=False, topological_graph_dot_include_skipped=False, verb_parser=<colcon_defaults.argument_parser.defaults.DefaultArgumentsDecorator object at 0x7f9f9fe208b0>, verb_extension=<colcon_package_information.verb.list.ListVerb object at 0x7f9f9ffb40a0>, main=<bound method ListVerb.main of <colcon_package_information.verb.list.ListVerb object at 0x7f9f9ffb40a0>>)
+[5.727s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) check parameters
+[5.727s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) check parameters
+[5.727s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) check parameters
+[5.727s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) check parameters
+[5.727s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) discover
+[5.728s] INFO:colcon.colcon_core.package_discovery:Crawling recursively for packages in '/home/amir/antonio_ws/Antonio/micro_ros_ws/pico_def_drive'
+[5.728s] Level 1:colcon.colcon_core.package_identification:_identify(/home/amir/antonio_ws/Antonio/micro_ros_ws/pico_def_drive) by extensions ['ignore', 'ignore_ament_install']
+[5.729s] Level 1:colcon.colcon_core.package_identification:_identify(/home/amir/antonio_ws/Antonio/micro_ros_ws/pico_def_drive) by extension 'ignore'
+[5.729s] Level 1:colcon.colcon_core.package_identification:_identify(/home/amir/antonio_ws/Antonio/micro_ros_ws/pico_def_drive) by extension 'ignore_ament_install'
+[5.729s] Level 1:colcon.colcon_core.package_identification:_identify(/home/amir/antonio_ws/Antonio/micro_ros_ws/pico_def_drive) by extensions ['colcon_pkg']
+[5.729s] Level 1:colcon.colcon_core.package_identification:_identify(/home/amir/antonio_ws/Antonio/micro_ros_ws/pico_def_drive) by extension 'colcon_pkg'
+[5.729s] Level 1:colcon.colcon_core.package_identification:_identify(/home/amir/antonio_ws/Antonio/micro_ros_ws/pico_def_drive) by extensions ['colcon_meta']
+[5.729s] Level 1:colcon.colcon_core.package_identification:_identify(/home/amir/antonio_ws/Antonio/micro_ros_ws/pico_def_drive) by extension 'colcon_meta'
+[5.730s] Level 1:colcon.colcon_core.package_identification:_identify(/home/amir/antonio_ws/Antonio/micro_ros_ws/pico_def_drive) by extensions ['ros']
+[5.730s] Level 1:colcon.colcon_core.package_identification:_identify(/home/amir/antonio_ws/Antonio/micro_ros_ws/pico_def_drive) by extension 'ros'
+[5.762s] Level 1:colcon.colcon_core.package_identification:_identify(/home/amir/antonio_ws/Antonio/micro_ros_ws/pico_def_drive) by extensions ['cmake', 'python']
+[5.762s] Level 1:colcon.colcon_core.package_identification:_identify(/home/amir/antonio_ws/Antonio/micro_ros_ws/pico_def_drive) by extension 'cmake'
+[6.305s] Level 1:colcon.colcon_core.package_identification:_identify(/home/amir/antonio_ws/Antonio/micro_ros_ws/pico_def_drive) by extension 'python'
+[6.309s] DEBUG:colcon.colcon_core.package_identification:Package '/home/amir/antonio_ws/Antonio/micro_ros_ws/pico_def_drive' with type 'cmake' and name 'pico_def_drive'
+[6.309s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) using defaults

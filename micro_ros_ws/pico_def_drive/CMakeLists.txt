@@ -1,6 +1,7 @@
 cmake_minimum_required(VERSION 3.12)
 
-include($ENV{PICO_SDK_PATH}/external/pico_sdk_import.cmake)
+include(pico_sdk_import.cmake)
+
 
 SET(ProjectName pico_def_drive)
 
@@ -8,7 +9,6 @@ project(${ProjectName} C CXX ASM)
 set(CMAKE_C_STANDARD 11)
 set(CMAKE_CXX_STANDARD 17)
 
-include(pico_sdk_import.cmake)
 
 # Name project
 
@@ -16,7 +16,6 @@ include(pico_sdk_import.cmake)
 SET(FREERTOS_KERNEL_PATH ${CMAKE_CURRENT_SOURCE_DIR}/../include/FreeRTOS-Kernel)
 
 # Import those libraries
-#include(pico_sdk_import.cmake)
 include(${FREERTOS_KERNEL_PATH}/portable/ThirdParty/GCC/RP2040/FreeRTOS_Kernel_import.cmake)
 
 # Initialize the Raspberry Pi Pico SDK

@@ -1,12 +1,20 @@
 
+include_directories(include)
+
 add_executable(${ProjectName}
-    main.c
-    pico_uart_transport.c
+    main.cpp
+    
+    
+    include/Agent.cpp
+    include/uRosBridge.cpp
+    include/uRosEntities.cpp
+    include/pico_usb_transport.c
+    include/freertos_allocators.c
 )
 
 target_include_directories(${ProjectName} PUBLIC
     ${CMAKE_CURRENT_LIST_DIR}
-    
+    include   
 )
 
 target_link_libraries(${ProjectName} 
@@ -14,12 +22,15 @@ target_link_libraries(${ProjectName}
     pico_multicore
     FreeRTOS-Kernel-Heap4 
     micro_ros
+    pico_rand
+    hardware_pwm
     )
 
 pico_enable_stdio_usb(${ProjectName} 1)
-pico_enable_stdio_uart(${ProjectName} 0)
-add_compile_definitions(PICO_UART_ENABLE_CRLF_SUPPORT=0)
-add_compile_definitions(PICO_STDIO_ENABLE_CRLF_SUPPORT=0)
-add_compile_definitions(PICO_STDIO_DEFAULT_CRLF=0)
+pico_enable_stdio_uart(${ProjectName} 1)
+target_compile_definitions(${ProjectName} PRIVATE
+    PICO_DEFAULT_UART_RX_PIN=16
+    PICO_DEFAULT_UART_TX_PIN=17
+)
 
 pico_add_extra_outputs(${ProjectName})
