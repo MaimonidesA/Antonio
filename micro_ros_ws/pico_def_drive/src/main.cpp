@@ -1,107 +1,110 @@
+
+
+
 #include <stdio.h>
 #include <pico/stdlib.h>
 #include "FreeRTOS.h"
 #include "task.h"
 #include "semphr.h"
 
+#include "BlinkAgent.h"
+
+#include "uRosBridge.h"
+
+#include "MotorsAgent.h"
+
+#include "Antonio.h"
+
 extern"C"{
-#include "rcl/rcl.h"
-#include <rcl/error_handling.h>
-#include <rclc/rclc.h>
-#include <rclc/executor.h>
-#include <std_msgs/msg/int32.h>
-#include <rmw_microros/rmw_microros.h>
-#include <geometry_msgs/msg/twist.h>
-#include <nav_msgs/msg/odometry.h>
-#include "rosidl_runtime_c/string_functions.h"
-#include "rosidl_runtime_c/primitives_sequence_functions.h"
 
-#include <pico_usb_transports.h>
-
-}
-const uint LED_PIN = 25;
-bool led_on = true;
-
-rcl_publisher_t publisher;
-std_msgs__msg__Int32 msg;
-
-
-
-void timer_callback(rcl_timer_t *timer, int64_t last_call_time)
-{
-    
-    rcl_ret_t ret = rcl_publish(&publisher, &msg, NULL);
-    msg.data++;
-    if (led_on)
-    {
-        gpio_put(LED_PIN, false); led_on = false;
-    }
-    else
-    {
-        gpio_put(LED_PIN, true); led_on = true;
-    }
-    
-    
+#include "pico/stdio_usb.h"
+#include "pico/stdio_uart.h"
+#include "pico/stdio.h"
+#include "pico/stdio/driver.h"
+//#include <pico_usb_transports.h>
 }
 
-int main()
-{
-    rmw_uros_set_custom_transport(
-		true,
-		NULL,
-		pico_usb_transport_open,
-		pico_usb_transport_close,
-		pico_usb_transport_write,
-		pico_usb_transport_read
-	);
+//Standard Task priority
+#define TASK_PRIORITY		( tskIDLE_PRIORITY + 1UL )
 
-    gpio_init(LED_PIN);
-    gpio_set_dir(LED_PIN, GPIO_OUT);
+//LED PAD to use
+#define BLINK_LED_PAD	25
+#define CONN_LED_PAD	3
 
-    rcl_timer_t timer;
-    rcl_node_t node;
-    rcl_allocator_t allocator;
-    rclc_support_t support;
-    rclc_executor_t executor;
+//Left Motor
+#define LEFT_CW		15
+#define LEFT_CCW	14
+#define LEFT_PWM 	13
+#define LEFT_ROTENV	8
 
-    allocator = rcl_get_default_allocator();
+//Right Motor
+#define RIGHT_CW	12
+#define RIGHT_CCW	11
+#define RIGHT_PWM 	10
+#define RIGHT_ROTENV 9
 
-    // Wait for agent successful ping for 2 minutes.
-    const int timeout_ms = 1000; 
-    const uint8_t attempts = 120;
+//PID
+#define KP	0.55
+#define KI	0.019
+#define KD	0.24
+ 
+/***
+ * Main task to boot the other Agents
+ * @param params - unused
+ */
+void mainTask(void *params){
+    BlinkAgent blink(BLINK_LED_PAD);
 
-    rcl_ret_t ret = rmw_uros_ping_agent(timeout_ms, attempts);
+    blink.start("Blink", TASK_PRIORITY);
 
-    if (ret != RCL_RET_OK)
-    {
-        // Unreachable agent, exiting program.
-        return ret;
-    }
 
-    rclc_support_init(&support, 0, NULL, &allocator);
+    MotorsAgent motors;
+	motors.addMotor(0, LEFT_CW, LEFT_CCW, LEFT_PWM, LEFT_ROTENV);
+	motors.addMotor(1, RIGHT_CW, RIGHT_CCW, RIGHT_PWM, RIGHT_ROTENV);
+	//motors.configAllPID(KP, KI, KD);
+	motors.start("motors", TASK_PRIORITY);
 
-    rclc_node_init_default(&node, "pico_node", "", &support);
-    rclc_publisher_init_default(
-        &publisher,
-        &node,
-        ROSIDL_GET_MSG_TYPE_SUPPORT(std_msgs, msg, Int32),
-        "pico_publisher");
+    //Antonio 
+    Antonio antonio;
+    antonio.setMotorsAgent(&motors);
+    antonio.start("Antonio", TASK_PRIORITY);
+    
+    //Start up a uROS Bridge
+    uRosBridge *bridge = uRosBridge::getInstance();
+    
+    bridge->setuRosEntities(&antonio);
+    bridge->setLed(CONN_LED_PAD);
+    bridge->start("Bridge",  TASK_PRIORITY+2);
 
-    rclc_timer_init_default(
-        &timer,
-        &support,
-        RCL_MS_TO_NS(1000),
-        timer_callback);
+	for(;;){
+    	vTaskDelay(10000);  
+        }
+}
+ 
+void vLaunch( void) {  //Launch the tasks and scheduler
 
-    rclc_executor_init(&executor, &support.context, 1, &allocator);
-    rclc_executor_add_timer(&executor, &timer);
 
-   // gpio_put(LED_PIN, 1);
+    TaskHandle_t task;
+    xTaskCreate(mainTask, "MainThread", 500, NULL, TASK_PRIORITY, &task);
 
-    msg.data = 0;
-    while (true)
-    {
-        rclc_executor_spin_some(&executor, RCL_MS_TO_NS(100));
-    }
+    /* Start the tasks and timer running. */
+    vTaskStartScheduler();
+}
+
+
+
+int main( void ){
+	//Setup serial over UART and give a few seconds to settle before we start
+    stdio_init_all();
+    stdio_filter_driver(&stdio_uart);
+    sleep_ms(2000);
+    printf("GO\n");
+
+    //Start tasks and scheduler
+    const char *rtos_name = "FreeRTOS";
+    printf("Starting %s on core 0:\n", rtos_name);
+    vLaunch();
+
+
     return 0;
 }

@@ -19,6 +19,8 @@
     ],
     "files.associations": {
         "pico_uart_transports.h": "c",
-        "stdint.h": "c"
+        "stdint.h": "c",
+        "cmath": "cpp",
+        "complex": "cpp"
     }
 }
