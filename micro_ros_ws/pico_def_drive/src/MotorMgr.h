@@ -24,7 +24,7 @@ public:
 	 * @param PWM - Motor voltage control
 	 * @param gpIN - GP Pad for motor encoder input
 	 */
-	MotorMgr(uint8_t gpCW, uint8_t gpCCW,uint8_t PWM, uint8_t gpIN);
+	MotorMgr(uint8_t gpCW, uint8_t gpCCW,uint8_t gpPWM, uint8_t gpIN);
 
 	virtual ~MotorMgr();
 	/***
@@ -69,7 +69,7 @@ public:
 	/*float getDeltaRadians(bool clear=true);*/
 
 protected:
-	bool xCW = true;
+	
 
 	/***
 	 * Handle GPIO event on teh ROTENC
@@ -91,10 +91,10 @@ protected:
 
 private:
 	/*void calibrate(uint8_t gpSlot);*/
-
+	bool xCW ;
 	uint8_t xGP_CW;
-	uint8_t xGP_CCW;
-	uint8_t xGP_PWM=0;
+	uint8_t xGP_CCW; 
+	uint8_t xGP_PWM;
 	uint8_t xGP_IN;   // GP Pad for motor encoder input
 	uint8_t xGPSlot = 0xFF;
 	uint32_t xSlotTime = 0;

@@ -13,7 +13,7 @@
 #include <cmath>
 
 
-MotorsAgent::MotorsAgent(){
+MotorsAgent::MotorsAgent(uint8_t gpCW, uint8_t gpCCW, uint8_t gpPWM, uint8_t gpIN) : MotorMgr( gpCW, gpCCW, gpPWM, gpIN){
 	for (uint i=0; i < NUM_MOTORS; i++){
 		pMotors[i] = NULL;
 	}
@@ -30,20 +30,19 @@ MotorsAgent::~MotorsAgent() {
 void MotorsAgent::run(){
 	
 	for (;;){
-		for (uint i=0; i < NUM_MOTORS; i++)
-		{
-		    if (pMotors[i] != NULL)
-			{
-		    	int set = pMotors[i]->setThrottle(xThrottle_percent, xCW);
-		    }
+
+		 
+		 setThrottle(xThrottle_percent, true);
+		 vTaskDelay(200); 
 		}
-		vTaskDelay(200);
+		
 	}
-}
+
 
 void MotorsAgent::setSpeed(uint index, float percent, bool cw){
+	xIndex = index;
 	xThrottle_percent = percent;
-	xCW = cw;
+	//xCW = cw;
 }
 
 configSTACK_DEPTH_TYPE MotorsAgent::getMaxStackSize(){

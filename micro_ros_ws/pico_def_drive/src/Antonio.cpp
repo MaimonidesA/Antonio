@@ -37,9 +37,9 @@ void Antonio::run(){
 	for (;;){
 		if (pMotorsAgent != NULL){
 			uint32_t timeSinceTwise = to_ms_since_boot (get_absolute_time ()) - xLastTwistTimestamp;
-			if (timeSinceTwise > MAX_TWIST_TIME_MS){
+			if (timeSinceTwise > MAX_TWIST_TIME_MS)
+            {
 				robotStop();
-				printf("STOPPED due to twist lost\n");
 			}
 			//updateOdom();
 			//publishOdom();
@@ -170,7 +170,7 @@ void Antonio::handleSubscriptionMsg(const void* msg, uRosSubContext_t* context){
 
 		// FWD and Backwards
 		if (pTwistMsg->angular.z == 0.0){
-			double rps = (pTwistMsg->linear.x / circum) * (2 * M_PI);
+			float rps = pTwistMsg->linear.x;
 			bool cw = true;
 			if (rps < 0.0){
 				cw = false;
@@ -190,16 +190,16 @@ void Antonio::handleSubscriptionMsg(const void* msg, uRosSubContext_t* context){
 			//ARC
 			bool fwd = (pTwistMsg->linear.x > 0.0);
 			bool cw = (pTwistMsg->angular.z > 0.0);
-			double a = fabs(pTwistMsg->angular.z);
-			double arc = a/ (M_PI * 2);
-			double fullCircleCircum = (pTwistMsg->linear.x / arc);
-			double radius = fullCircleCircum / ( 2.0 * M_PI);
+			float a = fabs(pTwistMsg->angular.z);
+			float arc = a/ (M_PI * 2);
+			float fullCircleCircum = (pTwistMsg->linear.x / arc);
+			float radius = fullCircleCircum / ( 2.0 * M_PI);
 
-			double speedA = (radius + WHEELS_SEP/4) * (2 * M_PI) * arc;
-			double speedB = (radius - WHEELS_SEP/4) * (2 * M_PI) * arc;
+			float speedA = (radius + WHEELS_SEP/4) * (2 * M_PI) * arc;
+			float speedB = (radius - WHEELS_SEP/4) * (2 * M_PI) * arc;
 
-			double rpsA = (speedA / circum) * (2 * M_PI);
-			double rpsB = (speedB / circum) * (2 * M_PI);
+			float rpsA = (speedA / circum) * (2 * M_PI);
+			float rpsB = (speedB / circum) * (2 * M_PI);
 
 			if (fwd){
 				if (!cw){

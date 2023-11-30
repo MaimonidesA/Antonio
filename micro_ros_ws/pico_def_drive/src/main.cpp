@@ -58,9 +58,9 @@ void mainTask(void *params){
     blink.start("Blink", TASK_PRIORITY);
 
 
-    MotorsAgent motors;
-	motors.addMotor(0, LEFT_CW, LEFT_CCW, LEFT_PWM, LEFT_ROTENV);
-	motors.addMotor(1, RIGHT_CW, RIGHT_CCW, RIGHT_PWM, RIGHT_ROTENV);
+    MotorsAgent motors(RIGHT_CW, RIGHT_CCW, RIGHT_PWM, LEFT_ROTENV);
+	//motors.addMotor(0, LEFT_CW, LEFT_CCW, LEFT_PWM, LEFT_ROTENV);
+	//motors.addMotor(1, RIGHT_CW, RIGHT_CCW, RIGHT_PWM, RIGHT_ROTENV);
 	//motors.configAllPID(KP, KI, KD);
 	motors.start("motors", TASK_PRIORITY);
 

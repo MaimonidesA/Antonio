@@ -27,9 +27,9 @@ extern"C"{
 #define NUM_MOTORS 2
 #endif
 
-class MotorsAgent : public Agent, public uRosEntities {
+class MotorsAgent : public Agent, public uRosEntities, public MotorMgr{
 public:
-    MotorsAgent();
+    MotorsAgent(uint8_t gpCW, uint8_t gpCCW, uint8_t gpPWM, uint8_t gpIN);
 
 	virtual ~MotorsAgent();
 	/***
@@ -134,8 +134,9 @@ private:
 
 	/*void initJointState();
 	void pubJointState();*/
-	float xThrottle_percent;
-	bool xCW;
+	float xThrottle_percent =0.1;
+	bool xCW = true;
+	uint xIndex;
 	MotorMgr *pMotors[NUM_MOTORS];
 
 	//rcl_publisher_t xPubJoint;

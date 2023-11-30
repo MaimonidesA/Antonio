@@ -13,17 +13,18 @@ MotorMgr::MotorMgr(uint8_t gpCW, uint8_t gpCCW, uint8_t gpPWM, uint8_t gpIN) {
 	xGP_CW = gpCW;
 	xGP_CCW = gpCCW;
 	xGP_IN = gpIN;
-	
 
+	gpio_init(xGP_PWM);
+	gpio_set_function(xGP_PWM, GPIO_FUNC_PWM);
 	pwm_set_gpio_level(xGP_PWM, 0);
 	uint slice_num = pwm_gpio_to_slice_num(xGP_PWM);
 	pwm_set_enabled(slice_num, true);
 	
 	gpio_init(xGP_CW);
-	gpio_is_dir_out(xGP_CW);
+	gpio_set_dir(xGP_CW, GPIO_OUT);
 
 	gpio_init(xGP_CCW);
-	gpio_is_dir_out(xGP_CCW);
+	gpio_set_dir(xGP_CCW, GPIO_OUT);
 }
 
 MotorMgr::~MotorMgr() {	// TODO Auto-generated destructor stub
@@ -31,7 +32,7 @@ MotorMgr::~MotorMgr() {	// TODO Auto-generated destructor stub
 
 int MotorMgr::setThrottle(float percent, bool cw){
 	xThrottle = percent; 
-	xCW = cw;
+	
 
 	if (xThrottle < 0 ){
 		xThrottle == 0.0;
@@ -50,13 +51,13 @@ int MotorMgr::setThrottle(float percent, bool cw){
 
 	int pwm = (int)((float)(0xffff) * xThrottle);
 	pwm_set_gpio_level(xGP_PWM, pwm);
-	if (cw){		// run clockwise
-		gpio_set_dir(xGP_CCW, 0);
-		gpio_set_dir(xGP_CW, 1);
+	if (cw == true){		// run clockwise
+		gpio_put(xGP_CCW, 1);
+		gpio_put(xGP_CW, 0);
 
 	} else {		// run counter clockwise
-		gpio_set_dir(xGP_CCW, 1);
-		gpio_set_dir(xGP_CW, 0);
+		gpio_put(xGP_CCW, 0);
+		gpio_put(xGP_CW, 1);
 	}
 }
 
