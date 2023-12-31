@@ -1,40 +1,28 @@
-
-include_directories(include)
-
 add_executable(${ProjectName}
-    main.cpp
-    Antonio.cpp
-    
-    BlinkAgent.cpp
-    MotorsAgent.cpp
-    MotorMgr.cpp
+        main.cpp
+        pico_uart_transport.c
+		ICM20600.cpp
+        )
+target_include_directories(${ProjectName} PRIVATE
+        ${CMAKE_CURRENT_LIST_DIR}
+        )
 
-    Agent.cpp
-    uRosBridge.cpp
-    uRosEntities.cpp
-    pico_usb_transport.c
-    freertos_allocators.c
-)
-
-target_include_directories(${ProjectName} PUBLIC
-    ${CMAKE_CURRENT_LIST_DIR}
-    include   
-)
-
+# Pull in our pico_stdlib which pulls in commonly used features
 target_link_libraries(${ProjectName} 
-    pico_stdlib 
-    pico_multicore
-    FreeRTOS-Kernel-Heap4 
-    micro_ros
-    pico_rand
-    hardware_pwm
-    )
+	pico_stdlib 
+	hardware_pwm
+	hardware_i2c
+	micro_ros
+	FreeRTOS-Kernel-Heap4
+	hardware_dma
+	)
+
+# create map/bin/hex file etc.
 pico_add_extra_outputs(${ProjectName})
 
+# enable usb output, disable uart output
 pico_enable_stdio_usb(${ProjectName} 1)
-pico_enable_stdio_uart(${ProjectName} 1)
-target_compile_definitions(${ProjectName} PRIVATE
-    PICO_DEFAULT_UART_RX_PIN=16
-    PICO_DEFAULT_UART_TX_PIN=17
-)
-
+pico_enable_stdio_uart(${ProjectName} 0)
+add_compile_definitions(PICO_UART_ENABLE_CRLF_SUPPORT=0)
+add_compile_definitions(PICO_STDIO_ENABLE_CRLF_SUPPORT=0)
+add_compile_definitions(PICO_STDIO_DEFAULT_CRLF=0)

@@ -12,6 +12,10 @@
         FreeRTOS-Kernel-Heap4 
         hardware_pwm
         hardware_irq
+        hardware_adc
+        hardware_dma
+        hardware_timer
+
         )
 
      pico_enable_stdio_usb(${ProjectName} 1) 

@@ -44,7 +44,6 @@
 #define configUSE_PREEMPTION                    1
 #define configUSE_TICKLESS_IDLE                 0
 #define configUSE_IDLE_HOOK                     0
-#define configUSE_MINIMAL_IDLE_HOOK             0
 #define configUSE_TICK_HOOK                     0
 #define configTICK_RATE_HZ                      ( ( TickType_t ) 1000 )
 #define configMAX_PRIORITIES                    32
@@ -107,7 +106,7 @@
 /* SMP port only */
 #define configNUMBER_OF_CORES                   2
 #define configTICK_CORE                         0
-#define configRUN_MULTIPLE_PRIORITIES           1
+#define configRUN_MULTIPLE_PRIORITIES           0
 #define configUSE_CORE_AFFINITY                 1
 #endif
 
