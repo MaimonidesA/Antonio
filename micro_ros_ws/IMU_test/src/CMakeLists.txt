@@ -1,6 +1,7 @@
 add_executable(${ProjectName}
         main.cpp
 		ICM20600.cpp
+		SimpleKalmanFilter.cpp
         #pico_uart_transport.c
         )
 

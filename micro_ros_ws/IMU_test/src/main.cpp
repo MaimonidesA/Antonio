@@ -4,6 +4,7 @@
 #include "hardware/i2c.h"
 #include "ICM20600.h"
 #include <time.h>
+#include "SimpleKalmanFilter.h"
 
 extern "C"{
 #include "rcl/rcl.h"
@@ -22,12 +23,21 @@ extern "C"{
 #include "rosidl_runtime_c/primitives_sequence_functions.h"
 #include <geometry_msgs/msg/twist.h>
 }
+// === the fixed point macros (16.15) ========================================
+typedef signed int fix15 ;
+#define multfix15(a,b) ((fix15)((((signed long long)(a))*((signed long long)(b)))>>15))
+#define float2fix15(a) ((fix15)((a)*32768.0)) // 2^15
+#define fix2float15(a) ((float)(a)/32768.0)
+#define absfix15(a) abs(a) 
+#define int2fix15(a) ((fix15)(a << 15))
+#define fix2int15(a) ((int)(a >> 15))
+#define char2fix15(a) (fix15)(((fix15)(a)) << 15)
 
-
+#define BAT 21
 // Arrays in which raw measurements will be stored
 clock_t clock()
 {
-    return (clock_t) time_us_64() / 10000;
+    return (clock_t) time_us_32() / 1000000;
 }
 
 ICM20600 icm20600(true);
@@ -47,17 +57,34 @@ double Accelerometer_Pitch, Accelerometer_roll;
 // gyro orientation.
 double gyro_Pitch, gyro_roll, gyro_yaw;
 
-clock_t startTime;
-clock_t endTime;
+double startTime;
+double endTime ;
 double Delta_Time;
 
 double priv_gyro_Pitch;
 double Linear_velocity = 0;
+double priv_Linear_velocity = 0;
 double Distance = 0;
 
+double Acc_X;
+double prev_Acc_X;
+double Sum_Acc_X;
+double chige_betwin_megur_A;
+double clibrate_Acc_X;
+double kalman_Acc_X;
+double X_position;
+int cont_Sum_Acc_X;
+double G ;
+SimpleKalmanFilter simpleKalmanFilter(10, 2, 0.01);
 
 int main() {
+    
     stdio_init_all();
+
+    gpio_init(BAT);
+    gpio_set_dir(BAT, GPIO_IN);
+
+    startTime = clock();
 
     ICM20600 icm20600(true);
 
@@ -73,72 +100,96 @@ int main() {
     icm20600.initialize();
     icm20600.setPowerMode(ICM_6AXIS_LOW_NOISE);
     icm20600.setAccScaleRange(RANGE_2G);
+    icm20600.setAccOutputDataRate(ACC_RATE_1K_BW_218);
+    //icm20600.setAccAverageSample(ACC_AVERAGE_32);
+   // icm20600.setSampleRateDivier(2);
+
+    sleep_ms(4000);
+
+    for (size_t i = 0; i < 4000; i++)
+    {
+
+    G = G + sqrt(sqrt( (double)icm20600.getAccelerationZ() * (double)icm20600.getAccelerationZ() + (double)icm20600.getAccelerationY() * (double)icm20600.getAccelerationY()) *
+             sqrt( (double)icm20600.getAccelerationZ() * (double)icm20600.getAccelerationZ() + (double)icm20600.getAccelerationY() * (double)icm20600.getAccelerationY()) + (double)icm20600.getAccelerationX() * (double)icm20600.getAccelerationX());
+             sleep_ms(1);
+    }
+    G = G / 4000;
+
+    for (size_t i = 0; i < 4000; i++)
+    {
+         //Pitch
+        Delta_Time = (time_us_32() - endTime) / 1000000;
+        endTime = time_us_32();
+        acceleration_Z = icm20600.getAccelerationZ();
+        acceleration_X = icm20600.getAccelerationX();
+        acceleration_Y = icm20600.getAccelerationY();
+
+        Accelerometer_Pitch = atan(acceleration_X / sqrt( acceleration_Z * acceleration_Z + acceleration_Y * acceleration_Y));
+        Pitch = Accelerometer_Pitch ;
+        
+        //roll
+        Accelerometer_roll = atan(acceleration_Y / sqrt( acceleration_Z * acceleration_Z + acceleration_X * acceleration_X));
+        roll = Accelerometer_roll ;
+        
+        Acc_X =  (icm20600.getAccelerationX() - sin(Pitch) * G) ;
+        Sum_Acc_X = Sum_Acc_X + Acc_X;
+        chige_betwin_megur_A = chige_betwin_megur_A + abs(Acc_X - prev_Acc_X);
+        prev_Acc_X = Acc_X;
+        printf("%f,\n ", Acc_X);//******************7*/
+    }
+
+    clibrate_Acc_X = Sum_Acc_X / 4000;
+    chige_betwin_megur_A = chige_betwin_megur_A / 4000;
+    
  
     while (1)
     {
-        Accelerometer_Pitch = atan((double)(icm20600.getAccelerationX()) / (double)(icm20600.getAccelerationZ()));
-        
         //Pitch
-        endTime = clock();
-        Delta_Time = endTime - startTime;
-        gyro_Pitch = Pitch + ((icm20600.getGyroscopeY()+2) * (Delta_Time * Delta_Time / 2)) * M_PI / 180 ;
-        priv_gyro_Pitch = gyro_Pitch;
-        startTime = endTime;
+        Delta_Time = (time_us_32() - endTime) / 1000000;
+        endTime = time_us_32();
+        acceleration_Z = icm20600.getAccelerationZ();
+        acceleration_X = icm20600.getAccelerationX();
+        acceleration_Y = icm20600.getAccelerationY();
 
-        Pitch = gyro_Pitch * 0.9 + Accelerometer_Pitch * 0.1;
+        Accelerometer_Pitch = atan(acceleration_X / sqrt( acceleration_Z * acceleration_Z + acceleration_Y * acceleration_Y));
+ 
+        gyro_Pitch = gyro_Pitch - (icm20600.getGyroscopeY()+2) * Delta_Time * M_PI / 180 ;
+    
+        Pitch = (Pitch - (icm20600.getGyroscopeY()+2) * Delta_Time * M_PI / 180) * 0.999 + Accelerometer_Pitch * 0.001;
         
         //roll
-        Accelerometer_roll = atan((double)(icm20600.getAccelerationY()) / (double)(icm20600.getAccelerationZ()));
+
+        Accelerometer_roll = atan(acceleration_Y / sqrt( acceleration_Z * acceleration_Z + acceleration_X * acceleration_X));
        
-        endTime = clock();
-        Delta_Time = endTime - startTime;
-        gyro_roll = roll + (icm20600.getGyroscopeX() * (Delta_Time * Delta_Time / 2)) * M_PI / 180;
-        startTime = endTime;
+        gyro_roll = gyro_roll + icm20600.getGyroscopeX() * Delta_Time * M_PI / 180;
+        
+        roll = (roll + icm20600.getGyroscopeX() * Delta_Time * M_PI / 180) * 0.995 + Accelerometer_roll * 0.005;
+        
+        
+        Acc_X = ((double)icm20600.getAccelerationX() - sin(Pitch) * G) ;
+        kalman_Acc_X = simpleKalmanFilter.updateEstimate(Acc_X);
+       // Acc_X = prev_Acc_X * 0.95 + Acc_X * 0.05;
+        //prev_Acc_X = Acc_X;
 
-        roll = gyro_roll * 0.9 + Accelerometer_roll * 0.1;
+        Linear_velocity = Linear_velocity  + kalman_Acc_X * Delta_Time  ;
+       
+        bool bat = gpio_get(BAT);
 
-        printf("%f, ", Pitch);//*/
-        printf("%f, ", gyro_Pitch);//*/
-        printf("%f, ", Accelerometer_Pitch);//*/
-        printf("%f, ", roll);//*/
-        printf("%f, ", gyro_roll);//*/
-        printf("%f,\n", Accelerometer_roll);//*/
-       // printf("pitch : %f gyro_Pitch :%f Acc_Pitch: %f roll : %f gyro_roll : %f Acc_roll : %f\n" , Pitch, gyro_Pitch, Accelerometer_Pitch, roll, gyro_roll);//*/
-
-        /*double acceleration_sum = 0;
-        double Average = 1000;
-      
-        clock_t startTime = clock();
-
-        for (size_t i = 0; i < Average; i++)
-        {
-            acceleration_sum = acceleration_sum + (double)(icm20600.getAccelerationX());
+        if (bat == 0 ){
+            Acc_X = 0 ;
+            Linear_velocity = 0;
         }
-        clock_t endTime = clock();
-        double executionTime = (double)(endTime - startTime) / CLOCKS_PER_SEC;
-        Linear_velocity = Linear_velocity + executionTime * ((acceleration_sum / Average)/100.0);
-
-        Distance = Distance + Linear_velocity * executionTime;
-
-        int acceleration_X = icm20600.getAccelerationX();
-        int acceleration_Y = icm20600.getAccelerationY();
-        int acceleration_Z = icm20600.getAccelerationZ();
-
-        printf("Distance : %f velocity_x : %f time :%.8f  Average acc : %f acce   X : %i     Y : %i      Z : %i\n" 
-              ,Distance ,Linear_velocity, executionTime, ((acceleration_sum / Average)/100.0) ,acceleration_X, acceleration_Y, acceleration_Z);
-
-    /*
-      int gyro_X  = icm20600.getGyroscopeX();
-      int gyro_Y  = icm20600.getGyroscopeY();
-      int gyro_Z  = icm20600.getGyroscopeZ();
-      
-      int acceleration_X = icm20600.getAccelerationX();
-      int acceleration_Y = icm20600.getAccelerationY();
-      int acceleration_Z = icm20600.getAccelerationZ();
-      
-      printf("acce   X : %i     Y : %i      Z : %i  gyro  X: %i     Y :%i    Z :%i \n" ,acceleration_X, acceleration_Y, acceleration_Z, gyro_X, gyro_Y, gyro_Z );
-      
-     */
+        X_position = X_position  + Linear_velocity * Delta_Time + kalman_Acc_X * Delta_Time * Delta_Time/2  ;
+        if (abs(X_position) > 20){X_position = 0;}
+        //if (abs(Linear_velocity) > 20){Linear_velocity = 0;}
+         
+        
+        printf("%f, %f, %f, %f, %f, %f,  %f, %f, %f, %f, %f\n"
+        ,G, Delta_Time, X_position, Linear_velocity, Acc_X, Pitch, roll, acceleration_Z, clibrate_Acc_X, chige_betwin_megur_A, kalman_Acc_X);
+        //printf("%f, ", Accelerometer_Pitch);//    3*/
+       // printf("%f, ", gyro_roll);//**************5*/
+        //printf("%f, ", Accelerometer_roll);//*****6*/
+       // printf(" %f, \n", clibrate_Acc_X);//******12
     }
    
 
