@@ -1,0 +1,43 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "/home/antonio/antonio_ws/Antonio/micro_ros_ws/pico_def_drive_Protothreads/build/pico-sdk/src/rp2_common/tinyusb/CMakeFiles/PioasmBuild"
+		},
+		{
+			"file" : "/home/antonio/antonio_ws/Antonio/micro_ros_ws/pico_def_drive_Protothreads/build/pico-sdk/src/rp2_common/tinyusb/CMakeFiles/PioasmBuild.rule"
+		},
+		{
+			"file" : "/home/antonio/antonio_ws/Antonio/micro_ros_ws/pico_def_drive_Protothreads/build/pico-sdk/src/rp2_common/tinyusb/CMakeFiles/PioasmBuild-complete.rule"
+		},
+		{
+			"file" : "/home/antonio/antonio_ws/Antonio/micro_ros_ws/pico_def_drive_Protothreads/build/pico-sdk/src/rp2_common/tinyusb/pioasm/src/PioasmBuild-stamp/PioasmBuild-build.rule"
+		},
+		{
+			"file" : "/home/antonio/antonio_ws/Antonio/micro_ros_ws/pico_def_drive_Protothreads/build/pico-sdk/src/rp2_common/tinyusb/pioasm/src/PioasmBuild-stamp/PioasmBuild-configure.rule"
+		},
+		{
+			"file" : "/home/antonio/antonio_ws/Antonio/micro_ros_ws/pico_def_drive_Protothreads/build/pico-sdk/src/rp2_common/tinyusb/pioasm/src/PioasmBuild-stamp/PioasmBuild-download.rule"
+		},
+		{
+			"file" : "/home/antonio/antonio_ws/Antonio/micro_ros_ws/pico_def_drive_Protothreads/build/pico-sdk/src/rp2_common/tinyusb/pioasm/src/PioasmBuild-stamp/PioasmBuild-install.rule"
+		},
+		{
+			"file" : "/home/antonio/antonio_ws/Antonio/micro_ros_ws/pico_def_drive_Protothreads/build/pico-sdk/src/rp2_common/tinyusb/pioasm/src/PioasmBuild-stamp/PioasmBuild-mkdir.rule"
+		},
+		{
+			"file" : "/home/antonio/antonio_ws/Antonio/micro_ros_ws/pico_def_drive_Protothreads/build/pico-sdk/src/rp2_common/tinyusb/pioasm/src/PioasmBuild-stamp/PioasmBuild-patch.rule"
+		},
+		{
+			"file" : "/home/antonio/antonio_ws/Antonio/micro_ros_ws/pico_def_drive_Protothreads/build/pico-sdk/src/rp2_common/tinyusb/pioasm/src/PioasmBuild-stamp/PioasmBuild-update.rule"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"PioasmBuild"
+		],
+		"name" : "PioasmBuild"
+	}
+}
