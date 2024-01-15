@@ -35,7 +35,7 @@ extern "C"{
 #include <geometry_msgs/msg/twist.h>
 }
 
-#define timestamp float((int)time_us_32())
+#define timestamp double((int)time_us_32())
 
 //Left Motor
 #define LEFT_CW		    15
@@ -49,15 +49,12 @@ extern "C"{
 #define RIGHT_PWM 	    10
 #define RIGHT_Encoder 	21
 
-
-
-
-
-
 const uint LED_PIN = 25;
 // SMP Types.
-int Spinlock_num_count;
+int Spinlock_num_odom;
 spin_lock_t *spinlock_odom;
+int Spinlock_num_ticks;
+spin_lock_t *spinlock_ticks;
 
 // ros Types
 rcl_publisher_t publisher;
@@ -66,57 +63,123 @@ std_msgs__msg__Int32 msg;
 rcl_publisher_t 		PubOdom;
 nav_msgs__msg__Odometry OdomMsg;
 
-
-
 rcl_subscription_t subscriber;
 geometry_msgs__msg__Twist Twist_msg;
 
-double Linear_speed_request;
-double  Angular_speed_request;
+double Linear_request;
+double  Angular_request;
+bool cmd_val_msg_Arrive;
+double Last_cmd_val_arrive;
 
-float Ticks_per_cycle = 275;
-float Wheel_Radius = 36;  // Units mm 
-float Wheel_Circumference = 2*M_PI*Wheel_Radius; // Units mm
-float Distance_between_wheels = 236; // Units mm
+// PID parameters.
+double LKP = 1, LKI = 0.000, LKD = 0.10; //Linear Pid [0 < coefficients < 1]
+double AKP = 0.1, AKI = 0.0000, AKD = 0.00; //Angular Pid [0 < coefficients < 1]
+double L_Continuous_error;
+double A_Continuous_error;
+double Last_Linear_err;
+double Last_Angular_err;
+double Linear_PID;
+double Angular_PID;
+double Angular_err;
+double Linear_err;
+
+// Wheels parameters.
+double Ticks_per_cycle = 275;
+double Wheel_Radius = 0.036;  //0.036 Meter.
+double Wheel_Circumference = 2*M_PI*Wheel_Radius; // Units M
+double Distance_between_wheels = 0.236; // Units M
 
 double Right_throttle;
 double Left_throttle;
 
-float Left_RPM;
-float Left_velocity;
-float Left_Encoder_Delta_Time =0;
-float Left_Encoder_priv_Time = 0;
+bool Left_CW;
+double Left_RPM;
+double Left_velocity;
+double Left_Encoder_Delta_Time =0;
+double Left_Encoder_priv_Time = 0;
+double xLeft_ticks = 0;
 
-float Right_RPM;
-float Right_velocity;
-float Right_Encoder_Delta_Time = 0;
-float Right_Encoder_priv_Time = 0;
+bool Right_CW;
+double Right_RPM;
+double Right_velocity;
+double Right_Encoder_Delta_Time = 0;
+double Right_Encoder_priv_Time = 0;
+double xRight_ticks = 0;
+
+double Average_distance;
+double Previous_average_distance;
 
 struct Velocity_t {
-   float Linear = 0;
-   float angular = 0;
+   double Linear = 0;
+   double angular = 0;
 } Velocity;
 
-Velocity_t Robot_Velocity(float Left_Encoder_Delta_Time, float Right_Encoder_Delta_Time) {
+struct position_t {
+    double X;
+    double Y;
+    double Angle;
+}position;
+
+position_t Robot_position(double Right_ticks, double Left_ticks){
+    double Right_distance = (Wheel_Circumference / Ticks_per_cycle) * Right_ticks;
+    double Left_distance = (Wheel_Circumference / Ticks_per_cycle) * Left_ticks;
+    position.Angle += (Right_distance - Left_distance) /  Distance_between_wheels;
+    if(position.Angle > 2*M_PI){position.Angle -= 2*M_PI;}else if(position.Angle < 0){position.Angle += 2*M_PI;}
+    Average_distance = (Right_distance + Left_distance) / 2;
+    xRight_ticks = 0;
+    xLeft_ticks = 0;
+    Right_distance = 0;
+    Left_distance = 0;
+    position.X += cos(position.Angle) * Average_distance ;
+    position.Y += sin(position.Angle) * Average_distance ;
+    Previous_average_distance = Average_distance;
+    return position;
+}
+
+Velocity_t Robot_Velocity(double Left_Encoder_Delta_Time, double Right_Encoder_Delta_Time) {
     
-    Left_velocity = (Wheel_Circumference / Ticks_per_cycle / 1000.0) / (Left_Encoder_Delta_Time / 1000000); // Units m/s
+    Left_velocity = (Wheel_Circumference / Ticks_per_cycle) / (Left_Encoder_Delta_Time / 1000000); // Units m/s
     if (!gpio_get(LEFT_CW)){Left_velocity  *= (-1);}
 
-    Right_velocity = (Wheel_Circumference / Ticks_per_cycle / 1000.0) / (Right_Encoder_Delta_Time / 1000000); // Units m/s
+    Right_velocity = (Wheel_Circumference / Ticks_per_cycle) / (Right_Encoder_Delta_Time / 1000000); // Units m/s
     if (!gpio_get(RIGHT_CW)){Right_velocity *=  (-1);}
 
     if (Right_Encoder_Delta_Time == 0) {Right_velocity = 0;}
     if (Left_Encoder_Delta_Time == 0) {Left_velocity = 0;}
     Velocity.Linear = Left_velocity / 2 + Right_velocity / 2;
-    Velocity.angular = Left_velocity / (2 * M_PI * Distance_between_wheels) - Right_velocity / (2 * M_PI * Distance_between_wheels); //  Units radians/second.
+    Velocity.angular = Left_velocity / (Distance_between_wheels) - Right_velocity / (Distance_between_wheels); //  Units radians/second.
 
     return Velocity;
 }
 
-void PID() {
-    // todo
-}
+void PID(double Linear_request, double Angular_request, double Angular_velocity, double Linear_velocity) {
+    Linear_err = Linear_request - Linear_velocity;
+    Angular_err = Angular_request - Angular_velocity;
+    double LP, LI, LD;   //Linear PID.
+    double AP, AI, AD;   //Angular PID.
+    L_Continuous_error = L_Continuous_error + Linear_err;
+    A_Continuous_error = A_Continuous_error + Angular_err;
 
+    LP = Linear_err * LKP;
+    LI = (Linear_err + L_Continuous_error) * LKI;
+    LI = (abs(LI) > 0.01) ? (LI/LI)* 0.01 : LI;
+    LD = (Linear_err - Last_Linear_err) * LKD;
+    Last_Linear_err = Linear_err;
+    Linear_PID = (LP + LI + LD);
+    Linear_PID = (Linear_PID > 0.2) ? 0.2 : Linear_PID ;
+    Linear_PID = (Linear_PID < -0.2) ? -0.2 : Linear_PID ;
+
+    AP = Angular_err * AKP ;
+    AI = (Angular_err + A_Continuous_error) * AKI;
+    AI = (abs(AI) > 0.01) ? (AI/AI)* 0.01 : AI;
+    AD = (Angular_err - Last_Angular_err) * AKD;
+    Last_Angular_err = Angular_err;
+    Angular_PID = (AP + AI + AD)/2;
+    Angular_PID = (Angular_PID > 0.2) ? 0.2 : Angular_PID ;
+    Angular_PID = (Angular_PID < -0.2) ? -0.2 : Angular_PID ;
+
+ 
+}
 
 void IMU_init(ICM20600 &icm20600){
      ////////////////////////////////////////////////////////////////////////
@@ -135,12 +198,12 @@ void IMU_init(ICM20600 &icm20600){
 
 void IMU_val(void *params){
     ICM20600 icm20600(true);
-    float Linear_velocity;
+    double Linear_velocity;
     while (1)
     {
       int gyro_Z  = icm20600.getGyroscopeZ();
       int acceleration_X = icm20600.getAccelerationX();
-      float acceleration_sum = 0;
+      double acceleration_sum = 0;
       int Average = 100;
       
       int Previous_time = time_us_32();
@@ -167,45 +230,54 @@ void timer_callback(rcl_timer_t *timer, int64_t last_call_time)
 
 void set_throttle(){
 
-     if (Angular_speed_request == 0.0 )
-    {
-       Right_throttle = Linear_speed_request;
-       Left_throttle = Linear_speed_request ;
+ PID(Linear_request, Angular_request, Velocity.angular, Velocity.Linear);
+    if (abs(Angular_err/10) > abs(Linear_err)){
+        if (Angular_err < 0){
+            Right_throttle = Right_throttle  + abs(Angular_PID);
+            Left_throttle = Left_throttle - abs(Angular_PID);
+        }
+        else if(Angular_err > 0){
+            Right_throttle = Right_throttle - abs(Angular_PID);
+            Left_throttle = Left_throttle  + abs(Angular_PID);
+        }
     }
-    if (Angular_speed_request < 0.0 ) 
-    {
-        Right_throttle = ((Linear_speed_request) - abs(Angular_speed_request));
-        Left_throttle = ((Linear_speed_request) + abs(Angular_speed_request));
-    }
-    else  
-    {
-        Right_throttle = ((Linear_speed_request) + abs(Angular_speed_request));
-        Left_throttle = ((Linear_speed_request) - abs(Angular_speed_request));
-    }
-    
+        else{
+            Right_throttle = Right_throttle + Linear_PID;
+            Left_throttle = Left_throttle + Linear_PID;
+        }
+    int Right_throttle_to_low = 1; 
+    int Left_throttle_to_low = 1; 
+    Right_throttle = ((Right_throttle) > 1) ? 1 : Right_throttle; Right_throttle = (Right_throttle < -1) ? -1 : Right_throttle;
+    Right_throttle_to_low = (abs(Right_throttle) < 0.15) ?  0 : 1;
+    Left_throttle = (Left_throttle > 1) ? 1 : Left_throttle; Left_throttle = (Left_throttle < -1) ? -1 : Left_throttle;
+    Left_throttle_to_low = (abs(Left_throttle) < 0.15) ? 0 :  1;
     //Left Motor
-    int left_pwm = (int)((float)(0xffff) * abs(Left_throttle));
+    int left_pwm = (int)((double)(0xffff) * abs(Left_throttle) * Right_throttle_to_low);
     pwm_set_gpio_level(LEFT_PWM, left_pwm);
-	if (Left_throttle < 0 ){
+	if (Left_throttle > 0 ){
 		gpio_put(LEFT_CW, 1);
 		gpio_put(LEFT_CCW, 0);
+        Left_CW = true;
 	}
     else// run counter clockwise
     {		
 		gpio_put(LEFT_CW, 0);
 		gpio_put(LEFT_CCW, 1);
+        Left_CW = false;
     }
     //Right Motor
-    int right_pwm = (int)((float)(0xffff) * abs(Right_throttle));
+    int right_pwm = (int)((double)(0xffff) * abs(Right_throttle) * Left_throttle_to_low);
     pwm_set_gpio_level(RIGHT_PWM, right_pwm);
-	if (Right_throttle < 0 ){
+	if (Right_throttle > 0 ){
 		gpio_put(RIGHT_CW, 1);
 		gpio_put(RIGHT_CCW, 0);
+        Right_CW = true;
 	}
     else // run counter clockwise
     {		
 		gpio_put(RIGHT_CW, 0);
 		gpio_put(RIGHT_CCW, 1);
+        Right_CW = false;
     }
 }
 
@@ -214,14 +286,25 @@ void subscription_callback(const void * msgin)
     // Cast received message to used type
     const geometry_msgs__msg__Twist * pTwistMsg = (const geometry_msgs__msg__Twist *) msgin;
 
-    Linear_speed_request =  pTwistMsg->linear.x; 
-    Angular_speed_request =  pTwistMsg->angular.z; 
+    Linear_request = pTwistMsg->linear.x;
+    Angular_request =  pTwistMsg->angular.z; 
+    Linear_request = (Linear_request > 0.26) ? 0.26 : Linear_request;
+    Linear_request = (Linear_request < -0.26) ? -0.26 : Linear_request;
+    Angular_request = (Angular_request > 2.4) ? 2.4 : Angular_request;
+    Angular_request = (Angular_request < -2.4) ? -2.4 : Angular_request;
+    cmd_val_msg_Arrive = true;
+    Last_cmd_val_arrive = timestamp;
 }
 
-nav_msgs__msg__Odometry update_odom(float Linear, float angular){
+nav_msgs__msg__Odometry update_odom(double Linear, double angular, double position_x,double position_y, double Angle){
      //TWIST
 	OdomMsg.twist.twist.linear.x = Linear;
 	OdomMsg.twist.twist.angular.z = angular;
+
+    OdomMsg.pose.pose.position.x = position_x;
+    OdomMsg.pose.pose.position.y = position_y;
+
+    OdomMsg.pose.pose.orientation.z = Angle;
 
     return OdomMsg;
 }
@@ -279,6 +362,7 @@ void core_1(){
 
     bool RIGHT_Encoder_gpio = false;
     bool Left_Encoder_gpio = false;
+    double Detect_motion = 0;
     //spin_unlock_unsafe(spinlock_odom);
     while (1)
     {
@@ -286,23 +370,38 @@ void core_1(){
             Right_Encoder_Delta_Time = timestamp - Right_Encoder_priv_Time;
             Right_Encoder_priv_Time = timestamp;
             RIGHT_Encoder_gpio = true;
+            Detect_motion = timestamp;
+    spin_lock_unsafe_blocking(spinlock_ticks);
+            if(Right_CW){ xRight_ticks++;}else{xRight_ticks-- ;}
+    spin_unlock_unsafe(spinlock_ticks);
         }
         else if (gpio_get(RIGHT_Encoder) != 0)
         {
              RIGHT_Encoder_gpio = false;
         }
 
-        if (gpio_get(LEFT_Encoder) == 0 && !RIGHT_Encoder_gpio){
+        if (gpio_get(LEFT_Encoder) == 0 && !Left_Encoder_gpio){
             Left_Encoder_Delta_Time = timestamp - Left_Encoder_priv_Time;
             Left_Encoder_priv_Time = timestamp;
             Left_Encoder_gpio = true;
+            Detect_motion = timestamp;
+    spin_lock_unsafe_blocking(spinlock_ticks);
+            if(Left_CW){ xLeft_ticks++;} else{xLeft_ticks--;}
+    spin_unlock_unsafe(spinlock_ticks);
         }
-        else if (gpio_get(RIGHT_Encoder) != 0)
+        else if (gpio_get(LEFT_Encoder) != 0)
         {
              Left_Encoder_gpio = false;
         }
-spin_lock_unsafe_blocking(spinlock_odom);      
-spin_unlock_unsafe(spinlock_odom);
+        if ((timestamp - Detect_motion) > 57000){
+            spin_lock_unsafe_blocking(spinlock_odom);  
+            Left_Encoder_Delta_Time = 0;
+            Right_Encoder_Delta_Time = 0;
+            spin_unlock_unsafe(spinlock_odom);
+        }
+
+    
+
     }   
 }
 
@@ -321,9 +420,12 @@ int main(){
 		pico_serial_transport_read
 	);
 
-    Spinlock_num_count = spin_lock_claim_unused(true);
-    spinlock_odom = spin_lock_init(Spinlock_num_count);
+    Spinlock_num_odom = spin_lock_claim_unused(true);
+    spinlock_odom = spin_lock_init(Spinlock_num_odom);
  
+    Spinlock_num_ticks = spin_lock_claim_unused(true);
+    spinlock_ticks = spin_lock_init(Spinlock_num_odom);
+
     gpio_init(LED_PIN);
     gpio_set_dir(LED_PIN, GPIO_OUT);
 
@@ -391,10 +493,24 @@ int main(){
         rclc_executor_spin_some(&executor, RCL_MS_TO_NS(100));
     spin_lock_unsafe_blocking(spinlock_odom);      
         Robot_Velocity(Left_Encoder_Delta_Time, Right_Encoder_Delta_Time);
+   // spin_lock_unsafe_blocking(spinlock_ticks);
+        position = Robot_position(xRight_ticks, xLeft_ticks);          
+   // spin_unlock_unsafe(spinlock_ticks);
+        OdomMsg = update_odom(Velocity.Linear, Velocity.angular, position.X, position.Y ,position.Angle);
     spin_unlock_unsafe(spinlock_odom);
-        OdomMsg = update_odom(Velocity.Linear, Velocity.angular);
         rcl_ret_t ret_odom = rcl_publish(&PubOdom, &OdomMsg, NULL); 
-        set_throttle();
+       
+        if (cmd_val_msg_Arrive){
+            set_throttle();
+            
+            if((timestamp - Last_cmd_val_arrive) > 2000000){
+                pwm_set_gpio_level(RIGHT_PWM, 0);
+                pwm_set_gpio_level(LEFT_PWM, 0);
+                Right_throttle =0;
+                Left_throttle =0;
+                cmd_val_msg_Arrive = false;
+            }
+        }
     };
     return 0;
 }
