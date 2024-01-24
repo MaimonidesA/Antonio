@@ -1,0 +1,147 @@
+[35m[1mConsolidate compiler generated dependencies of target Wheels_odom_tf2_broadcaster[0m
+[ 50%] [32mBuilding CXX object CMakeFiles/Wheels_odom_tf2_broadcaster.dir/src/Wheels_odom_tf2_broadcaster.cpp.o[0m
+[01m[K/home/antonio/antonio_ws/Antonio/antonio_description/src/Wheels_odom_tf2_broadcaster.cpp:51:49:[m[K [01;31m[Kerror: [m[K‘[01m[Kturtlesim[m[K’ was not declared in this scope
+   51 |   void handle_turtle_pose(const std::shared_ptr<[01;31m[Kturtlesim[m[K::msg::Pose> msg)
+      |                                                 [01;31m[K^~~~~~~~~[m[K
+[01m[K/home/antonio/antonio_ws/Antonio/antonio_description/src/Wheels_odom_tf2_broadcaster.cpp:51:69:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+   51 |   void handle_turtle_pose(const std::shared_ptr<turtlesim::msg::Pose[01;31m[K>[m[K msg)
+      |                                                                     [01;31m[K^[m[K
+[01m[K/home/antonio/antonio_ws/Antonio/antonio_description/src/Wheels_odom_tf2_broadcaster.cpp:51:49:[m[K [01;31m[Kerror: [m[K‘[01m[Kturtlesim[m[K’ was not declared in this scope
+   51 |   void handle_turtle_pose(const std::shared_ptr<[01;31m[Kturtlesim[m[K::msg::Pose> msg)
+      |                                                 [01;31m[K^~~~~~~~~[m[K
+[01m[K/home/antonio/antonio_ws/Antonio/antonio_description/src/Wheels_odom_tf2_broadcaster.cpp:51:69:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+   51 |   void handle_turtle_pose(const std::shared_ptr<turtlesim::msg::Pose[01;31m[K>[m[K msg)
+      |                                                                     [01;31m[K^[m[K
+[01m[K/home/antonio/antonio_ws/Antonio/antonio_description/src/Wheels_odom_tf2_broadcaster.cpp:51:49:[m[K [01;31m[Kerror: [m[K‘[01m[Kturtlesim[m[K’ was not declared in this scope
+   51 |   void handle_turtle_pose(const std::shared_ptr<[01;31m[Kturtlesim[m[K::msg::Pose> msg)
+      |                                                 [01;31m[K^~~~~~~~~[m[K
+[01m[K/home/antonio/antonio_ws/Antonio/antonio_description/src/Wheels_odom_tf2_broadcaster.cpp:51:69:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+   51 |   void handle_turtle_pose(const std::shared_ptr<turtlesim::msg::Pose[01;31m[K>[m[K msg)
+      |                                                                     [01;31m[K^[m[K
+[01m[K/home/antonio/antonio_ws/Antonio/antonio_description/src/Wheels_odom_tf2_broadcaster.cpp:51:33:[m[K [01;31m[Kerror: [m[Kinvalid template-id
+   51 |   void handle_turtle_pose(const [01;31m[Kstd[m[K::shared_ptr<turtlesim::msg::Pose> msg)
+      |                                 [01;31m[K^~~[m[K
+[01m[K/home/antonio/antonio_ws/Antonio/antonio_description/src/Wheels_odom_tf2_broadcaster.cpp:51:49:[m[K [01;31m[Kerror: [m[K‘[01m[Kturtlesim[m[K’ has not been declared
+   51 |   void handle_turtle_pose(const std::shared_ptr<[01;31m[Kturtlesim[m[K::msg::Pose> msg)
+      |                                                 [01;31m[K^~~~~~~~~[m[K
+[01m[K/home/antonio/antonio_ws/Antonio/antonio_description/src/Wheels_odom_tf2_broadcaster.cpp:51:27:[m[K [01;31m[Kerror: [m[Kclass template placeholder ‘[01m[Kstd::shared_ptr[m[K’ not permitted in this context
+   51 |   void handle_turtle_pose([01;31m[Kconst[m[K std::shared_ptr<turtlesim::msg::Pose> msg)
+      |                           [01;31m[K^~~~~[m[K
+[01m[K/home/antonio/antonio_ws/Antonio/antonio_description/src/Wheels_odom_tf2_broadcaster.cpp:81:24:[m[K [01;31m[Kerror: [m[K‘[01m[Kturtlesim[m[K’ was not declared in this scope
+   81 |   rclcpp::Subscription<[01;31m[Kturtlesim[m[K::msg::Pose>::SharedPtr subscription_;
+      |                        [01;31m[K^~~~~~~~~[m[K
+[01m[K/home/antonio/antonio_ws/Antonio/antonio_description/src/Wheels_odom_tf2_broadcaster.cpp:81:44:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+   81 |   rclcpp::Subscription<turtlesim::msg::Pose[01;31m[K>[m[K::SharedPtr subscription_;
+      |                                            [01;31m[K^[m[K
+[01m[K/home/antonio/antonio_ws/Antonio/antonio_description/src/Wheels_odom_tf2_broadcaster.cpp:81:44:[m[K [01;31m[Kerror: [m[Ktemplate argument 3 is invalid
+[01m[K/home/antonio/antonio_ws/Antonio/antonio_description/src/Wheels_odom_tf2_broadcaster.cpp:81:44:[m[K [01;31m[Kerror: [m[Ktemplate argument 4 is invalid
+[01m[K/home/antonio/antonio_ws/Antonio/antonio_description/src/Wheels_odom_tf2_broadcaster.cpp:81:44:[m[K [01;31m[Kerror: [m[Ktemplate argument 5 is invalid
+[01m[K/home/antonio/antonio_ws/Antonio/antonio_description/src/Wheels_odom_tf2_broadcaster.cpp:81:47:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K;[m[K’ at end of member declaration
+   81 |   rclcpp::Subscription<turtlesim::msg::Pose>::[01;31m[KSharedPtr[m[K subscription_;
+      |                                               [01;31m[K^~~~~~~~~[m[K
+      |                                                        [32m[K;[m[K
+[01m[K/home/antonio/antonio_ws/Antonio/antonio_description/src/Wheels_odom_tf2_broadcaster.cpp:81:57:[m[K [01;31m[Kerror: [m[K‘[01m[Ksubscription_[m[K’ does not name a type; did you mean ‘[01m[Krmw_subscription_t[m[K’?
+   81 |   rclcpp::Subscription<turtlesim::msg::Pose>::SharedPtr [01;31m[Ksubscription_[m[K;
+      |                                                         [01;31m[K^~~~~~~~~~~~~[m[K
+      |                                                         [32m[Krmw_subscription_t[m[K
+[01m[K/home/antonio/antonio_ws/Antonio/antonio_description/src/Wheels_odom_tf2_broadcaster.cpp:[m[K In constructor ‘[01m[KFramePublisher::FramePublisher()[m[K’:
+[01m[K/home/antonio/antonio_ws/Antonio/antonio_description/src/Wheels_odom_tf2_broadcaster.cpp:45:5:[m[K [01;31m[Kerror: [m[K‘[01m[Ksubscription_[m[K’ was not declared in this scope; did you mean ‘[01m[Krmw_subscription_t[m[K’?
+   45 |     [01;31m[Ksubscription_[m[K = this->create_subscription<turtlesim::msg::Pose>(
+      |     [01;31m[K^~~~~~~~~~~~~[m[K
+      |     [32m[Krmw_subscription_t[m[K
+[01m[K/home/antonio/antonio_ws/Antonio/antonio_description/src/Wheels_odom_tf2_broadcaster.cpp:45:47:[m[K [01;31m[Kerror: [m[K‘[01m[Kturtlesim[m[K’ was not declared in this scope; did you mean ‘[01m[Kturtlename_[m[K’?
+   45 |     subscription_ = this->create_subscription<[01;31m[Kturtlesim[m[K::msg::Pose>(
+      |                                               [01;31m[K^~~~~~~~~[m[K
+      |                                               [32m[Kturtlename_[m[K
+[01m[K/home/antonio/antonio_ws/Antonio/antonio_description/src/Wheels_odom_tf2_broadcaster.cpp:45:27:[m[K [01;31m[Kerror: [m[Kparse error in template argument list
+   45 |     subscription_ = this->[01;31m[Kcreate_subscription<turtlesim::msg::Pose>[m[K(
+      |                           [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/antonio/antonio_ws/Antonio/antonio_description/src/Wheels_odom_tf2_broadcaster.cpp:45:68:[m[K [01;31m[Kerror: [m[Kno matching function for call to ‘[01m[KFramePublisher::create_subscription<<expression error> >(std::string&, int, std::_Bind_helper<false, void (FramePublisher::*)(...), FramePublisher*, const std::_Placeholder<1>&>::type)[m[K’
+   45 |     subscription_ = [01;31m[Kthis->create_subscription<turtlesim::msg::Pose>([m[K
+      |                     [01;31m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^[m[K
+   46 | [01;31m[K      topic_name, 10,[m[K
+      |       [01;31m[K~~~~~~~~~~~~~~~[m[K                                               
+   47 | [01;31m[K      std::bind(&FramePublisher::handle_turtle_pose, this, std::placeholders::_1))[m[K;
+      |       [01;31m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+In file included from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors/single_threaded_executor.hpp:28[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:22[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155[m[K,
+                 from [01m[K/home/antonio/antonio_ws/Antonio/antonio_description/src/Wheels_odom_tf2_broadcaster.cpp:21[m[K:
+[01m[K/opt/ros/humble/include/rclcpp/rclcpp/node.hpp:219:3:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class MessageT, class CallbackT, class AllocatorT, class SubscriptionT, class MessageMemoryStrategyT> std::shared_ptr<ROSMessageT> rclcpp::Node::create_subscription(const string&, const rclcpp::QoS&, CallbackT&&, const rclcpp::SubscriptionOptionsWithAllocator<AllocatorT>&, typename MessageMemoryStrategyT::SharedPtr)[m[K’
+  219 |   [01;36m[Kcreate_subscription[m[K(
+      |   [01;36m[K^~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/opt/ros/humble/include/rclcpp/rclcpp/node.hpp:219:3:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[01m[K/home/antonio/antonio_ws/Antonio/antonio_description/src/Wheels_odom_tf2_broadcaster.cpp:45:68:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+   45 |     subscription_ = [01;31m[Kthis->create_subscription<turtlesim::msg::Pose>([m[K
+      |                     [01;31m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^[m[K
+   46 | [01;31m[K      topic_name, 10,[m[K
+      |       [01;31m[K~~~~~~~~~~~~~~~[m[K                                               
+   47 | [01;31m[K      std::bind(&FramePublisher::handle_turtle_pose, this, std::placeholders::_1))[m[K;
+      |       [01;31m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/antonio/antonio_ws/Antonio/antonio_description/src/Wheels_odom_tf2_broadcaster.cpp:[m[K In member function ‘[01m[Kvoid FramePublisher::handle_turtle_pose(...)[m[K’:
+[01m[K/home/antonio/antonio_ws/Antonio/antonio_description/src/Wheels_odom_tf2_broadcaster.cpp:63:33:[m[K [01;31m[Kerror: [m[K‘[01m[Kmsg[m[K’ was not declared in this scope
+   63 |     t.transform.translation.x = [01;31m[Kmsg[m[K->x;
+      |                                 [01;31m[K^~~[m[K
+[01m[K/home/antonio/antonio_ws/Antonio/antonio_description/src/Wheels_odom_tf2_broadcaster.cpp:63:33:[m[K [01;36m[Knote: [m[Ksuggested alternatives:
+In file included from [01m[K/opt/ros/humble/include/std_msgs/std_msgs/msg/detail/header__struct.hpp:20[m[K,
+                 from [01m[K/opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/transform_stamped__struct.hpp:20[m[K,
+                 from [01m[K/opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/transform_stamped.hpp:7[m[K,
+                 from [01m[K/home/antonio/antonio_ws/Antonio/antonio_description/src/Wheels_odom_tf2_broadcaster.cpp:20[m[K:
+[01m[K/opt/ros/humble/include/builtin_interfaces/builtin_interfaces/msg/detail/time__struct.hpp:27:11:[m[K [01;36m[Knote: [m[K  ‘[01m[Kbuiltin_interfaces::msg[m[K’
+   27 | namespace [01;36m[Kmsg[m[K
+      |           [01;36m[K^~~[m[K
+In file included from [01m[K/opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/transform_stamped__struct.hpp:20[m[K,
+                 from [01m[K/opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/transform_stamped.hpp:7[m[K,
+                 from [01m[K/home/antonio/antonio_ws/Antonio/antonio_description/src/Wheels_odom_tf2_broadcaster.cpp:20[m[K:
+[01m[K/opt/ros/humble/include/std_msgs/std_msgs/msg/detail/header__struct.hpp:31:11:[m[K [01;36m[Knote: [m[K  ‘[01m[Kstd_msgs::msg[m[K’
+   31 | namespace [01;36m[Kmsg[m[K
+      |           [01;36m[K^~~[m[K
+In file included from [01m[K/opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/transform__struct.hpp:20[m[K,
+                 from [01m[K/opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/transform_stamped__struct.hpp:22[m[K,
+                 from [01m[K/opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/transform_stamped.hpp:7[m[K,
+                 from [01m[K/home/antonio/antonio_ws/Antonio/antonio_description/src/Wheels_odom_tf2_broadcaster.cpp:20[m[K:
+[01m[K/opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/vector3__struct.hpp:27:11:[m[K [01;36m[Knote: [m[K  ‘[01m[Kgeometry_msgs::msg[m[K’
+   27 | namespace [01;36m[Kmsg[m[K
+      |           [01;36m[K^~~[m[K
+In file included from [01m[K/opt/ros/humble/include/rcl_interfaces/rcl_interfaces/msg/set_parameters_result.hpp:7[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/qos_overriding_options.hpp:28[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/subscription_options.hpp:30[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/subscription.hpp:45[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:25[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155[m[K,
+                 from [01m[K/home/antonio/antonio_ws/Antonio/antonio_description/src/Wheels_odom_tf2_broadcaster.cpp:21[m[K:
+[01m[K/opt/ros/humble/include/rcl_interfaces/rcl_interfaces/msg/detail/set_parameters_result__struct.hpp:27:11:[m[K [01;36m[Knote: [m[K  ‘[01m[Krcl_interfaces::msg[m[K’
+   27 | namespace [01;36m[Kmsg[m[K
+      |           [01;36m[K^~~[m[K
+In file included from [01m[K/opt/ros/humble/include/statistics_msgs/statistics_msgs/msg/detail/metrics_message__struct.hpp:23[m[K,
+                 from [01m[K/opt/ros/humble/include/statistics_msgs/statistics_msgs/msg/metrics_message.hpp:7[m[K,
+                 from [01m[K/opt/ros/humble/include/libstatistics_collector/libstatistics_collector/collector/generate_statistics_message.hpp:21[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/topic_statistics/subscription_topic_statistics.hpp:23[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/subscription.hpp:50[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:25[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155[m[K,
+                 from [01m[K/home/antonio/antonio_ws/Antonio/antonio_description/src/Wheels_odom_tf2_broadcaster.cpp:21[m[K:
+[01m[K/opt/ros/humble/include/statistics_msgs/statistics_msgs/msg/detail/statistic_data_point__struct.hpp:27:11:[m[K [01;36m[Knote: [m[K  ‘[01m[Kstatistics_msgs::msg[m[K’
+   27 | namespace [01;36m[Kmsg[m[K
+      |           [01;36m[K^~~[m[K
+In file included from [01m[K/opt/ros/humble/include/tf2_msgs/tf2_msgs/msg/tf_message.hpp:7[m[K,
+                 from [01m[K/opt/ros/humble/include/tf2_ros/tf2_ros/transform_broadcaster.h:43[m[K,
+                 from [01m[K/home/antonio/antonio_ws/Antonio/antonio_description/src/Wheels_odom_tf2_broadcaster.cpp:23[m[K:
+[01m[K/opt/ros/humble/include/tf2_msgs/tf2_msgs/msg/detail/tf_message__struct.hpp:31:11:[m[K [01;36m[Knote: [m[K  ‘[01m[Ktf2_msgs::msg[m[K’
+   31 | namespace [01;36m[Kmsg[m[K
+      |           [01;36m[K^~~[m[K
+gmake[2]: *** [CMakeFiles/Wheels_odom_tf2_broadcaster.dir/build.make:76: CMakeFiles/Wheels_odom_tf2_broadcaster.dir/src/Wheels_odom_tf2_broadcaster.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:137: CMakeFiles/Wheels_odom_tf2_broadcaster.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

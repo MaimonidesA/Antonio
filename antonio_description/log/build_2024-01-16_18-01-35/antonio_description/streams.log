@@ -1,0 +1,10 @@
+[0.127s] Invoking command in '/home/antonio/antonio_ws/Antonio/antonio_description/build/antonio_description': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/antonio/antonio_ws/Antonio/antonio_description/build/antonio_description -- -j4 -l4
+[0.200s] [ 50%] [32mBuilding CXX object CMakeFiles/Wheels_odom_tf2_broadcaster.dir/src/Wheels_odom_tf2_broadcaster.cpp.o[0m
+[4.222s] [01m[K/home/antonio/antonio_ws/Antonio/antonio_description/src/Wheels_odom_tf2_broadcaster.cpp:[m[K In constructor ‘[01m[KFramePublisher::FramePublisher()[m[K’:
+[4.222s] [01m[K/home/antonio/antonio_ws/Antonio/antonio_description/src/Wheels_odom_tf2_broadcaster.cpp:33:5:[m[K [01;31m[Kerror: [m[K‘[01m[Kturtlename_[m[K’ was not declared in this scope
+[4.222s]    33 |     [01;31m[Kturtlename_[m[K = this->declare_parameter<std::string>("turtlename", "turtle");
+[4.223s]       |     [01;31m[K^~~~~~~~~~~[m[K
+[8.339s] gmake[2]: *** [CMakeFiles/Wheels_odom_tf2_broadcaster.dir/build.make:76: CMakeFiles/Wheels_odom_tf2_broadcaster.dir/src/Wheels_odom_tf2_broadcaster.cpp.o] Error 1
+[8.340s] gmake[1]: *** [CMakeFiles/Makefile2:137: CMakeFiles/Wheels_odom_tf2_broadcaster.dir/all] Error 2
+[8.340s] gmake: *** [Makefile:146: all] Error 2
+[8.342s] Invoked command in '/home/antonio/antonio_ws/Antonio/antonio_description/build/antonio_description' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/antonio/antonio_ws/Antonio/antonio_description/build/antonio_description -- -j4 -l4

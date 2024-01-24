@@ -1,0 +1,38 @@
+[0.130s] Invoking command in '/home/antonio/antonio_ws/Antonio/antonio_description/build/antonio_description': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/antonio/antonio_ws/Antonio/antonio_description/build/antonio_description -- -j4 -l4
+[0.189s] [35m[1mConsolidate compiler generated dependencies of target Wheels_odom_tf2_broadcaster[0m
+[0.220s] [ 50%] [32mBuilding CXX object CMakeFiles/Wheels_odom_tf2_broadcaster.dir/src/Wheels_odom_tf2_broadcaster.cpp.o[0m
+[13.172s] [100%] [32m[1mLinking CXX executable Wheels_odom_tf2_broadcaster[0m
+[13.956s] [100%] Built target Wheels_odom_tf2_broadcaster
+[13.972s] Invoked command in '/home/antonio/antonio_ws/Antonio/antonio_description/build/antonio_description' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/antonio/antonio_ws/Antonio/antonio_description/build/antonio_description -- -j4 -l4
+[14.015s] Invoking command in '/home/antonio/antonio_ws/Antonio/antonio_description/build/antonio_description': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /home/antonio/antonio_ws/Antonio/antonio_description/build/antonio_description
+[14.024s] -- Install configuration: ""
+[14.025s] -- Up-to-date: /home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/antonio_description/src
+[14.025s] -- Up-to-date: /home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/antonio_description/src/description
+[14.025s] -- Up-to-date: /home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/antonio_description/src/description/antonio_description.urdf
+[14.025s] -- Installing: /home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/antonio_description/src/Wheels_odom_tf2_broadcaster.cpp
+[14.026s] -- Up-to-date: /home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/antonio_description/launch
+[14.026s] -- Up-to-date: /home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/antonio_description/launch/__pycache__
+[14.026s] -- Installing: /home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/antonio_description/launch/__pycache__/display.launch.cpython-310.pyc
+[14.026s] -- Up-to-date: /home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/antonio_description/launch/display.launch.py
+[14.026s] -- Up-to-date: /home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/antonio_description/rviz
+[14.026s] -- Up-to-date: /home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/antonio_description/rviz/urdf_config.rviz
+[14.027s] -- Up-to-date: /home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/antonio_description/config
+[14.027s] -- Installing: /home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/antonio_description/config/ekf.yaml
+[14.027s] -- Installing: /home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/lib/antonio_description/Wheels_odom_tf2_broadcaster
+[14.033s] -- Set runtime path of "/home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/lib/antonio_description/Wheels_odom_tf2_broadcaster" to ""
+[14.033s] -- Up-to-date: /home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/ament_index/resource_index/package_run_dependencies/antonio_description
+[14.034s] -- Up-to-date: /home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/ament_index/resource_index/parent_prefix_path/antonio_description
+[14.034s] -- Up-to-date: /home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/antonio_description/environment/ament_prefix_path.sh
+[14.036s] -- Up-to-date: /home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/antonio_description/environment/ament_prefix_path.dsv
+[14.037s] -- Up-to-date: /home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/antonio_description/environment/path.sh
+[14.039s] -- Up-to-date: /home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/antonio_description/environment/path.dsv
+[14.040s] -- Up-to-date: /home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/antonio_description/local_setup.bash
+[14.041s] -- Up-to-date: /home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/antonio_description/local_setup.sh
+[14.041s] -- Up-to-date: /home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/antonio_description/local_setup.zsh
+[14.043s] -- Up-to-date: /home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/antonio_description/local_setup.dsv
+[14.044s] -- Installing: /home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/antonio_description/package.dsv
+[14.045s] -- Up-to-date: /home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/ament_index/resource_index/packages/antonio_description
+[14.045s] -- Up-to-date: /home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/antonio_description/cmake/antonio_descriptionConfig.cmake
+[14.045s] -- Up-to-date: /home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/antonio_description/cmake/antonio_descriptionConfig-version.cmake
+[14.046s] -- Up-to-date: /home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/antonio_description/package.xml
+[14.047s] Invoked command in '/home/antonio/antonio_ws/Antonio/antonio_description/build/antonio_description' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /home/antonio/antonio_ws/Antonio/antonio_description/build/antonio_description

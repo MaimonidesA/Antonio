@@ -1,0 +1,64 @@
+[0.711s] Invoking command in '/home/antonio/antonio_ws/Antonio/antonio_description/build/antonio_description': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/antonio/antonio_ws/Antonio/antonio_description/build/antonio_description -- -j4 -l4
+[6.405s] -- Found ament_cmake: 1.3.6 (/opt/ros/humble/share/ament_cmake/cmake)
+[9.427s] -- Found geometry_msgs: 4.2.3 (/opt/ros/humble/share/geometry_msgs/cmake)
+[10.143s] -- Found rosidl_generator_c: 3.1.5 (/opt/ros/humble/share/rosidl_generator_c/cmake)
+[10.274s] -- Found rosidl_adapter: 3.1.5 (/opt/ros/humble/share/rosidl_adapter/cmake)
+[10.683s] -- Found rosidl_generator_cpp: 3.1.5 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)
+[10.889s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[11.278s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[12.309s] -- Found nav_msgs: 4.2.3 (/opt/ros/humble/share/nav_msgs/cmake)
+[12.660s] -- Found rclcpp: 16.0.7 (/opt/ros/humble/share/rclcpp/cmake)
+[13.431s] -- Found rmw_implementation_cmake: 6.1.1 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)
+[13.456s] -- Found rmw_fastrtps_cpp: 6.2.5 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)
+[14.331s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[15.134s] -- Found tf2: 0.25.5 (/opt/ros/humble/share/tf2/cmake)
+[15.238s] -- Found tf2_ros: 0.25.5 (/opt/ros/humble/share/tf2_ros/cmake)
+[17.405s] -- Found ament_lint_auto: 0.12.9 (/opt/ros/humble/share/ament_lint_auto/cmake)
+[18.433s] -- Added test 'cppcheck' to perform static code analysis on C / C++ code
+[18.433s] -- Configured cppcheck include dirs: 
+[18.433s] -- Configured cppcheck exclude dirs and/or files: 
+[18.441s] -- Added test 'flake8' to check Python code syntax and style conventions
+[18.453s] -- Added test 'lint_cmake' to check CMake code style
+[18.467s] -- Added test 'pep257' to check Python code against some of the docstring style conventions in PEP 257
+[18.519s] -- Added test 'uncrustify' to check C / C++ code style
+[18.520s] -- Configured uncrustify additional arguments: 
+[18.531s] -- Added test 'xmllint' to check XML markup files
+[18.635s] -- Configuring done
+[19.132s] -- Generating done
+[19.139s] -- Build files have been written to: /home/antonio/antonio_ws/Antonio/antonio_description/build/antonio_description
+[19.247s] [35m[1mConsolidate compiler generated dependencies of target Wheels_odom_tf2_broadcaster[0m
+[19.287s] [100%] Built target Wheels_odom_tf2_broadcaster
+[19.317s] Invoked command in '/home/antonio/antonio_ws/Antonio/antonio_description/build/antonio_description' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/antonio/antonio_ws/Antonio/antonio_description/build/antonio_description -- -j4 -l4
+[19.368s] Invoking command in '/home/antonio/antonio_ws/Antonio/antonio_description/build/antonio_description': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /home/antonio/antonio_ws/Antonio/antonio_description/build/antonio_description
+[19.379s] -- Install configuration: ""
+[19.379s] -- Up-to-date: /home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/antonio_description/src
+[19.379s] -- Up-to-date: /home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/antonio_description/src/description
+[19.379s] -- Installing: /home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/antonio_description/src/description/antonio_description.urdf
+[19.408s] -- Up-to-date: /home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/antonio_description/src/Wheels_odom_tf2_broadcaster.cpp
+[19.409s] -- Up-to-date: /home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/antonio_description/launch
+[19.409s] -- Up-to-date: /home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/antonio_description/launch/__pycache__
+[19.409s] -- Installing: /home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/antonio_description/launch/__pycache__/display.launch.cpython-310.pyc
+[19.409s] -- Installing: /home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/antonio_description/launch/display.launch.py
+[19.417s] -- Up-to-date: /home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/antonio_description/rviz
+[19.417s] -- Up-to-date: /home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/antonio_description/rviz/urdf_config.rviz
+[19.417s] -- Up-to-date: /home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/antonio_description/config
+[19.418s] -- Up-to-date: /home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/antonio_description/config/ekf.yaml
+[19.418s] -- Installing: /home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/antonio_description/world
+[19.418s] -- Installing: /home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/antonio_description/world/antonio_world.sdf
+[19.429s] -- Up-to-date: /home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/lib/antonio_description/Wheels_odom_tf2_broadcaster
+[19.430s] -- Up-to-date: /home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/ament_index/resource_index/package_run_dependencies/antonio_description
+[19.430s] -- Up-to-date: /home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/ament_index/resource_index/parent_prefix_path/antonio_description
+[19.431s] -- Up-to-date: /home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/antonio_description/environment/ament_prefix_path.sh
+[19.432s] -- Installing: /home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/antonio_description/environment/ament_prefix_path.dsv
+[19.432s] -- Up-to-date: /home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/antonio_description/environment/path.sh
+[19.432s] -- Installing: /home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/antonio_description/environment/path.dsv
+[19.432s] -- Up-to-date: /home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/antonio_description/local_setup.bash
+[19.433s] -- Up-to-date: /home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/antonio_description/local_setup.sh
+[19.433s] -- Up-to-date: /home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/antonio_description/local_setup.zsh
+[19.433s] -- Installing: /home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/antonio_description/local_setup.dsv
+[19.433s] -- Installing: /home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/antonio_description/package.dsv
+[19.434s] -- Up-to-date: /home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/ament_index/resource_index/packages/antonio_description
+[19.437s] -- Up-to-date: /home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/antonio_description/cmake/antonio_descriptionConfig.cmake
+[19.440s] -- Up-to-date: /home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/antonio_description/cmake/antonio_descriptionConfig-version.cmake
+[19.441s] -- Up-to-date: /home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/antonio_description/package.xml
+[19.441s] Invoked command in '/home/antonio/antonio_ws/Antonio/antonio_description/build/antonio_description' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /home/antonio/antonio_ws/Antonio/antonio_description/build/antonio_description

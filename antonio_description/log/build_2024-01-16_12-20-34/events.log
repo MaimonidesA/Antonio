@@ -1,0 +1,71 @@
+[0.000000] (-) TimerEvent: {}
+[0.000316] (antonio_description) JobQueued: {'identifier': 'antonio_description', 'dependencies': OrderedDict()}
+[0.000452] (antonio_description) JobStarted: {'identifier': 'antonio_description'}
+[0.098793] (-) TimerEvent: {}
+[0.127967] (antonio_description) JobProgress: {'identifier': 'antonio_description', 'progress': 'cmake'}
+[0.128952] (antonio_description) JobProgress: {'identifier': 'antonio_description', 'progress': 'build'}
+[0.130224] (antonio_description) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/antonio/antonio_ws/Antonio/antonio_description/build/antonio_description', '--', '-j4', '-l4'], 'cwd': '/home/antonio/antonio_ws/Antonio/antonio_description/build/antonio_description', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('USER', 'antonio'), ('SSH_CLIENT', '192.168.1.31 65077 22'), ('XDG_SESSION_TYPE', 'tty'), ('GIT_ASKPASS', '/home/antonio/.vscode-server/bin/0ee08df0cf4527e40edc9aa28f4b5bd38bbff2b2/extensions/git/dist/askpass.sh'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('BROWSER', '/home/antonio/.vscode-server/bin/0ee08df0cf4527e40edc9aa28f4b5bd38bbff2b2/bin/helpers/browser.sh'), ('MOTD_SHOWN', 'pam'), ('HOME', '/home/antonio'), ('OLDPWD', '/home/antonio/antonio_ws/Antonio/learning_tf2_cpp'), ('TERM_PROGRAM_VERSION', '1.85.1'), ('VSCODE_IPC_HOOK_CLI', '/run/user/1000/vscode-ipc-3cf927ff-b75c-411b-8802-984fa0e06923.sock'), ('ROS_PYTHON_VERSION', '3'), ('GTK_MODULES', 'appmenu-gtk-module'), ('VSCODE_GIT_ASKPASS_MAIN', '/home/antonio/.vscode-server/bin/0ee08df0cf4527e40edc9aa28f4b5bd38bbff2b2/extensions/git/dist/askpass-main.js'), ('VSCODE_GIT_ASKPASS_NODE', '/home/antonio/.vscode-server/bin/0ee08df0cf4527e40edc9aa28f4b5bd38bbff2b2/node'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('UBUNTU_MENUPROXY', '1'), ('PICO_TOOLCHAIN_PATH', '...'), ('COLCON_PREFIX_PATH', '/home/antonio/antonio_ws/Antonio/antonio_description/install'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'antonio'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('TERM', 'xterm-256color'), ('XDG_SESSION_ID', '2124'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/home/antonio/.vscode-server/bin/0ee08df0cf4527e40edc9aa28f4b5bd38bbff2b2/bin/remote-cli:/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('LANG', 'en_US.UTF-8'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('VSCODE_GIT_IPC_HANDLE', '/run/user/1000/vscode-git-13788dbbf9.sock'), ('TERM_PROGRAM', 'vscode'), ('AMENT_PREFIX_PATH', '/home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description:/opt/ros/humble'), ('SHELL', '/bin/bash'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('VSCODE_GIT_ASKPASS_EXTRA_ARGS', ''), ('PWD', '/home/antonio/antonio_ws/Antonio/antonio_description/build/antonio_description'), ('PICO_SDK_PATH', '/home/antonio/microros_ws/src/pico-sdk'), ('SSH_CONNECTION', '192.168.1.31 65077 192.168.1.47 22'), ('XDG_DATA_DIRS', '/home/antonio/.local/share/flatpak/exports/share:/var/lib/flatpak/exports/share:/usr/local/share:/usr/share:/var/lib/snapd/desktop'), ('PYTHONPATH', '/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('COLCON', '1'), ('CMAKE_PREFIX_PATH', '/home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description:/opt/ros/humble')]), 'shell': False}
+[0.172433] (antonio_description) StdoutLine: {'line': b'-- Found ament_cmake: 1.3.6 (/opt/ros/humble/share/ament_cmake/cmake)\n'}
+[0.198901] (-) TimerEvent: {}
+[0.299262] (-) TimerEvent: {}
+[0.397936] (antonio_description) StdoutLine: {'line': b'-- Found geometry_msgs: 4.2.3 (/opt/ros/humble/share/geometry_msgs/cmake)\n'}
+[0.399358] (-) TimerEvent: {}
+[0.446147] (antonio_description) StdoutLine: {'line': b'-- Found rosidl_generator_c: 3.1.5 (/opt/ros/humble/share/rosidl_generator_c/cmake)\n'}
+[0.450236] (antonio_description) StdoutLine: {'line': b'-- Found rosidl_adapter: 3.1.5 (/opt/ros/humble/share/rosidl_adapter/cmake)\n'}
+[0.459013] (antonio_description) StdoutLine: {'line': b'-- Found rosidl_generator_cpp: 3.1.5 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)\n'}
+[0.477344] (antonio_description) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c\n'}
+[0.499670] (-) TimerEvent: {}
+[0.506216] (antonio_description) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp\n'}
+[0.599809] (-) TimerEvent: {}
+[0.688435] (antonio_description) StdoutLine: {'line': b'-- Found nav_msgs: 4.2.3 (/opt/ros/humble/share/nav_msgs/cmake)\n'}
+[0.699935] (-) TimerEvent: {}
+[0.800583] (-) TimerEvent: {}
+[0.816269] (antonio_description) StdoutLine: {'line': b'-- Found rclcpp: 16.0.7 (/opt/ros/humble/share/rclcpp/cmake)\n'}
+[0.891797] (antonio_description) StdoutLine: {'line': b'-- Found rmw_implementation_cmake: 6.1.1 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)\n'}
+[0.893975] (antonio_description) StdoutLine: {'line': b'-- Found rmw_fastrtps_cpp: 6.2.5 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)\n'}
+[0.900699] (-) TimerEvent: {}
+[1.001112] (-) TimerEvent: {}
+[1.069009] (antonio_description) StdoutLine: {'line': b"-- Using RMW implementation 'rmw_fastrtps_cpp' as default\n"}
+[1.101233] (-) TimerEvent: {}
+[1.201653] (-) TimerEvent: {}
+[1.272557] (antonio_description) StdoutLine: {'line': b'-- Found tf2: 0.25.5 (/opt/ros/humble/share/tf2/cmake)\n'}
+[1.285168] (antonio_description) StdoutLine: {'line': b'-- Found tf2_ros: 0.25.5 (/opt/ros/humble/share/tf2_ros/cmake)\n'}
+[1.301759] (-) TimerEvent: {}
+[1.402139] (-) TimerEvent: {}
+[1.502503] (-) TimerEvent: {}
+[1.603017] (-) TimerEvent: {}
+[1.703758] (-) TimerEvent: {}
+[1.804155] (-) TimerEvent: {}
+[1.806533] (antonio_description) StdoutLine: {'line': b'-- Found ament_lint_auto: 0.12.9 (/opt/ros/humble/share/ament_lint_auto/cmake)\n'}
+[1.904287] (-) TimerEvent: {}
+[1.936561] (antonio_description) StdoutLine: {'line': b"-- Added test 'cppcheck' to perform static code analysis on C / C++ code\n"}
+[1.936915] (antonio_description) StdoutLine: {'line': b'-- Configured cppcheck include dirs: \n'}
+[1.937089] (antonio_description) StdoutLine: {'line': b'-- Configured cppcheck exclude dirs and/or files: \n'}
+[1.940334] (antonio_description) StdoutLine: {'line': b"-- Added test 'flake8' to check Python code syntax and style conventions\n"}
+[1.946406] (antonio_description) StdoutLine: {'line': b"-- Added test 'lint_cmake' to check CMake code style\n"}
+[1.949773] (antonio_description) StdoutLine: {'line': b"-- Added test 'pep257' to check Python code against some of the docstring style conventions in PEP 257\n"}
+[1.973340] (antonio_description) StdoutLine: {'line': b"-- Added test 'uncrustify' to check C / C++ code style\n"}
+[1.973652] (antonio_description) StdoutLine: {'line': b'-- Configured uncrustify additional arguments: \n'}
+[1.976597] (antonio_description) StdoutLine: {'line': b"-- Added test 'xmllint' to check XML markup files\n"}
+[1.977636] (antonio_description) StdoutLine: {'line': b'-- Configuring done\n'}
+[1.994722] (antonio_description) StdoutLine: {'line': b'-- Generating done\n'}
+[1.997605] (antonio_description) StdoutLine: {'line': b'-- Build files have been written to: /home/antonio/antonio_ws/Antonio/antonio_description/build/antonio_description\n'}
+[2.004404] (-) TimerEvent: {}
+[2.045647] (antonio_description) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target Wheels_odom_tf2_broadcaster\x1b[0m\n'}
+[2.072578] (antonio_description) StdoutLine: {'line': b'[ 50%] \x1b[32mBuilding CXX object CMakeFiles/Wheels_odom_tf2_broadcaster.dir/src/Wheels_odom_tf2_broadcaster.cpp.o\x1b[0m\n'}
+[2.104519] (-) TimerEvent: {}
+[2.204871] (-) TimerEvent: {}
+[2.305245] (-) TimerEvent: {}
+[2.405604] (-) TimerEvent: {}
+[2.435060] (antonio_description) StderrLine: {'line': b'\x1b[01m\x1b[K/home/antonio/antonio_ws/Antonio/antonio_description/src/Wheels_odom_tf2_broadcaster.cpp:24:10:\x1b[m\x1b[K \x1b[01;31m\x1b[Kfatal error: \x1b[m\x1b[Knav_msgs/msg/Odometry.h: No such file or directory\n'}
+[2.435381] (antonio_description) StderrLine: {'line': b'   24 | #include \x1b[01;31m\x1b[K"nav_msgs/msg/Odometry.h"\x1b[m\x1b[K\n'}
+[2.435555] (antonio_description) StderrLine: {'line': b'      |          \x1b[01;31m\x1b[K^~~~~~~~~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[2.435717] (antonio_description) StderrLine: {'line': b'compilation terminated.\n'}
+[2.439534] (antonio_description) StderrLine: {'line': b'gmake[2]: *** [CMakeFiles/Wheels_odom_tf2_broadcaster.dir/build.make:76: CMakeFiles/Wheels_odom_tf2_broadcaster.dir/src/Wheels_odom_tf2_broadcaster.cpp.o] Error 1\n'}
+[2.439903] (antonio_description) StderrLine: {'line': b'gmake[1]: *** [CMakeFiles/Makefile2:137: CMakeFiles/Wheels_odom_tf2_broadcaster.dir/all] Error 2\n'}
+[2.440167] (antonio_description) StderrLine: {'line': b'gmake: *** [Makefile:146: all] Error 2\n'}
+[2.442874] (antonio_description) CommandEnded: {'returncode': 2}
+[2.508831] (-) TimerEvent: {}
+[2.609153] (-) TimerEvent: {}
+[2.626586] (antonio_description) JobEnded: {'identifier': 'antonio_description', 'rc': 2}
+[2.637276] (-) EventReactorShutdown: {}

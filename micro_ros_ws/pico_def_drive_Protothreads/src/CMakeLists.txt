@@ -17,6 +17,7 @@ target_link_libraries(${ProjectName}
 	hardware_gpio
 	pico_multicore
 	hardware_sync
+	eigen
 
 	)
 

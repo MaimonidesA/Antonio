@@ -1,0 +1,72 @@
+[01m[K/home/antonio/antonio_ws/Antonio/antonio_description/src/Wheels_odom_tf2_broadcaster.cpp:79:24:[m[K [01;31m[Kerror: [m[K‘[01m[Kturtlesim[m[K’ was not declared in this scope
+   79 |   rclcpp::Subscription<[01;31m[Kturtlesim[m[K::msg::Pose>::SharedPtr subscription_;
+      |                        [01;31m[K^~~~~~~~~[m[K
+[01m[K/home/antonio/antonio_ws/Antonio/antonio_description/src/Wheels_odom_tf2_broadcaster.cpp:79:44:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+   79 |   rclcpp::Subscription<turtlesim::msg::Pose[01;31m[K>[m[K::SharedPtr subscription_;
+      |                                            [01;31m[K^[m[K
+[01m[K/home/antonio/antonio_ws/Antonio/antonio_description/src/Wheels_odom_tf2_broadcaster.cpp:79:44:[m[K [01;31m[Kerror: [m[Ktemplate argument 3 is invalid
+[01m[K/home/antonio/antonio_ws/Antonio/antonio_description/src/Wheels_odom_tf2_broadcaster.cpp:79:44:[m[K [01;31m[Kerror: [m[Ktemplate argument 4 is invalid
+[01m[K/home/antonio/antonio_ws/Antonio/antonio_description/src/Wheels_odom_tf2_broadcaster.cpp:79:44:[m[K [01;31m[Kerror: [m[Ktemplate argument 5 is invalid
+[01m[K/home/antonio/antonio_ws/Antonio/antonio_description/src/Wheels_odom_tf2_broadcaster.cpp:79:47:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K;[m[K’ at end of member declaration
+   79 |   rclcpp::Subscription<turtlesim::msg::Pose>::[01;31m[KSharedPtr[m[K subscription_;
+      |                                               [01;31m[K^~~~~~~~~[m[K
+      |                                                        [32m[K;[m[K
+[01m[K/home/antonio/antonio_ws/Antonio/antonio_description/src/Wheels_odom_tf2_broadcaster.cpp:79:57:[m[K [01;31m[Kerror: [m[K‘[01m[Ksubscription_[m[K’ does not name a type; did you mean ‘[01m[Krmw_subscription_t[m[K’?
+   79 |   rclcpp::Subscription<turtlesim::msg::Pose>::SharedPtr [01;31m[Ksubscription_[m[K;
+      |                                                         [01;31m[K^~~~~~~~~~~~~[m[K
+      |                                                         [32m[Krmw_subscription_t[m[K
+[01m[K/home/antonio/antonio_ws/Antonio/antonio_description/src/Wheels_odom_tf2_broadcaster.cpp:[m[K In constructor ‘[01m[KFramePublisher::FramePublisher()[m[K’:
+[01m[K/home/antonio/antonio_ws/Antonio/antonio_description/src/Wheels_odom_tf2_broadcaster.cpp:45:60:[m[K [01;31m[Kerror: [m[K‘[01m[Kturtlesim[m[K’ was not declared in this scope; did you mean ‘[01m[Kturtlename_[m[K’?
+   45 |     auto handle_turtle_pose = [this](const std::shared_ptr<[01;31m[Kturtlesim[m[K::msg::Pose> msg) {
+      |                                                            [01;31m[K^~~~~~~~~[m[K
+      |                                                            [32m[Kturtlename_[m[K
+[01m[K/home/antonio/antonio_ws/Antonio/antonio_description/src/Wheels_odom_tf2_broadcaster.cpp:45:80:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+   45 |     auto handle_turtle_pose = [this](const std::shared_ptr<turtlesim::msg::Pose[01;31m[K>[m[K msg) {
+      |                                                                                [01;31m[K^[m[K
+[01m[K/home/antonio/antonio_ws/Antonio/antonio_description/src/Wheels_odom_tf2_broadcaster.cpp:[m[K In lambda function:
+[01m[K/home/antonio/antonio_ws/Antonio/antonio_description/src/Wheels_odom_tf2_broadcaster.cpp:56:40:[m[K [01;31m[Kerror: [m[Kbase operand of ‘[01m[K->[m[K’ is not a pointer
+   56 |         t.transform.translation.x = msg[01;31m[K->[m[Kx;
+      |                                        [01;31m[K^~[m[K
+[01m[K/home/antonio/antonio_ws/Antonio/antonio_description/src/Wheels_odom_tf2_broadcaster.cpp:57:40:[m[K [01;31m[Kerror: [m[Kbase operand of ‘[01m[K->[m[K’ is not a pointer
+   57 |         t.transform.translation.y = msg[01;31m[K->[m[Ky;
+      |                                        [01;31m[K^~[m[K
+[01m[K/home/antonio/antonio_ws/Antonio/antonio_description/src/Wheels_odom_tf2_broadcaster.cpp:64:27:[m[K [01;31m[Kerror: [m[Kbase operand of ‘[01m[K->[m[K’ is not a pointer
+   64 |         q.setRPY(0, 0, msg[01;31m[K->[m[Ktheta);
+      |                           [01;31m[K^~[m[K
+[01m[K/home/antonio/antonio_ws/Antonio/antonio_description/src/Wheels_odom_tf2_broadcaster.cpp:[m[K In constructor ‘[01m[KFramePublisher::FramePublisher()[m[K’:
+[01m[K/home/antonio/antonio_ws/Antonio/antonio_description/src/Wheels_odom_tf2_broadcaster.cpp:73:5:[m[K [01;31m[Kerror: [m[K‘[01m[Ksubscription_[m[K’ was not declared in this scope; did you mean ‘[01m[Krmw_subscription_t[m[K’?
+   73 |     [01;31m[Ksubscription_[m[K = this->create_subscription<turtlesim::msg::Pose>(
+      |     [01;31m[K^~~~~~~~~~~~~[m[K
+      |     [32m[Krmw_subscription_t[m[K
+[01m[K/home/antonio/antonio_ws/Antonio/antonio_description/src/Wheels_odom_tf2_broadcaster.cpp:73:47:[m[K [01;31m[Kerror: [m[K‘[01m[Kturtlesim[m[K’ was not declared in this scope; did you mean ‘[01m[Kturtlename_[m[K’?
+   73 |     subscription_ = this->create_subscription<[01;31m[Kturtlesim[m[K::msg::Pose>(
+      |                                               [01;31m[K^~~~~~~~~[m[K
+      |                                               [32m[Kturtlename_[m[K
+[01m[K/home/antonio/antonio_ws/Antonio/antonio_description/src/Wheels_odom_tf2_broadcaster.cpp:73:27:[m[K [01;31m[Kerror: [m[Kparse error in template argument list
+   73 |     subscription_ = this->[01;31m[Kcreate_subscription<turtlesim::msg::Pose>[m[K(
+      |                           [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/antonio/antonio_ws/Antonio/antonio_description/src/Wheels_odom_tf2_broadcaster.cpp:73:68:[m[K [01;31m[Kerror: [m[Kno matching function for call to ‘[01m[KFramePublisher::create_subscription<<expression error> >(std::string&, int, FramePublisher::FramePublisher()::<lambda(int)>&)[m[K’
+   73 |     subscription_ = [01;31m[Kthis->create_subscription<turtlesim::msg::Pose>([m[K
+      |                     [01;31m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^[m[K
+   74 | [01;31m[K      topic_name, 10,[m[K
+      |       [01;31m[K~~~~~~~~~~~~~~~[m[K                                               
+   75 | [01;31m[K      handle_turtle_pose)[m[K;
+      |       [01;31m[K~~~~~~~~~~~~~~~~~~~[m[K                                           
+In file included from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors/single_threaded_executor.hpp:28[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:22[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155[m[K,
+                 from [01m[K/home/antonio/antonio_ws/Antonio/antonio_description/src/Wheels_odom_tf2_broadcaster.cpp:21[m[K:
+[01m[K/opt/ros/humble/include/rclcpp/rclcpp/node.hpp:219:3:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class MessageT, class CallbackT, class AllocatorT, class SubscriptionT, class MessageMemoryStrategyT> std::shared_ptr<ROSMessageT> rclcpp::Node::create_subscription(const string&, const rclcpp::QoS&, CallbackT&&, const rclcpp::SubscriptionOptionsWithAllocator<AllocatorT>&, typename MessageMemoryStrategyT::SharedPtr)[m[K’
+  219 |   [01;36m[Kcreate_subscription[m[K(
+      |   [01;36m[K^~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/opt/ros/humble/include/rclcpp/rclcpp/node.hpp:219:3:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[01m[K/home/antonio/antonio_ws/Antonio/antonio_description/src/Wheels_odom_tf2_broadcaster.cpp:73:68:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+   73 |     subscription_ = [01;31m[Kthis->create_subscription<turtlesim::msg::Pose>([m[K
+      |                     [01;31m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^[m[K
+   74 | [01;31m[K      topic_name, 10,[m[K
+      |       [01;31m[K~~~~~~~~~~~~~~~[m[K                                               
+   75 | [01;31m[K      handle_turtle_pose)[m[K;
+      |       [01;31m[K~~~~~~~~~~~~~~~~~~~[m[K                                           
+gmake[2]: *** [CMakeFiles/Wheels_odom_tf2_broadcaster.dir/build.make:76: CMakeFiles/Wheels_odom_tf2_broadcaster.dir/src/Wheels_odom_tf2_broadcaster.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:137: CMakeFiles/Wheels_odom_tf2_broadcaster.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

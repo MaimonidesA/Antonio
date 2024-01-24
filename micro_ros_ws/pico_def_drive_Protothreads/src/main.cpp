@@ -33,7 +33,11 @@ extern "C"{
 #include "rosidl_runtime_c/string_functions.h"
 #include "rosidl_runtime_c/primitives_sequence_functions.h"
 #include <geometry_msgs/msg/twist.h>
+#include <geometry_msgs/msg/transform.h>
+#include <geometry_msgs/msg/pose.h>
 }
+#include <Eigen/Core>
+#include <Eigen/Geometry>
 
 #define timestamp double((int)time_us_32())
 
@@ -49,6 +53,8 @@ extern "C"{
 #define RIGHT_PWM 	    10
 #define RIGHT_Encoder 	21
 
+using namespace Eigen;
+
 const uint LED_PIN = 25;
 // SMP Types.
 int Spinlock_num_odom;
@@ -60,11 +66,19 @@ spin_lock_t *spinlock_ticks;
 rcl_publisher_t publisher;
 std_msgs__msg__Int32 msg;
 
+rcl_subscription_t subscriber;
+
 rcl_publisher_t 		PubOdom;
 nav_msgs__msg__Odometry OdomMsg;
 
-rcl_subscription_t subscriber;
+rcl_publisher_t 		PubPose;
+geometry_msgs__msg__Pose position;
+
+
+
 geometry_msgs__msg__Twist Twist_msg;
+
+geometry_msgs__msg__Transform odom_transform;
 
 double Linear_request;
 double  Angular_request;
@@ -92,14 +106,14 @@ double Distance_between_wheels = 0.236; // Units M
 double Right_throttle;
 double Left_throttle;
 
-bool Left_CW;
+bool Left_Forward;
 double Left_RPM;
 double Left_velocity;
 double Left_Encoder_Delta_Time =0;
 double Left_Encoder_priv_Time = 0;
 double xLeft_ticks = 0;
 
-bool Right_CW;
+bool Right_Forward;
 double Right_RPM;
 double Right_velocity;
 double Right_Encoder_Delta_Time = 0;
@@ -118,20 +132,20 @@ struct position_t {
     double X;
     double Y;
     double Angle;
-}position;
+};
 
-position_t Robot_position(double Right_ticks, double Left_ticks){
+geometry_msgs__msg__Pose Robot_position(double Right_ticks, double Left_ticks){
     double Right_distance = (Wheel_Circumference / Ticks_per_cycle) * Right_ticks;
     double Left_distance = (Wheel_Circumference / Ticks_per_cycle) * Left_ticks;
-    position.Angle += (Right_distance - Left_distance) /  Distance_between_wheels;
-    if(position.Angle > 2*M_PI){position.Angle -= 2*M_PI;}else if(position.Angle < 0){position.Angle += 2*M_PI;}
+    position.orientation.z += (Right_distance - Left_distance) /  Distance_between_wheels;
+    if(position.orientation.z > 2*M_PI){position.orientation.z -= 2*M_PI;}else if(position.orientation.z < 0){position.orientation.z += 2*M_PI;}
     Average_distance = (Right_distance + Left_distance) / 2;
     xRight_ticks = 0;
     xLeft_ticks = 0;
     Right_distance = 0;
     Left_distance = 0;
-    position.X += cos(position.Angle) * Average_distance ;
-    position.Y += sin(position.Angle) * Average_distance ;
+    position.position.x += cos(position.orientation.z) * Average_distance ;
+    position.position.y += sin(position.orientation.z) * Average_distance ;
     Previous_average_distance = Average_distance;
     return position;
 }
@@ -139,21 +153,21 @@ position_t Robot_position(double Right_ticks, double Left_ticks){
 Velocity_t Robot_Velocity(double Left_Encoder_Delta_Time, double Right_Encoder_Delta_Time) {
     
     Left_velocity = (Wheel_Circumference / Ticks_per_cycle) / (Left_Encoder_Delta_Time / 1000000); // Units m/s
-    if (!gpio_get(LEFT_CW)){Left_velocity  *= (-1);}
+    if (!Left_Forward){Left_velocity  *= (-1);}
 
     Right_velocity = (Wheel_Circumference / Ticks_per_cycle) / (Right_Encoder_Delta_Time / 1000000); // Units m/s
-    if (!gpio_get(RIGHT_CW)){Right_velocity *=  (-1);}
+    if (!Right_Forward){Right_velocity *=  (-1);}
 
     if (Right_Encoder_Delta_Time == 0) {Right_velocity = 0;}
     if (Left_Encoder_Delta_Time == 0) {Left_velocity = 0;}
     Velocity.Linear = Left_velocity / 2 + Right_velocity / 2;
-    Velocity.angular = Left_velocity / (Distance_between_wheels) - Right_velocity / (Distance_between_wheels); //  Units radians/second.
+    Velocity.angular =  Right_velocity / (Distance_between_wheels) - Left_velocity / (Distance_between_wheels); //  Units radians/second.
 
     return Velocity;
 }
 
 void PID(double Linear_request, double Angular_request, double Angular_velocity, double Linear_velocity) {
-    Linear_err = Linear_request - Linear_velocity;
+    Linear_err =  Linear_request - Linear_velocity;
     Angular_err = Angular_request - Angular_velocity;
     double LP, LI, LD;   //Linear PID.
     double AP, AI, AD;   //Angular PID.
@@ -232,13 +246,13 @@ void set_throttle(){
 
  PID(Linear_request, Angular_request, Velocity.angular, Velocity.Linear);
     if (abs(Angular_err/10) > abs(Linear_err)){
-        if (Angular_err < 0){
-            Right_throttle = Right_throttle  + abs(Angular_PID);
-            Left_throttle = Left_throttle - abs(Angular_PID);
+        if (Angular_err > 0){
+            Right_throttle = Right_throttle  + abs(Angular_PID) ;
+            Left_throttle = Left_throttle - abs(Angular_PID) ;
         }
-        else if(Angular_err > 0){
-            Right_throttle = Right_throttle - abs(Angular_PID);
-            Left_throttle = Left_throttle  + abs(Angular_PID);
+        else if(Angular_err < 0){
+            Right_throttle = Right_throttle - abs(Angular_PID) ;
+            Left_throttle = Left_throttle + abs(Angular_PID) ;
         }
     }
         else{
@@ -255,29 +269,29 @@ void set_throttle(){
     int left_pwm = (int)((double)(0xffff) * abs(Left_throttle) * Right_throttle_to_low);
     pwm_set_gpio_level(LEFT_PWM, left_pwm);
 	if (Left_throttle > 0 ){
-		gpio_put(LEFT_CW, 1);
-		gpio_put(LEFT_CCW, 0);
-        Left_CW = true;
+		gpio_put(LEFT_CW, 0);
+		gpio_put(LEFT_CCW, 1);
+        Left_Forward = true;
 	}
     else// run counter clockwise
     {		
-		gpio_put(LEFT_CW, 0);
-		gpio_put(LEFT_CCW, 1);
-        Left_CW = false;
+		gpio_put(LEFT_CW, 1);
+		gpio_put(LEFT_CCW, 0);
+        Left_Forward = false;
     }
     //Right Motor
     int right_pwm = (int)((double)(0xffff) * abs(Right_throttle) * Left_throttle_to_low);
     pwm_set_gpio_level(RIGHT_PWM, right_pwm);
 	if (Right_throttle > 0 ){
-		gpio_put(RIGHT_CW, 1);
-		gpio_put(RIGHT_CCW, 0);
-        Right_CW = true;
+		gpio_put(RIGHT_CW, 0);
+		gpio_put(RIGHT_CCW, 1);
+        Right_Forward = true;
 	}
     else // run counter clockwise
     {		
-		gpio_put(RIGHT_CW, 0);
-		gpio_put(RIGHT_CCW, 1);
-        Right_CW = false;
+		gpio_put(RIGHT_CW, 1);
+		gpio_put(RIGHT_CCW, 0);
+        Right_Forward = false;
     }
 }
 
@@ -297,17 +311,35 @@ void subscription_callback(const void * msgin)
 }
 
 nav_msgs__msg__Odometry update_odom(double Linear, double angular, double position_x,double position_y, double Angle){
-     //TWIST
+
+//Update header   
+    int64_t time = rmw_uros_epoch_nanos();
+    OdomMsg.header.stamp.sec = time / 1000000000;
+    rosidl_runtime_c__String__assign(&OdomMsg.header.frame_id, "Wheels/odom");
+    rosidl_runtime_c__String__assign(&OdomMsg.child_frame_id, "base_link");
+//TWIST
+     
 	OdomMsg.twist.twist.linear.x = Linear;
 	OdomMsg.twist.twist.angular.z = angular;
 
+//POSE
     OdomMsg.pose.pose.position.x = position_x;
     OdomMsg.pose.pose.position.y = position_y;
-
-    OdomMsg.pose.pose.orientation.z = Angle;
+    Quaterniond q;
+	Matrix3d m;
+	m = AngleAxisd(0.0, 	    	Vector3d::UnitX())
+	  * AngleAxisd(0.0,  		    Vector3d::UnitY())
+	  * AngleAxisd(position.orientation.z, 	Vector3d::UnitZ());
+	q = m;
+	OdomMsg.pose.pose.orientation.x = q.x();
+	OdomMsg.pose.pose.orientation.y = q.y();
+	OdomMsg.pose.pose.orientation.z = q.z();
+	OdomMsg.pose.pose.orientation.w = q.w();
+   // OdomMsg.pose.pose.orientation.z = Angle;
 
     return OdomMsg;
 }
+
 
 void  setupOdomMsg(){
     nav_msgs__msg__Odometry__init(&OdomMsg);
@@ -372,7 +404,7 @@ void core_1(){
             RIGHT_Encoder_gpio = true;
             Detect_motion = timestamp;
     spin_lock_unsafe_blocking(spinlock_ticks);
-            if(Right_CW){ xRight_ticks++;}else{xRight_ticks-- ;}
+            if(Right_Forward){ xRight_ticks++;}else{xRight_ticks-- ;}
     spin_unlock_unsafe(spinlock_ticks);
         }
         else if (gpio_get(RIGHT_Encoder) != 0)
@@ -386,7 +418,7 @@ void core_1(){
             Left_Encoder_gpio = true;
             Detect_motion = timestamp;
     spin_lock_unsafe_blocking(spinlock_ticks);
-            if(Left_CW){ xLeft_ticks++;} else{xLeft_ticks--;}
+            if(Left_Forward){ xLeft_ticks++;} else{xLeft_ticks--;}
     spin_unlock_unsafe(spinlock_ticks);
         }
         else if (gpio_get(LEFT_Encoder) != 0)
@@ -450,19 +482,19 @@ int main(){
 
     rclc_support_init(&support, 0, NULL, &allocator);
 
-    rclc_node_init_default(&node, "pico_node", "", &support);
-
-    rclc_publisher_init_default(
-        &publisher,
-        &node,
-        ROSIDL_GET_MSG_TYPE_SUPPORT(std_msgs, msg, Int32),
-        "pico_publisher");
+    rclc_node_init_default(&node, "pico_def_drive_node", "", &support);
 
     rclc_publisher_init_default(
         &PubOdom,
         &node,
         ROSIDL_GET_MSG_TYPE_SUPPORT(nav_msgs, msg, Odometry),
-        "odom");
+        "Wheels/odom");
+
+    rclc_publisher_init_default(
+        &PubPose,
+        &node,
+        ROSIDL_GET_MSG_TYPE_SUPPORT(geometry_msgs, msg, Pose),
+        "Wheels/Pose");        
 
     rcl_ret_t rc = rclc_subscription_init_default(
          &subscriber,
@@ -477,11 +509,9 @@ int main(){
         timer_callback);
 
     rclc_executor_init(&executor, &support.context, 3, &allocator);
-    rclc_executor_add_timer(&executor, &timer);
+    rclc_executor_add_timer(&exceutor, &timer);
     //* Add subscription to the executor
-    rc = rclc_executor_add_subscription(
-      &executor, &subscriber, &Twist_msg,
-      &subscription_callback, ON_NEW_DATA);
+    rc = rclc_executor_add_subscription(&executor, &subscriber, &Twist_msg, &subscription_callback, ON_NEW_DATA);
 
     gpio_put(LED_PIN, 1);
     msg.data = 0;
@@ -496,9 +526,10 @@ int main(){
    // spin_lock_unsafe_blocking(spinlock_ticks);
         position = Robot_position(xRight_ticks, xLeft_ticks);          
    // spin_unlock_unsafe(spinlock_ticks);
-        OdomMsg = update_odom(Velocity.Linear, Velocity.angular, position.X, position.Y ,position.Angle);
+        OdomMsg = update_odom(Velocity.Linear, Velocity.angular, position.position.x, position.position.y ,position.orientation.z);
     spin_unlock_unsafe(spinlock_odom);
         rcl_ret_t ret_odom = rcl_publish(&PubOdom, &OdomMsg, NULL); 
+        rcl_ret_t ret_Pose = rcl_publish(&PubPose, &position, NULL); 
        
         if (cmd_val_msg_Arrive){
             set_throttle();

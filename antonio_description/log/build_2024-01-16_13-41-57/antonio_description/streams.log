@@ -1,0 +1,17 @@
+[0.137s] Invoking command in '/home/antonio/antonio_ws/Antonio/antonio_description/build/antonio_description': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/antonio/antonio_ws/Antonio/antonio_description/build/antonio_description -- -j4 -l4
+[0.195s] [35m[1mConsolidate compiler generated dependencies of target Wheels_odom_tf2_broadcaster[0m
+[0.233s] [ 50%] [32mBuilding CXX object CMakeFiles/Wheels_odom_tf2_broadcaster.dir/src/Wheels_odom_tf2_broadcaster.cpp.o[0m
+[4.254s] [01m[K/home/antonio/antonio_ws/Antonio/antonio_description/src/Wheels_odom_tf2_broadcaster.cpp:[m[K In member function ‘[01m[Kvoid FramePublisher::handle_pose(std::shared_ptr<geometry_msgs::msg::Pose_<std::allocator<void> > >)[m[K’:
+[4.254s] [01m[K/home/antonio/antonio_ws/Antonio/antonio_description/src/Wheels_odom_tf2_broadcaster.cpp:63:37:[m[K [01;31m[Kerror: [m[K‘[01m[Kconst class std::shared_ptr<geometry_msgs::msg::Pose_<std::allocator<void> > >[m[K’ has no member named ‘[01m[Kposetion[m[K’
+[4.254s]    63 |     t.transform.translation.x = msg.[01;31m[Kposetion[m[K.x;
+[4.255s]       |                                     [01;31m[K^~~~~~~~[m[K
+[4.255s] [01m[K/home/antonio/antonio_ws/Antonio/antonio_description/src/Wheels_odom_tf2_broadcaster.cpp:64:38:[m[K [01;31m[Kerror: [m[K‘[01m[Kusing element_type = struct geometry_msgs::msg::Pose_<std::allocator<void> >[m[K’ {aka ‘[01m[Kstruct geometry_msgs::msg::Pose_<std::allocator<void> >[m[K’} has no member named ‘[01m[Ky[m[K’
+[4.255s]    64 |     t.transform.translation.y = msg->[01;31m[Ky[m[K;
+[4.255s]       |                                      [01;31m[K^[m[K
+[4.255s] [01m[K/home/antonio/antonio_ws/Antonio/antonio_description/src/Wheels_odom_tf2_broadcaster.cpp:71:25:[m[K [01;31m[Kerror: [m[K‘[01m[Kusing element_type = struct geometry_msgs::msg::Pose_<std::allocator<void> >[m[K’ {aka ‘[01m[Kstruct geometry_msgs::msg::Pose_<std::allocator<void> >[m[K’} has no member named ‘[01m[Ktheta[m[K’
+[4.256s]    71 |     q.setRPY(0, 0, msg->[01;31m[Ktheta[m[K);
+[4.256s]       |                         [01;31m[K^~~~~[m[K
+[8.342s] gmake[2]: *** [CMakeFiles/Wheels_odom_tf2_broadcaster.dir/build.make:76: CMakeFiles/Wheels_odom_tf2_broadcaster.dir/src/Wheels_odom_tf2_broadcaster.cpp.o] Error 1
+[8.342s] gmake[1]: *** [CMakeFiles/Makefile2:137: CMakeFiles/Wheels_odom_tf2_broadcaster.dir/all] Error 2
+[8.343s] gmake: *** [Makefile:146: all] Error 2
+[8.345s] Invoked command in '/home/antonio/antonio_ws/Antonio/antonio_description/build/antonio_description' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/antonio/antonio_ws/Antonio/antonio_description/build/antonio_description -- -j4 -l4

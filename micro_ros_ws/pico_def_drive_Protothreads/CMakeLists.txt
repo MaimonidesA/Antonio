@@ -23,5 +23,9 @@ pico_sdk_init()
 SET(MICRO_ROS_PATH "${CMAKE_CURRENT_LIST_DIR}/../lib/micro_ros_raspberrypi_pico_sdk/" CACHE STRING "Common Lib")
 include(micro_ros.cmake)
 
+SET(EIGEN_PATH "${CMAKE_CURRENT_LIST_DIR}/../lib/eigen/" CACHE STRING "Common Lib")
+include(eigen_import.cmake)
+
+
 add_subdirectory(src)
 

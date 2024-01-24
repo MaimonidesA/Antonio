@@ -1,0 +1,10 @@
+/home/antonio/antonio_ws/Antonio/antonio_description/build/antonio_description/CMakeFiles/uninstall.dir
+/home/antonio/antonio_ws/Antonio/antonio_description/build/antonio_description/CMakeFiles/antonio_description_uninstall.dir
+/home/antonio/antonio_ws/Antonio/antonio_description/build/antonio_description/CMakeFiles/Wheels_odom_tf2_broadcaster.dir
+/home/antonio/antonio_ws/Antonio/antonio_description/build/antonio_description/CMakeFiles/test.dir
+/home/antonio/antonio_ws/Antonio/antonio_description/build/antonio_description/CMakeFiles/edit_cache.dir
+/home/antonio/antonio_ws/Antonio/antonio_description/build/antonio_description/CMakeFiles/rebuild_cache.dir
+/home/antonio/antonio_ws/Antonio/antonio_description/build/antonio_description/CMakeFiles/list_install_components.dir
+/home/antonio/antonio_ws/Antonio/antonio_description/build/antonio_description/CMakeFiles/install.dir
+/home/antonio/antonio_ws/Antonio/antonio_description/build/antonio_description/CMakeFiles/install/local.dir
+/home/antonio/antonio_ws/Antonio/antonio_description/build/antonio_description/CMakeFiles/install/strip.dir

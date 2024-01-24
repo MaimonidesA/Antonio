@@ -1,0 +1,119 @@
+[0.000000] (-) TimerEvent: {}
+[0.000190] (antonio_description) JobQueued: {'identifier': 'antonio_description', 'dependencies': OrderedDict()}
+[0.000262] (antonio_description) JobStarted: {'identifier': 'antonio_description'}
+[0.098899] (-) TimerEvent: {}
+[0.165101] (antonio_description) JobProgress: {'identifier': 'antonio_description', 'progress': 'cmake'}
+[0.199141] (-) TimerEvent: {}
+[0.207901] (antonio_description) JobProgress: {'identifier': 'antonio_description', 'progress': 'build'}
+[0.209105] (antonio_description) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/antonio/antonio_ws/Antonio/antonio_description/build/antonio_description', '--', '-j4', '-l4'], 'cwd': '/home/antonio/antonio_ws/Antonio/antonio_description/build/antonio_description', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('USER', 'antonio'), ('SSH_CLIENT', '192.168.1.31 65077 22'), ('XDG_SESSION_TYPE', 'tty'), ('GIT_ASKPASS', '/home/antonio/.vscode-server/bin/0ee08df0cf4527e40edc9aa28f4b5bd38bbff2b2/extensions/git/dist/askpass.sh'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('BROWSER', '/home/antonio/.vscode-server/bin/0ee08df0cf4527e40edc9aa28f4b5bd38bbff2b2/bin/helpers/browser.sh'), ('MOTD_SHOWN', 'pam'), ('HOME', '/home/antonio'), ('OLDPWD', '/home/antonio/antonio_ws/Antonio/learning_tf2_cpp'), ('TERM_PROGRAM_VERSION', '1.85.1'), ('VSCODE_IPC_HOOK_CLI', '/run/user/1000/vscode-ipc-3cf927ff-b75c-411b-8802-984fa0e06923.sock'), ('ROS_PYTHON_VERSION', '3'), ('GTK_MODULES', 'appmenu-gtk-module'), ('VSCODE_GIT_ASKPASS_MAIN', '/home/antonio/.vscode-server/bin/0ee08df0cf4527e40edc9aa28f4b5bd38bbff2b2/extensions/git/dist/askpass-main.js'), ('VSCODE_GIT_ASKPASS_NODE', '/home/antonio/.vscode-server/bin/0ee08df0cf4527e40edc9aa28f4b5bd38bbff2b2/node'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('UBUNTU_MENUPROXY', '1'), ('PICO_TOOLCHAIN_PATH', '...'), ('COLCON_PREFIX_PATH', '/home/antonio/antonio_ws/Antonio/antonio_description/install'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'antonio'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('TERM', 'xterm-256color'), ('XDG_SESSION_ID', '2124'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/home/antonio/.vscode-server/bin/0ee08df0cf4527e40edc9aa28f4b5bd38bbff2b2/bin/remote-cli:/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('LANG', 'en_US.UTF-8'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('VSCODE_GIT_IPC_HANDLE', '/run/user/1000/vscode-git-13788dbbf9.sock'), ('TERM_PROGRAM', 'vscode'), ('AMENT_PREFIX_PATH', '/home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description:/opt/ros/humble'), ('SHELL', '/bin/bash'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('VSCODE_GIT_ASKPASS_EXTRA_ARGS', ''), ('PWD', '/home/antonio/antonio_ws/Antonio/antonio_description/build/antonio_description'), ('PICO_SDK_PATH', '/home/antonio/microros_ws/src/pico-sdk'), ('SSH_CONNECTION', '192.168.1.31 65077 192.168.1.47 22'), ('XDG_DATA_DIRS', '/home/antonio/.local/share/flatpak/exports/share:/var/lib/flatpak/exports/share:/usr/local/share:/usr/share:/var/lib/snapd/desktop'), ('PYTHONPATH', '/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('COLCON', '1'), ('CMAKE_PREFIX_PATH', '/home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description:/opt/ros/humble')]), 'shell': False}
+[0.299327] (-) TimerEvent: {}
+[0.399827] (-) TimerEvent: {}
+[0.500301] (-) TimerEvent: {}
+[0.533692] (antonio_description) StdoutLine: {'line': b'-- Found ament_cmake: 1.3.6 (/opt/ros/humble/share/ament_cmake/cmake)\n'}
+[0.600484] (-) TimerEvent: {}
+[0.700954] (-) TimerEvent: {}
+[0.801383] (-) TimerEvent: {}
+[0.901807] (-) TimerEvent: {}
+[1.002883] (-) TimerEvent: {}
+[1.103329] (-) TimerEvent: {}
+[1.204021] (-) TimerEvent: {}
+[1.304524] (-) TimerEvent: {}
+[1.395969] (antonio_description) StdoutLine: {'line': b'-- Found geometry_msgs: 4.2.3 (/opt/ros/humble/share/geometry_msgs/cmake)\n'}
+[1.404705] (-) TimerEvent: {}
+[1.505241] (-) TimerEvent: {}
+[1.605717] (-) TimerEvent: {}
+[1.706406] (-) TimerEvent: {}
+[1.730453] (antonio_description) StdoutLine: {'line': b'-- Found rosidl_generator_c: 3.1.5 (/opt/ros/humble/share/rosidl_generator_c/cmake)\n'}
+[1.762351] (antonio_description) StdoutLine: {'line': b'-- Found rosidl_adapter: 3.1.5 (/opt/ros/humble/share/rosidl_adapter/cmake)\n'}
+[1.806658] (-) TimerEvent: {}
+[1.838887] (antonio_description) StdoutLine: {'line': b'-- Found rosidl_generator_cpp: 3.1.5 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)\n'}
+[1.900700] (antonio_description) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c\n'}
+[1.906773] (-) TimerEvent: {}
+[1.959104] (antonio_description) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp\n'}
+[2.006984] (-) TimerEvent: {}
+[2.107446] (-) TimerEvent: {}
+[2.207808] (-) TimerEvent: {}
+[2.308458] (-) TimerEvent: {}
+[2.327094] (antonio_description) StdoutLine: {'line': b'-- Found rclcpp: 16.0.7 (/opt/ros/humble/share/rclcpp/cmake)\n'}
+[2.408616] (-) TimerEvent: {}
+[2.509407] (-) TimerEvent: {}
+[2.610018] (-) TimerEvent: {}
+[2.710546] (-) TimerEvent: {}
+[2.742930] (antonio_description) StdoutLine: {'line': b'-- Found rmw_implementation_cmake: 6.1.1 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)\n'}
+[2.758872] (antonio_description) StdoutLine: {'line': b'-- Found rmw_fastrtps_cpp: 6.2.5 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)\n'}
+[2.810642] (-) TimerEvent: {}
+[2.911075] (-) TimerEvent: {}
+[3.011555] (-) TimerEvent: {}
+[3.112098] (-) TimerEvent: {}
+[3.212802] (-) TimerEvent: {}
+[3.219512] (antonio_description) StdoutLine: {'line': b'-- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "3.0.2")  \n'}
+[3.313035] (-) TimerEvent: {}
+[3.353975] (antonio_description) StdoutLine: {'line': b'-- Found FastRTPS: /opt/ros/humble/include  \n'}
+[3.413091] (-) TimerEvent: {}
+[3.485615] (antonio_description) StdoutLine: {'line': b"-- Using RMW implementation 'rmw_fastrtps_cpp' as default\n"}
+[3.513217] (-) TimerEvent: {}
+[3.613670] (-) TimerEvent: {}
+[3.714088] (-) TimerEvent: {}
+[3.814656] (-) TimerEvent: {}
+[3.896344] (antonio_description) StdoutLine: {'line': b'-- Looking for pthread.h\n'}
+[3.914766] (-) TimerEvent: {}
+[4.015293] (-) TimerEvent: {}
+[4.115815] (-) TimerEvent: {}
+[4.216349] (-) TimerEvent: {}
+[4.316746] (-) TimerEvent: {}
+[4.417241] (-) TimerEvent: {}
+[4.518158] (-) TimerEvent: {}
+[4.619007] (-) TimerEvent: {}
+[4.719740] (-) TimerEvent: {}
+[4.820303] (-) TimerEvent: {}
+[4.920898] (-) TimerEvent: {}
+[5.022056] (-) TimerEvent: {}
+[5.122498] (-) TimerEvent: {}
+[5.137814] (antonio_description) StdoutLine: {'line': b'-- Looking for pthread.h - found\n'}
+[5.154312] (antonio_description) StdoutLine: {'line': b'-- Performing Test CMAKE_HAVE_LIBC_PTHREAD\n'}
+[5.222817] (-) TimerEvent: {}
+[5.323867] (-) TimerEvent: {}
+[5.408249] (antonio_description) StdoutLine: {'line': b'-- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success\n'}
+[5.409861] (antonio_description) StdoutLine: {'line': b'-- Found Threads: TRUE  \n'}
+[5.423811] (-) TimerEvent: {}
+[5.524192] (-) TimerEvent: {}
+[5.624635] (-) TimerEvent: {}
+[5.725071] (-) TimerEvent: {}
+[5.825506] (-) TimerEvent: {}
+[5.925930] (-) TimerEvent: {}
+[6.026433] (-) TimerEvent: {}
+[6.084971] (antonio_description) StdoutLine: {'line': b'-- Found tf2: 0.25.5 (/opt/ros/humble/share/tf2/cmake)\n'}
+[6.126535] (-) TimerEvent: {}
+[6.226904] (-) TimerEvent: {}
+[6.327474] (-) TimerEvent: {}
+[6.403223] (antonio_description) StdoutLine: {'line': b'-- Found tf2_ros: 0.25.5 (/opt/ros/humble/share/tf2_ros/cmake)\n'}
+[6.427599] (-) TimerEvent: {}
+[6.527975] (-) TimerEvent: {}
+[6.628349] (-) TimerEvent: {}
+[6.728760] (-) TimerEvent: {}
+[6.829189] (-) TimerEvent: {}
+[6.929831] (-) TimerEvent: {}
+[7.031020] (-) TimerEvent: {}
+[7.131474] (-) TimerEvent: {}
+[7.231883] (-) TimerEvent: {}
+[7.332295] (-) TimerEvent: {}
+[7.432686] (-) TimerEvent: {}
+[7.533119] (-) TimerEvent: {}
+[7.562829] (antonio_description) StderrLine: {'line': b'\x1b[31mCMake Error at /opt/ros/humble/share/ament_cmake_target_dependencies/cmake/ament_target_dependencies.cmake:42 (message):\n'}
+[7.563180] (antonio_description) StderrLine: {'line': b'  ament_target_dependencies() the first argument must be a valid target name\n'}
+[7.563423] (antonio_description) StderrLine: {'line': b'Call Stack (most recent call first):\n'}
+[7.563600] (antonio_description) StderrLine: {'line': b'  CMakeLists.txt:19 (ament_target_dependencies)\n'}
+[7.563766] (antonio_description) StderrLine: {'line': b'\n'}
+[7.563930] (antonio_description) StderrLine: {'line': b'\x1b[0m\n'}
+[7.564097] (antonio_description) StdoutLine: {'line': b'-- Configuring incomplete, errors occurred!\n'}
+[7.564277] (antonio_description) StdoutLine: {'line': b'See also "/home/antonio/antonio_ws/Antonio/antonio_description/build/antonio_description/CMakeFiles/CMakeOutput.log".\n'}
+[7.578069] (antonio_description) StderrLine: {'line': b'gmake: *** [Makefile:226: cmake_check_build_system] Error 1\n'}
+[7.581801] (antonio_description) CommandEnded: {'returncode': 2}
+[7.633538] (-) TimerEvent: {}
+[7.734197] (-) TimerEvent: {}
+[7.834640] (-) TimerEvent: {}
+[7.935738] (-) TimerEvent: {}
+[8.037198] (-) TimerEvent: {}
+[8.131898] (antonio_description) JobEnded: {'identifier': 'antonio_description', 'rc': 2}
+[8.137310] (-) TimerEvent: {}
+[8.142703] (-) EventReactorShutdown: {}

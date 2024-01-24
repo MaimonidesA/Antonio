@@ -1,5 +1,0 @@
-/home/antonio/antonio_ws/Antonio/micro_ros_ws/pico_def_drive_Protothreads/build/elf2uf2/CMakeFiles/elf2uf2.dir
-/home/antonio/antonio_ws/Antonio/micro_ros_ws/pico_def_drive_Protothreads/build/elf2uf2/CMakeFiles/edit_cache.dir
-/home/antonio/antonio_ws/Antonio/micro_ros_ws/pico_def_drive_Protothreads/build/elf2uf2/CMakeFiles/rebuild_cache.dir
-/home/antonio/antonio_ws/Antonio/micro_ros_ws/pico_def_drive_Protothreads/build/elf2uf2/boot_uf2_headers/CMakeFiles/edit_cache.dir
-/home/antonio/antonio_ws/Antonio/micro_ros_ws/pico_def_drive_Protothreads/build/elf2uf2/boot_uf2_headers/CMakeFiles/rebuild_cache.dir

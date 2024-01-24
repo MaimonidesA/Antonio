@@ -1,0 +1,160 @@
+[0.737s] Invoking command in '/home/antonio/antonio_ws/Antonio/antonio_description/build/antonio_description': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake /home/antonio/antonio_ws/Antonio/antonio_description -DCMAKE_INSTALL_PREFIX=/home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description
+[3.289s] -- Found ament_cmake: 1.3.6 (/opt/ros/humble/share/ament_cmake/cmake)
+[4.472s] -- Override CMake install command with custom implementation using symlinks instead of copying resources
+[5.318s] -- Found geometry_msgs: 4.2.3 (/opt/ros/humble/share/geometry_msgs/cmake)
+[6.290s] -- Found rosidl_generator_c: 3.1.5 (/opt/ros/humble/share/rosidl_generator_c/cmake)
+[6.405s] -- Found rosidl_adapter: 3.1.5 (/opt/ros/humble/share/rosidl_adapter/cmake)
+[6.638s] -- Found rosidl_generator_cpp: 3.1.5 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)
+[6.937s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[7.101s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[7.844s] -- Found nav_msgs: 4.2.3 (/opt/ros/humble/share/nav_msgs/cmake)
+[8.195s] -- Found rclcpp: 16.0.7 (/opt/ros/humble/share/rclcpp/cmake)
+[9.000s] -- Found rmw_implementation_cmake: 6.1.1 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)
+[9.050s] -- Found rmw_fastrtps_cpp: 6.2.5 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)
+[10.083s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[11.265s] -- Found tf2: 0.25.5 (/opt/ros/humble/share/tf2/cmake)
+[11.394s] -- Found tf2_ros: 0.25.5 (/opt/ros/humble/share/tf2_ros/cmake)
+[13.369s] -- Found ament_lint_auto: 0.12.9 (/opt/ros/humble/share/ament_lint_auto/cmake)
+[14.366s] -- Added test 'cppcheck' to perform static code analysis on C / C++ code
+[14.366s] -- Configured cppcheck include dirs: 
+[14.366s] -- Configured cppcheck exclude dirs and/or files: 
+[14.375s] -- Added test 'flake8' to check Python code syntax and style conventions
+[14.391s] -- Added test 'lint_cmake' to check CMake code style
+[14.400s] -- Added test 'pep257' to check Python code against some of the docstring style conventions in PEP 257
+[14.473s] -- Added test 'uncrustify' to check C / C++ code style
+[14.473s] -- Configured uncrustify additional arguments: 
+[14.482s] -- Added test 'xmllint' to check XML markup files
+[14.486s] -- Configuring done
+[14.701s] -- Generating done
+[14.708s] -- Build files have been written to: /home/antonio/antonio_ws/Antonio/antonio_description/build/antonio_description
+[14.726s] Invoked command in '/home/antonio/antonio_ws/Antonio/antonio_description/build/antonio_description' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake /home/antonio/antonio_ws/Antonio/antonio_description -DCMAKE_INSTALL_PREFIX=/home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description
+[14.729s] Invoking command in '/home/antonio/antonio_ws/Antonio/antonio_description/build/antonio_description': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/antonio/antonio_ws/Antonio/antonio_description/build/antonio_description -- -j4 -l4
+[14.931s] [35m[1mConsolidate compiler generated dependencies of target Wheels_odom_tf2_broadcaster[0m
+[14.972s] [ 50%] [32mBuilding CXX object CMakeFiles/Wheels_odom_tf2_broadcaster.dir/src/Wheels_odom_tf2_broadcaster.cpp.o[0m
+[32.826s] [100%] [32m[1mLinking CXX executable Wheels_odom_tf2_broadcaster[0m
+[35.153s] [100%] Built target Wheels_odom_tf2_broadcaster
+[35.168s] Invoked command in '/home/antonio/antonio_ws/Antonio/antonio_description/build/antonio_description' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/antonio/antonio_ws/Antonio/antonio_description/build/antonio_description -- -j4 -l4
+[35.215s] Invoking command in '/home/antonio/antonio_ws/Antonio/antonio_description/build/antonio_description': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/antonio/antonio_ws/Antonio/antonio_description/build/antonio_description
+[35.224s] -- Install configuration: ""
+[35.225s] -- Execute custom install script
+[35.227s] -- Up-to-date symlink: /home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/antonio_description/src/Wheels_odom_tf2_broadcaster.cpp
+[35.227s] -- Up-to-date symlink: /home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/antonio_description/src/description/antonio_description.urdf
+[35.227s] -- Up-to-date symlink: /home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/antonio_description/src/rplidar_ros2/.git/FETCH_HEAD
+[35.228s] -- Up-to-date symlink: /home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/antonio_description/src/rplidar_ros2/.git/HEAD
+[35.228s] -- Up-to-date symlink: /home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/antonio_description/src/rplidar_ros2/.git/config
+[35.228s] -- Up-to-date symlink: /home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/antonio_description/src/rplidar_ros2/.git/description
+[35.228s] -- Up-to-date symlink: /home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/antonio_description/src/rplidar_ros2/.git/hooks/applypatch-msg.sample
+[35.228s] -- Up-to-date symlink: /home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/antonio_description/src/rplidar_ros2/.git/hooks/commit-msg.sample
+[35.229s] -- Up-to-date symlink: /home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/antonio_description/src/rplidar_ros2/.git/hooks/fsmonitor-watchman.sample
+[35.229s] -- Up-to-date symlink: /home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/antonio_description/src/rplidar_ros2/.git/hooks/post-update.sample
+[35.229s] -- Up-to-date symlink: /home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/antonio_description/src/rplidar_ros2/.git/hooks/pre-applypatch.sample
+[35.229s] -- Up-to-date symlink: /home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/antonio_description/src/rplidar_ros2/.git/hooks/pre-commit.sample
+[35.230s] -- Up-to-date symlink: /home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/antonio_description/src/rplidar_ros2/.git/hooks/pre-merge-commit.sample
+[35.230s] -- Up-to-date symlink: /home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/antonio_description/src/rplidar_ros2/.git/hooks/pre-push.sample
+[35.230s] -- Up-to-date symlink: /home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/antonio_description/src/rplidar_ros2/.git/hooks/pre-rebase.sample
+[35.230s] -- Up-to-date symlink: /home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/antonio_description/src/rplidar_ros2/.git/hooks/pre-receive.sample
+[35.230s] -- Up-to-date symlink: /home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/antonio_description/src/rplidar_ros2/.git/hooks/prepare-commit-msg.sample
+[35.231s] -- Up-to-date symlink: /home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/antonio_description/src/rplidar_ros2/.git/hooks/push-to-checkout.sample
+[35.231s] -- Up-to-date symlink: /home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/antonio_description/src/rplidar_ros2/.git/hooks/update.sample
+[35.231s] -- Up-to-date symlink: /home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/antonio_description/src/rplidar_ros2/.git/index
+[35.231s] -- Up-to-date symlink: /home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/antonio_description/src/rplidar_ros2/.git/info/exclude
+[35.231s] -- Up-to-date symlink: /home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/antonio_description/src/rplidar_ros2/.git/logs/HEAD
+[35.232s] -- Up-to-date symlink: /home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/antonio_description/src/rplidar_ros2/.git/logs/refs/heads/ros2
+[35.232s] -- Up-to-date symlink: /home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/antonio_description/src/rplidar_ros2/.git/logs/refs/remotes/origin/HEAD
+[35.232s] -- Up-to-date symlink: /home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/antonio_description/src/rplidar_ros2/.git/objects/pack/pack-400e6c25f58ef5991c4a2a00f2b38d071276b907.idx
+[35.232s] -- Up-to-date symlink: /home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/antonio_description/src/rplidar_ros2/.git/objects/pack/pack-400e6c25f58ef5991c4a2a00f2b38d071276b907.pack
+[35.232s] -- Up-to-date symlink: /home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/antonio_description/src/rplidar_ros2/.git/objects/pack/pack-e16675e99140ead924424ea9321b1b862b2ff969.idx
+[35.233s] -- Up-to-date symlink: /home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/antonio_description/src/rplidar_ros2/.git/objects/pack/pack-e16675e99140ead924424ea9321b1b862b2ff969.pack
+[35.233s] -- Up-to-date symlink: /home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/antonio_description/src/rplidar_ros2/.git/packed-refs
+[35.233s] -- Up-to-date symlink: /home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/antonio_description/src/rplidar_ros2/.git/refs/heads/ros2
+[35.233s] -- Up-to-date symlink: /home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/antonio_description/src/rplidar_ros2/.git/refs/remotes/origin/HEAD
+[35.234s] -- Up-to-date symlink: /home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/antonio_description/src/rplidar_ros2/.gitignore
+[35.234s] -- Up-to-date symlink: /home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/antonio_description/src/rplidar_ros2/CHANGELOG.rst
+[35.234s] -- Up-to-date symlink: /home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/antonio_description/src/rplidar_ros2/CMakeLists.txt
+[35.234s] -- Up-to-date symlink: /home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/antonio_description/src/rplidar_ros2/LICENSE
+[35.234s] -- Up-to-date symlink: /home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/antonio_description/src/rplidar_ros2/README.md
+[35.235s] -- Up-to-date symlink: /home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/antonio_description/src/rplidar_ros2/include/rplidar_node.hpp
+[35.235s] -- Up-to-date symlink: /home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/antonio_description/src/rplidar_ros2/include/visibility.h
+[35.235s] -- Up-to-date symlink: /home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/antonio_description/src/rplidar_ros2/launch/rplidar.launch.py
+[35.235s] -- Up-to-date symlink: /home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/antonio_description/src/rplidar_ros2/launch/rplidar_a3.launch.py
+[35.235s] -- Up-to-date symlink: /home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/antonio_description/src/rplidar_ros2/launch/rplidar_s1.launch.py
+[35.236s] -- Up-to-date symlink: /home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/antonio_description/src/rplidar_ros2/launch/rplidar_s1_tcp.launch.py
+[35.236s] -- Up-to-date symlink: /home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/antonio_description/src/rplidar_ros2/launch/test_rplidar_a3.launch.py
+[35.236s] -- Up-to-date symlink: /home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/antonio_description/src/rplidar_ros2/launch/view_rplidar.launch.py
+[35.236s] -- Up-to-date symlink: /home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/antonio_description/src/rplidar_ros2/launch/view_rplidar_a3.launch.py
+[35.236s] -- Up-to-date symlink: /home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/antonio_description/src/rplidar_ros2/launch/view_rplidar_s1.launch.py
+[35.237s] -- Up-to-date symlink: /home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/antonio_description/src/rplidar_ros2/launch/view_rplidar_s1_tcp.launch.py
+[35.237s] -- Up-to-date symlink: /home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/antonio_description/src/rplidar_ros2/package.xml
+[35.237s] -- Up-to-date symlink: /home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/antonio_description/src/rplidar_ros2/rplidar_A1.png
+[35.237s] -- Up-to-date symlink: /home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/antonio_description/src/rplidar_ros2/rplidar_A2.png
+[35.237s] -- Up-to-date symlink: /home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/antonio_description/src/rplidar_ros2/rviz/rplidar.rviz
+[35.238s] -- Up-to-date symlink: /home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/antonio_description/src/rplidar_ros2/scripts/create_udev_rules.sh
+[35.238s] -- Up-to-date symlink: /home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/antonio_description/src/rplidar_ros2/scripts/delete_udev_rules.sh
+[35.238s] -- Up-to-date symlink: /home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/antonio_description/src/rplidar_ros2/scripts/rplidar.rules
+[35.238s] -- Up-to-date symlink: /home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/antonio_description/src/rplidar_ros2/sdk/README.txt
+[35.238s] -- Up-to-date symlink: /home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/antonio_description/src/rplidar_ros2/sdk/include/rplidar.h
+[35.239s] -- Up-to-date symlink: /home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/antonio_description/src/rplidar_ros2/sdk/include/rplidar_cmd.h
+[35.239s] -- Up-to-date symlink: /home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/antonio_description/src/rplidar_ros2/sdk/include/rplidar_driver.h
+[35.239s] -- Up-to-date symlink: /home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/antonio_description/src/rplidar_ros2/sdk/include/rplidar_protocol.h
+[35.239s] -- Up-to-date symlink: /home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/antonio_description/src/rplidar_ros2/sdk/include/rptypes.h
+[35.239s] -- Up-to-date symlink: /home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/antonio_description/src/rplidar_ros2/sdk/src/arch/linux/arch_linux.h
+[35.240s] -- Up-to-date symlink: /home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/antonio_description/src/rplidar_ros2/sdk/src/arch/linux/net_serial.cpp
+[35.240s] -- Up-to-date symlink: /home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/antonio_description/src/rplidar_ros2/sdk/src/arch/linux/net_serial.h
+[35.240s] -- Up-to-date symlink: /home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/antonio_description/src/rplidar_ros2/sdk/src/arch/linux/net_socket.cpp
+[35.240s] -- Up-to-date symlink: /home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/antonio_description/src/rplidar_ros2/sdk/src/arch/linux/thread.hpp
+[35.240s] -- Up-to-date symlink: /home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/antonio_description/src/rplidar_ros2/sdk/src/arch/linux/timer.cpp
+[35.241s] -- Up-to-date symlink: /home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/antonio_description/src/rplidar_ros2/sdk/src/arch/linux/timer.h
+[35.241s] -- Up-to-date symlink: /home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/antonio_description/src/rplidar_ros2/sdk/src/arch/macOS/arch_macOS.h
+[35.241s] -- Up-to-date symlink: /home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/antonio_description/src/rplidar_ros2/sdk/src/arch/macOS/net_serial.cpp
+[35.241s] -- Up-to-date symlink: /home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/antonio_description/src/rplidar_ros2/sdk/src/arch/macOS/net_serial.h
+[35.241s] -- Up-to-date symlink: /home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/antonio_description/src/rplidar_ros2/sdk/src/arch/macOS/net_socket.cpp
+[35.242s] -- Up-to-date symlink: /home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/antonio_description/src/rplidar_ros2/sdk/src/arch/macOS/thread.hpp
+[35.242s] -- Up-to-date symlink: /home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/antonio_description/src/rplidar_ros2/sdk/src/arch/macOS/timer.cpp
+[35.242s] -- Up-to-date symlink: /home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/antonio_description/src/rplidar_ros2/sdk/src/arch/macOS/timer.h
+[35.242s] -- Up-to-date symlink: /home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/antonio_description/src/rplidar_ros2/sdk/src/arch/win32/arch_win32.h
+[35.242s] -- Up-to-date symlink: /home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/antonio_description/src/rplidar_ros2/sdk/src/arch/win32/net_serial.cpp
+[35.242s] -- Up-to-date symlink: /home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/antonio_description/src/rplidar_ros2/sdk/src/arch/win32/net_serial.h
+[35.243s] -- Up-to-date symlink: /home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/antonio_description/src/rplidar_ros2/sdk/src/arch/win32/net_socket.cpp
+[35.243s] -- Up-to-date symlink: /home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/antonio_description/src/rplidar_ros2/sdk/src/arch/win32/timer.cpp
+[35.243s] -- Up-to-date symlink: /home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/antonio_description/src/rplidar_ros2/sdk/src/arch/win32/timer.h
+[35.243s] -- Up-to-date symlink: /home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/antonio_description/src/rplidar_ros2/sdk/src/arch/win32/winthread.hpp
+[35.244s] -- Up-to-date symlink: /home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/antonio_description/src/rplidar_ros2/sdk/src/hal/abs_rxtx.h
+[35.244s] -- Up-to-date symlink: /home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/antonio_description/src/rplidar_ros2/sdk/src/hal/assert.h
+[35.244s] -- Up-to-date symlink: /home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/antonio_description/src/rplidar_ros2/sdk/src/hal/byteops.h
+[35.244s] -- Up-to-date symlink: /home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/antonio_description/src/rplidar_ros2/sdk/src/hal/event.h
+[35.244s] -- Up-to-date symlink: /home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/antonio_description/src/rplidar_ros2/sdk/src/hal/locker.h
+[35.245s] -- Up-to-date symlink: /home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/antonio_description/src/rplidar_ros2/sdk/src/hal/socket.h
+[35.245s] -- Up-to-date symlink: /home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/antonio_description/src/rplidar_ros2/sdk/src/hal/thread.cpp
+[35.245s] -- Up-to-date symlink: /home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/antonio_description/src/rplidar_ros2/sdk/src/hal/thread.h
+[35.245s] -- Up-to-date symlink: /home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/antonio_description/src/rplidar_ros2/sdk/src/hal/types.h
+[35.245s] -- Up-to-date symlink: /home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/antonio_description/src/rplidar_ros2/sdk/src/hal/util.h
+[35.246s] -- Up-to-date symlink: /home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/antonio_description/src/rplidar_ros2/sdk/src/rplidar_driver.cpp
+[35.246s] -- Up-to-date symlink: /home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/antonio_description/src/rplidar_ros2/sdk/src/rplidar_driver_TCP.h
+[35.246s] -- Up-to-date symlink: /home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/antonio_description/src/rplidar_ros2/sdk/src/rplidar_driver_impl.h
+[35.246s] -- Up-to-date symlink: /home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/antonio_description/src/rplidar_ros2/sdk/src/rplidar_driver_serial.h
+[35.246s] -- Up-to-date symlink: /home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/antonio_description/src/rplidar_ros2/sdk/src/sdkcommon.h
+[35.247s] -- Up-to-date symlink: /home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/antonio_description/src/rplidar_ros2/src/rplidar_node.cpp
+[35.247s] -- Up-to-date symlink: /home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/antonio_description/src/rplidar_ros2/src/standalone_rplidar.cpp
+[35.247s] -- Symlinking: /home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/antonio_description/launch/__pycache__/display.launch.cpython-310.pyc
+[35.258s] -- Up-to-date symlink: /home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/antonio_description/launch/display.launch.py
+[35.258s] -- Up-to-date symlink: /home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/antonio_description/rviz/urdf_config.rviz
+[35.259s] -- Up-to-date symlink: /home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/antonio_description/config/ekf.yaml
+[35.259s] -- Up-to-date symlink: /home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/antonio_description/config/nav2_params.yaml
+[35.259s] -- Up-to-date symlink: /home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/antonio_description/world/antonio_world.sdf
+[35.260s] -- Up-to-date symlink: /home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/lib/antonio_description/Wheels_odom_tf2_broadcaster
+[35.260s] -- Up-to-date symlink: /home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/ament_index/resource_index/package_run_dependencies/antonio_description
+[35.260s] -- Up-to-date symlink: /home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/ament_index/resource_index/parent_prefix_path/antonio_description
+[35.260s] -- Up-to-date symlink: /home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/antonio_description/environment/ament_prefix_path.sh
+[35.261s] -- Up-to-date symlink: /home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/antonio_description/environment/ament_prefix_path.dsv
+[35.261s] -- Up-to-date symlink: /home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/antonio_description/environment/path.sh
+[35.261s] -- Up-to-date symlink: /home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/antonio_description/environment/path.dsv
+[35.262s] -- Up-to-date symlink: /home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/antonio_description/local_setup.bash
+[35.262s] -- Up-to-date symlink: /home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/antonio_description/local_setup.sh
+[35.262s] -- Up-to-date symlink: /home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/antonio_description/local_setup.zsh
+[35.262s] -- Up-to-date symlink: /home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/antonio_description/local_setup.dsv
+[35.263s] -- Symlinking: /home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/antonio_description/package.dsv
+[35.274s] -- Up-to-date symlink: /home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/ament_index/resource_index/packages/antonio_description
+[35.274s] -- Up-to-date symlink: /home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/antonio_description/cmake/antonio_descriptionConfig.cmake
+[35.274s] -- Up-to-date symlink: /home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/antonio_description/cmake/antonio_descriptionConfig-version.cmake
+[35.274s] -- Up-to-date symlink: /home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/antonio_description/package.xml
+[35.276s] Invoked command in '/home/antonio/antonio_ws/Antonio/antonio_description/build/antonio_description' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/antonio/antonio_ws/Antonio/antonio_description/build/antonio_description

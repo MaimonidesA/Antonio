@@ -1,0 +1,1 @@
+/home/antonio/antonio_ws/Antonio/antonio_description/build/antonio_description/ament_cmake_environment_hooks/local_setup.zsh

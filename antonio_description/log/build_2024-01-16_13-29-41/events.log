@@ -1,0 +1,210 @@
+[0.000000] (-) TimerEvent: {}
+[0.001093] (antonio_description) JobQueued: {'identifier': 'antonio_description', 'dependencies': OrderedDict()}
+[0.001507] (antonio_description) JobStarted: {'identifier': 'antonio_description'}
+[0.099521] (-) TimerEvent: {}
+[0.127370] (antonio_description) JobProgress: {'identifier': 'antonio_description', 'progress': 'cmake'}
+[0.128320] (antonio_description) JobProgress: {'identifier': 'antonio_description', 'progress': 'build'}
+[0.129632] (antonio_description) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/antonio/antonio_ws/Antonio/antonio_description/build/antonio_description', '--', '-j4', '-l4'], 'cwd': '/home/antonio/antonio_ws/Antonio/antonio_description/build/antonio_description', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('USER', 'antonio'), ('SSH_CLIENT', '192.168.1.31 65077 22'), ('XDG_SESSION_TYPE', 'tty'), ('GIT_ASKPASS', '/home/antonio/.vscode-server/bin/0ee08df0cf4527e40edc9aa28f4b5bd38bbff2b2/extensions/git/dist/askpass.sh'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('BROWSER', '/home/antonio/.vscode-server/bin/0ee08df0cf4527e40edc9aa28f4b5bd38bbff2b2/bin/helpers/browser.sh'), ('MOTD_SHOWN', 'pam'), ('HOME', '/home/antonio'), ('OLDPWD', '/home/antonio/antonio_ws/Antonio/learning_tf2_cpp'), ('TERM_PROGRAM_VERSION', '1.85.1'), ('VSCODE_IPC_HOOK_CLI', '/run/user/1000/vscode-ipc-3cf927ff-b75c-411b-8802-984fa0e06923.sock'), ('ROS_PYTHON_VERSION', '3'), ('GTK_MODULES', 'appmenu-gtk-module'), ('VSCODE_GIT_ASKPASS_MAIN', '/home/antonio/.vscode-server/bin/0ee08df0cf4527e40edc9aa28f4b5bd38bbff2b2/extensions/git/dist/askpass-main.js'), ('VSCODE_GIT_ASKPASS_NODE', '/home/antonio/.vscode-server/bin/0ee08df0cf4527e40edc9aa28f4b5bd38bbff2b2/node'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('UBUNTU_MENUPROXY', '1'), ('PICO_TOOLCHAIN_PATH', '...'), ('COLCON_PREFIX_PATH', '/home/antonio/antonio_ws/Antonio/antonio_description/install'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'antonio'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('TERM', 'xterm-256color'), ('XDG_SESSION_ID', '2124'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/home/antonio/.vscode-server/bin/0ee08df0cf4527e40edc9aa28f4b5bd38bbff2b2/bin/remote-cli:/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('LANG', 'en_US.UTF-8'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('VSCODE_GIT_IPC_HANDLE', '/run/user/1000/vscode-git-13788dbbf9.sock'), ('TERM_PROGRAM', 'vscode'), ('AMENT_PREFIX_PATH', '/home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description:/opt/ros/humble'), ('SHELL', '/bin/bash'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('VSCODE_GIT_ASKPASS_EXTRA_ARGS', ''), ('PWD', '/home/antonio/antonio_ws/Antonio/antonio_description/build/antonio_description'), ('PICO_SDK_PATH', '/home/antonio/microros_ws/src/pico-sdk'), ('SSH_CONNECTION', '192.168.1.31 65077 192.168.1.47 22'), ('XDG_DATA_DIRS', '/home/antonio/.local/share/flatpak/exports/share:/var/lib/flatpak/exports/share:/usr/local/share:/usr/share:/var/lib/snapd/desktop'), ('PYTHONPATH', '/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('COLCON', '1'), ('CMAKE_PREFIX_PATH', '/home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description:/opt/ros/humble')]), 'shell': False}
+[0.186163] (antonio_description) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target Wheels_odom_tf2_broadcaster\x1b[0m\n'}
+[0.199641] (-) TimerEvent: {}
+[0.219759] (antonio_description) StdoutLine: {'line': b'[ 50%] \x1b[32mBuilding CXX object CMakeFiles/Wheels_odom_tf2_broadcaster.dir/src/Wheels_odom_tf2_broadcaster.cpp.o\x1b[0m\n'}
+[0.299766] (-) TimerEvent: {}
+[0.400205] (-) TimerEvent: {}
+[0.500810] (-) TimerEvent: {}
+[0.601251] (-) TimerEvent: {}
+[0.701668] (-) TimerEvent: {}
+[0.802092] (-) TimerEvent: {}
+[0.902504] (-) TimerEvent: {}
+[1.002914] (-) TimerEvent: {}
+[1.103299] (-) TimerEvent: {}
+[1.203748] (-) TimerEvent: {}
+[1.304166] (-) TimerEvent: {}
+[1.404625] (-) TimerEvent: {}
+[1.505056] (-) TimerEvent: {}
+[1.605504] (-) TimerEvent: {}
+[1.705933] (-) TimerEvent: {}
+[1.806375] (-) TimerEvent: {}
+[1.906830] (-) TimerEvent: {}
+[2.007293] (-) TimerEvent: {}
+[2.107723] (-) TimerEvent: {}
+[2.208132] (-) TimerEvent: {}
+[2.308702] (-) TimerEvent: {}
+[2.409131] (-) TimerEvent: {}
+[2.509900] (-) TimerEvent: {}
+[2.611023] (-) TimerEvent: {}
+[2.711424] (-) TimerEvent: {}
+[2.811862] (-) TimerEvent: {}
+[2.912274] (-) TimerEvent: {}
+[3.012681] (-) TimerEvent: {}
+[3.113144] (-) TimerEvent: {}
+[3.213727] (-) TimerEvent: {}
+[3.314762] (-) TimerEvent: {}
+[3.415158] (-) TimerEvent: {}
+[3.515658] (-) TimerEvent: {}
+[3.616043] (-) TimerEvent: {}
+[3.716437] (-) TimerEvent: {}
+[3.816953] (-) TimerEvent: {}
+[3.917355] (-) TimerEvent: {}
+[4.017829] (-) TimerEvent: {}
+[4.078494] (antonio_description) StderrLine: {'line': b'\x1b[01m\x1b[K/home/antonio/antonio_ws/Antonio/antonio_description/src/Wheels_odom_tf2_broadcaster.cpp:51:49:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kturtlesim\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope\n'}
+[4.079174] (antonio_description) StderrLine: {'line': b'   51 |   void handle_turtle_pose(const std::shared_ptr<\x1b[01;31m\x1b[Kturtlesim\x1b[m\x1b[K::msg::Pose> msg)\n'}
+[4.079631] (antonio_description) StderrLine: {'line': b'      |                                                 \x1b[01;31m\x1b[K^~~~~~~~~\x1b[m\x1b[K\n'}
+[4.080246] (antonio_description) StderrLine: {'line': b'\x1b[01m\x1b[K/home/antonio/antonio_ws/Antonio/antonio_description/src/Wheels_odom_tf2_broadcaster.cpp:51:69:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Ktemplate argument 1 is invalid\n'}
+[4.081126] (antonio_description) StderrLine: {'line': b'   51 |   void handle_turtle_pose(const std::shared_ptr<turtlesim::msg::Pose\x1b[01;31m\x1b[K>\x1b[m\x1b[K msg)\n'}
+[4.081620] (antonio_description) StderrLine: {'line': b'      |                                                                     \x1b[01;31m\x1b[K^\x1b[m\x1b[K\n'}
+[4.091490] (antonio_description) StderrLine: {'line': b'\x1b[01m\x1b[K/home/antonio/antonio_ws/Antonio/antonio_description/src/Wheels_odom_tf2_broadcaster.cpp:51:49:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kturtlesim\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope\n'}
+[4.092158] (antonio_description) StderrLine: {'line': b'   51 |   void handle_turtle_pose(const std::shared_ptr<\x1b[01;31m\x1b[Kturtlesim\x1b[m\x1b[K::msg::Pose> msg)\n'}
+[4.093452] (antonio_description) StderrLine: {'line': b'      |                                                 \x1b[01;31m\x1b[K^~~~~~~~~\x1b[m\x1b[K\n'}
+[4.093782] (antonio_description) StderrLine: {'line': b'\x1b[01m\x1b[K/home/antonio/antonio_ws/Antonio/antonio_description/src/Wheels_odom_tf2_broadcaster.cpp:51:69:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Ktemplate argument 1 is invalid\n'}
+[4.093978] (antonio_description) StderrLine: {'line': b'   51 |   void handle_turtle_pose(const std::shared_ptr<turtlesim::msg::Pose\x1b[01;31m\x1b[K>\x1b[m\x1b[K msg)\n'}
+[4.094161] (antonio_description) StderrLine: {'line': b'      |                                                                     \x1b[01;31m\x1b[K^\x1b[m\x1b[K\n'}
+[4.099058] (antonio_description) StderrLine: {'line': b'\x1b[01m\x1b[K/home/antonio/antonio_ws/Antonio/antonio_description/src/Wheels_odom_tf2_broadcaster.cpp:51:49:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kturtlesim\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope\n'}
+[4.099430] (antonio_description) StderrLine: {'line': b'   51 |   void handle_turtle_pose(const std::shared_ptr<\x1b[01;31m\x1b[Kturtlesim\x1b[m\x1b[K::msg::Pose> msg)\n'}
+[4.099573] (antonio_description) StderrLine: {'line': b'      |                                                 \x1b[01;31m\x1b[K^~~~~~~~~\x1b[m\x1b[K\n'}
+[4.099697] (antonio_description) StderrLine: {'line': b'\x1b[01m\x1b[K/home/antonio/antonio_ws/Antonio/antonio_description/src/Wheels_odom_tf2_broadcaster.cpp:51:69:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Ktemplate argument 1 is invalid\n'}
+[4.099884] (antonio_description) StderrLine: {'line': b'   51 |   void handle_turtle_pose(const std::shared_ptr<turtlesim::msg::Pose\x1b[01;31m\x1b[K>\x1b[m\x1b[K msg)\n'}
+[4.100006] (antonio_description) StderrLine: {'line': b'      |                                                                     \x1b[01;31m\x1b[K^\x1b[m\x1b[K\n'}
+[4.100118] (antonio_description) StderrLine: {'line': b'\x1b[01m\x1b[K/home/antonio/antonio_ws/Antonio/antonio_description/src/Wheels_odom_tf2_broadcaster.cpp:51:33:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kinvalid template-id\n'}
+[4.100229] (antonio_description) StderrLine: {'line': b'   51 |   void handle_turtle_pose(const \x1b[01;31m\x1b[Kstd\x1b[m\x1b[K::shared_ptr<turtlesim::msg::Pose> msg)\n'}
+[4.100339] (antonio_description) StderrLine: {'line': b'      |                                 \x1b[01;31m\x1b[K^~~\x1b[m\x1b[K\n'}
+[4.100445] (antonio_description) StderrLine: {'line': b'\x1b[01m\x1b[K/home/antonio/antonio_ws/Antonio/antonio_description/src/Wheels_odom_tf2_broadcaster.cpp:51:49:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kturtlesim\x1b[m\x1b[K\xe2\x80\x99 has not been declared\n'}
+[4.100551] (antonio_description) StderrLine: {'line': b'   51 |   void handle_turtle_pose(const std::shared_ptr<\x1b[01;31m\x1b[Kturtlesim\x1b[m\x1b[K::msg::Pose> msg)\n'}
+[4.100655] (antonio_description) StderrLine: {'line': b'      |                                                 \x1b[01;31m\x1b[K^~~~~~~~~\x1b[m\x1b[K\n'}
+[4.100759] (antonio_description) StderrLine: {'line': b'\x1b[01m\x1b[K/home/antonio/antonio_ws/Antonio/antonio_description/src/Wheels_odom_tf2_broadcaster.cpp:51:27:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kclass template placeholder \xe2\x80\x98\x1b[01m\x1b[Kstd::shared_ptr\x1b[m\x1b[K\xe2\x80\x99 not permitted in this context\n'}
+[4.100865] (antonio_description) StderrLine: {'line': b'   51 |   void handle_turtle_pose(\x1b[01;31m\x1b[Kconst\x1b[m\x1b[K std::shared_ptr<turtlesim::msg::Pose> msg)\n'}
+[4.100968] (antonio_description) StderrLine: {'line': b'      |                           \x1b[01;31m\x1b[K^~~~~\x1b[m\x1b[K\n'}
+[4.108492] (antonio_description) StderrLine: {'line': b'\x1b[01m\x1b[K/home/antonio/antonio_ws/Antonio/antonio_description/src/Wheels_odom_tf2_broadcaster.cpp:81:24:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kturtlesim\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope\n'}
+[4.108794] (antonio_description) StderrLine: {'line': b'   81 |   rclcpp::Subscription<\x1b[01;31m\x1b[Kturtlesim\x1b[m\x1b[K::msg::Pose>::SharedPtr subscription_;\n'}
+[4.108914] (antonio_description) StderrLine: {'line': b'      |                        \x1b[01;31m\x1b[K^~~~~~~~~\x1b[m\x1b[K\n'}
+[4.109024] (antonio_description) StderrLine: {'line': b'\x1b[01m\x1b[K/home/antonio/antonio_ws/Antonio/antonio_description/src/Wheels_odom_tf2_broadcaster.cpp:81:44:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Ktemplate argument 1 is invalid\n'}
+[4.109134] (antonio_description) StderrLine: {'line': b'   81 |   rclcpp::Subscription<turtlesim::msg::Pose\x1b[01;31m\x1b[K>\x1b[m\x1b[K::SharedPtr subscription_;\n'}
+[4.109249] (antonio_description) StderrLine: {'line': b'      |                                            \x1b[01;31m\x1b[K^\x1b[m\x1b[K\n'}
+[4.109379] (antonio_description) StderrLine: {'line': b'\x1b[01m\x1b[K/home/antonio/antonio_ws/Antonio/antonio_description/src/Wheels_odom_tf2_broadcaster.cpp:81:44:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Ktemplate argument 3 is invalid\n'}
+[4.109495] (antonio_description) StderrLine: {'line': b'\x1b[01m\x1b[K/home/antonio/antonio_ws/Antonio/antonio_description/src/Wheels_odom_tf2_broadcaster.cpp:81:44:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Ktemplate argument 4 is invalid\n'}
+[4.109600] (antonio_description) StderrLine: {'line': b'\x1b[01m\x1b[K/home/antonio/antonio_ws/Antonio/antonio_description/src/Wheels_odom_tf2_broadcaster.cpp:81:44:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Ktemplate argument 5 is invalid\n'}
+[4.109705] (antonio_description) StderrLine: {'line': b'\x1b[01m\x1b[K/home/antonio/antonio_ws/Antonio/antonio_description/src/Wheels_odom_tf2_broadcaster.cpp:81:47:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kexpected \xe2\x80\x98\x1b[01m\x1b[K;\x1b[m\x1b[K\xe2\x80\x99 at end of member declaration\n'}
+[4.109810] (antonio_description) StderrLine: {'line': b'   81 |   rclcpp::Subscription<turtlesim::msg::Pose>::\x1b[01;31m\x1b[KSharedPtr\x1b[m\x1b[K subscription_;\n'}
+[4.109913] (antonio_description) StderrLine: {'line': b'      |                                               \x1b[01;31m\x1b[K^~~~~~~~~\x1b[m\x1b[K\n'}
+[4.110016] (antonio_description) StderrLine: {'line': b'      |                                                        \x1b[32m\x1b[K;\x1b[m\x1b[K\n'}
+[4.112924] (antonio_description) StderrLine: {'line': b'\x1b[01m\x1b[K/home/antonio/antonio_ws/Antonio/antonio_description/src/Wheels_odom_tf2_broadcaster.cpp:81:57:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Ksubscription_\x1b[m\x1b[K\xe2\x80\x99 does not name a type; did you mean \xe2\x80\x98\x1b[01m\x1b[Krmw_subscription_t\x1b[m\x1b[K\xe2\x80\x99?\n'}
+[4.113175] (antonio_description) StderrLine: {'line': b'   81 |   rclcpp::Subscription<turtlesim::msg::Pose>::SharedPtr \x1b[01;31m\x1b[Ksubscription_\x1b[m\x1b[K;\n'}
+[4.113339] (antonio_description) StderrLine: {'line': b'      |                                                         \x1b[01;31m\x1b[K^~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[4.113512] (antonio_description) StderrLine: {'line': b'      |                                                         \x1b[32m\x1b[Krmw_subscription_t\x1b[m\x1b[K\n'}
+[4.117919] (-) TimerEvent: {}
+[4.136169] (antonio_description) StderrLine: {'line': b'\x1b[01m\x1b[K/home/antonio/antonio_ws/Antonio/antonio_description/src/Wheels_odom_tf2_broadcaster.cpp:\x1b[m\x1b[K In constructor \xe2\x80\x98\x1b[01m\x1b[KFramePublisher::FramePublisher()\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[4.136476] (antonio_description) StderrLine: {'line': b'\x1b[01m\x1b[K/home/antonio/antonio_ws/Antonio/antonio_description/src/Wheels_odom_tf2_broadcaster.cpp:45:5:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Ksubscription_\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope; did you mean \xe2\x80\x98\x1b[01m\x1b[Krmw_subscription_t\x1b[m\x1b[K\xe2\x80\x99?\n'}
+[4.136656] (antonio_description) StderrLine: {'line': b'   45 |     \x1b[01;31m\x1b[Ksubscription_\x1b[m\x1b[K = this->create_subscription<turtlesim::msg::Pose>(\n'}
+[4.136843] (antonio_description) StderrLine: {'line': b'      |     \x1b[01;31m\x1b[K^~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[4.137004] (antonio_description) StderrLine: {'line': b'      |     \x1b[32m\x1b[Krmw_subscription_t\x1b[m\x1b[K\n'}
+[4.143010] (antonio_description) StderrLine: {'line': b'\x1b[01m\x1b[K/home/antonio/antonio_ws/Antonio/antonio_description/src/Wheels_odom_tf2_broadcaster.cpp:45:47:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kturtlesim\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope; did you mean \xe2\x80\x98\x1b[01m\x1b[Kturtlename_\x1b[m\x1b[K\xe2\x80\x99?\n'}
+[4.143299] (antonio_description) StderrLine: {'line': b'   45 |     subscription_ = this->create_subscription<\x1b[01;31m\x1b[Kturtlesim\x1b[m\x1b[K::msg::Pose>(\n'}
+[4.143471] (antonio_description) StderrLine: {'line': b'      |                                               \x1b[01;31m\x1b[K^~~~~~~~~\x1b[m\x1b[K\n'}
+[4.143646] (antonio_description) StderrLine: {'line': b'      |                                               \x1b[32m\x1b[Kturtlename_\x1b[m\x1b[K\n'}
+[4.143834] (antonio_description) StderrLine: {'line': b'\x1b[01m\x1b[K/home/antonio/antonio_ws/Antonio/antonio_description/src/Wheels_odom_tf2_broadcaster.cpp:45:27:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kparse error in template argument list\n'}
+[4.144158] (antonio_description) StderrLine: {'line': b'   45 |     subscription_ = this->\x1b[01;31m\x1b[Kcreate_subscription<turtlesim::msg::Pose>\x1b[m\x1b[K(\n'}
+[4.144347] (antonio_description) StderrLine: {'line': b'      |                           \x1b[01;31m\x1b[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[4.162474] (antonio_description) StderrLine: {'line': b'\x1b[01m\x1b[K/home/antonio/antonio_ws/Antonio/antonio_description/src/Wheels_odom_tf2_broadcaster.cpp:45:68:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kno matching function for call to \xe2\x80\x98\x1b[01m\x1b[KFramePublisher::create_subscription<<expression error> >(std::string&, int, std::_Bind_helper<false, void (FramePublisher::*)(...), FramePublisher*, const std::_Placeholder<1>&>::type)\x1b[m\x1b[K\xe2\x80\x99\n'}
+[4.162835] (antonio_description) StderrLine: {'line': b'   45 |     subscription_ = \x1b[01;31m\x1b[Kthis->create_subscription<turtlesim::msg::Pose>(\x1b[m\x1b[K\n'}
+[4.162953] (antonio_description) StderrLine: {'line': b'      |                     \x1b[01;31m\x1b[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^\x1b[m\x1b[K\n'}
+[4.163063] (antonio_description) StderrLine: {'line': b'   46 | \x1b[01;31m\x1b[K      topic_name, 10,\x1b[m\x1b[K\n'}
+[4.163171] (antonio_description) StderrLine: {'line': b'      |       \x1b[01;31m\x1b[K~~~~~~~~~~~~~~~\x1b[m\x1b[K                                               \n'}
+[4.163278] (antonio_description) StderrLine: {'line': b'   47 | \x1b[01;31m\x1b[K      std::bind(&FramePublisher::handle_turtle_pose, this, std::placeholders::_1))\x1b[m\x1b[K;\n'}
+[4.163384] (antonio_description) StderrLine: {'line': b'      |       \x1b[01;31m\x1b[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[4.163489] (antonio_description) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/executors/single_threaded_executor.hpp:28\x1b[m\x1b[K,\n'}
+[4.163594] (antonio_description) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:22\x1b[m\x1b[K,\n'}
+[4.163710] (antonio_description) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155\x1b[m\x1b[K,\n'}
+[4.163815] (antonio_description) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/antonio/antonio_ws/Antonio/antonio_description/src/Wheels_odom_tf2_broadcaster.cpp:21\x1b[m\x1b[K:\n'}
+[4.163930] (antonio_description) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/node.hpp:219:3:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kcandidate: \xe2\x80\x98\x1b[01m\x1b[Ktemplate<class MessageT, class CallbackT, class AllocatorT, class SubscriptionT, class MessageMemoryStrategyT> std::shared_ptr<ROSMessageT> rclcpp::Node::create_subscription(const string&, const rclcpp::QoS&, CallbackT&&, const rclcpp::SubscriptionOptionsWithAllocator<AllocatorT>&, typename MessageMemoryStrategyT::SharedPtr)\x1b[m\x1b[K\xe2\x80\x99\n'}
+[4.164056] (antonio_description) StderrLine: {'line': b'  219 |   \x1b[01;36m\x1b[Kcreate_subscription\x1b[m\x1b[K(\n'}
+[4.164160] (antonio_description) StderrLine: {'line': b'      |   \x1b[01;36m\x1b[K^~~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[4.164263] (antonio_description) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/node.hpp:219:3:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  template argument deduction/substitution failed:\n'}
+[4.164367] (antonio_description) StderrLine: {'line': b'\x1b[01m\x1b[K/home/antonio/antonio_ws/Antonio/antonio_description/src/Wheels_odom_tf2_broadcaster.cpp:45:68:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Ktemplate argument 1 is invalid\n'}
+[4.164471] (antonio_description) StderrLine: {'line': b'   45 |     subscription_ = \x1b[01;31m\x1b[Kthis->create_subscription<turtlesim::msg::Pose>(\x1b[m\x1b[K\n'}
+[4.164586] (antonio_description) StderrLine: {'line': b'      |                     \x1b[01;31m\x1b[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^\x1b[m\x1b[K\n'}
+[4.164766] (antonio_description) StderrLine: {'line': b'   46 | \x1b[01;31m\x1b[K      topic_name, 10,\x1b[m\x1b[K\n'}
+[4.164869] (antonio_description) StderrLine: {'line': b'      |       \x1b[01;31m\x1b[K~~~~~~~~~~~~~~~\x1b[m\x1b[K                                               \n'}
+[4.164972] (antonio_description) StderrLine: {'line': b'   47 | \x1b[01;31m\x1b[K      std::bind(&FramePublisher::handle_turtle_pose, this, std::placeholders::_1))\x1b[m\x1b[K;\n'}
+[4.165076] (antonio_description) StderrLine: {'line': b'      |       \x1b[01;31m\x1b[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[4.165179] (antonio_description) StderrLine: {'line': b'\x1b[01m\x1b[K/home/antonio/antonio_ws/Antonio/antonio_description/src/Wheels_odom_tf2_broadcaster.cpp:\x1b[m\x1b[K In member function \xe2\x80\x98\x1b[01m\x1b[Kvoid FramePublisher::handle_turtle_pose(...)\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[4.165312] (antonio_description) StderrLine: {'line': b'\x1b[01m\x1b[K/home/antonio/antonio_ws/Antonio/antonio_description/src/Wheels_odom_tf2_broadcaster.cpp:63:33:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kmsg\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope\n'}
+[4.165421] (antonio_description) StderrLine: {'line': b'   63 |     t.transform.translation.x = \x1b[01;31m\x1b[Kmsg\x1b[m\x1b[K->x;\n'}
+[4.165524] (antonio_description) StderrLine: {'line': b'      |                                 \x1b[01;31m\x1b[K^~~\x1b[m\x1b[K\n'}
+[4.168250] (antonio_description) StderrLine: {'line': b'\x1b[01m\x1b[K/home/antonio/antonio_ws/Antonio/antonio_description/src/Wheels_odom_tf2_broadcaster.cpp:63:33:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Ksuggested alternatives:\n'}
+[4.168501] (antonio_description) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/opt/ros/humble/include/std_msgs/std_msgs/msg/detail/header__struct.hpp:20\x1b[m\x1b[K,\n'}
+[4.168986] (antonio_description) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/transform_stamped__struct.hpp:20\x1b[m\x1b[K,\n'}
+[4.169129] (antonio_description) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/transform_stamped.hpp:7\x1b[m\x1b[K,\n'}
+[4.169316] (antonio_description) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/antonio/antonio_ws/Antonio/antonio_description/src/Wheels_odom_tf2_broadcaster.cpp:20\x1b[m\x1b[K:\n'}
+[4.169505] (antonio_description) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/humble/include/builtin_interfaces/builtin_interfaces/msg/detail/time__struct.hpp:27:11:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  \xe2\x80\x98\x1b[01m\x1b[Kbuiltin_interfaces::msg\x1b[m\x1b[K\xe2\x80\x99\n'}
+[4.169713] (antonio_description) StderrLine: {'line': b'   27 | namespace \x1b[01;36m\x1b[Kmsg\x1b[m\x1b[K\n'}
+[4.169906] (antonio_description) StderrLine: {'line': b'      |           \x1b[01;36m\x1b[K^~~\x1b[m\x1b[K\n'}
+[4.170032] (antonio_description) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/transform_stamped__struct.hpp:20\x1b[m\x1b[K,\n'}
+[4.170140] (antonio_description) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/transform_stamped.hpp:7\x1b[m\x1b[K,\n'}
+[4.170244] (antonio_description) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/antonio/antonio_ws/Antonio/antonio_description/src/Wheels_odom_tf2_broadcaster.cpp:20\x1b[m\x1b[K:\n'}
+[4.170349] (antonio_description) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/humble/include/std_msgs/std_msgs/msg/detail/header__struct.hpp:31:11:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  \xe2\x80\x98\x1b[01m\x1b[Kstd_msgs::msg\x1b[m\x1b[K\xe2\x80\x99\n'}
+[4.170455] (antonio_description) StderrLine: {'line': b'   31 | namespace \x1b[01;36m\x1b[Kmsg\x1b[m\x1b[K\n'}
+[4.170557] (antonio_description) StderrLine: {'line': b'      |           \x1b[01;36m\x1b[K^~~\x1b[m\x1b[K\n'}
+[4.170660] (antonio_description) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/transform__struct.hpp:20\x1b[m\x1b[K,\n'}
+[4.170763] (antonio_description) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/transform_stamped__struct.hpp:22\x1b[m\x1b[K,\n'}
+[4.170867] (antonio_description) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/transform_stamped.hpp:7\x1b[m\x1b[K,\n'}
+[4.170971] (antonio_description) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/antonio/antonio_ws/Antonio/antonio_description/src/Wheels_odom_tf2_broadcaster.cpp:20\x1b[m\x1b[K:\n'}
+[4.171200] (antonio_description) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/vector3__struct.hpp:27:11:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  \xe2\x80\x98\x1b[01m\x1b[Kgeometry_msgs::msg\x1b[m\x1b[K\xe2\x80\x99\n'}
+[4.171316] (antonio_description) StderrLine: {'line': b'   27 | namespace \x1b[01;36m\x1b[Kmsg\x1b[m\x1b[K\n'}
+[4.171419] (antonio_description) StderrLine: {'line': b'      |           \x1b[01;36m\x1b[K^~~\x1b[m\x1b[K\n'}
+[4.171521] (antonio_description) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/opt/ros/humble/include/rcl_interfaces/rcl_interfaces/msg/set_parameters_result.hpp:7\x1b[m\x1b[K,\n'}
+[4.171625] (antonio_description) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/qos_overriding_options.hpp:28\x1b[m\x1b[K,\n'}
+[4.171728] (antonio_description) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/subscription_options.hpp:30\x1b[m\x1b[K,\n'}
+[4.171831] (antonio_description) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/subscription.hpp:45\x1b[m\x1b[K,\n'}
+[4.171934] (antonio_description) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:25\x1b[m\x1b[K,\n'}
+[4.172036] (antonio_description) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25\x1b[m\x1b[K,\n'}
+[4.172140] (antonio_description) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18\x1b[m\x1b[K,\n'}
+[4.172243] (antonio_description) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20\x1b[m\x1b[K,\n'}
+[4.172354] (antonio_description) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37\x1b[m\x1b[K,\n'}
+[4.172457] (antonio_description) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25\x1b[m\x1b[K,\n'}
+[4.172560] (antonio_description) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21\x1b[m\x1b[K,\n'}
+[4.172663] (antonio_description) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155\x1b[m\x1b[K,\n'}
+[4.172765] (antonio_description) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/antonio/antonio_ws/Antonio/antonio_description/src/Wheels_odom_tf2_broadcaster.cpp:21\x1b[m\x1b[K:\n'}
+[4.172868] (antonio_description) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/humble/include/rcl_interfaces/rcl_interfaces/msg/detail/set_parameters_result__struct.hpp:27:11:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  \xe2\x80\x98\x1b[01m\x1b[Krcl_interfaces::msg\x1b[m\x1b[K\xe2\x80\x99\n'}
+[4.172973] (antonio_description) StderrLine: {'line': b'   27 | namespace \x1b[01;36m\x1b[Kmsg\x1b[m\x1b[K\n'}
+[4.173076] (antonio_description) StderrLine: {'line': b'      |           \x1b[01;36m\x1b[K^~~\x1b[m\x1b[K\n'}
+[4.173178] (antonio_description) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/opt/ros/humble/include/statistics_msgs/statistics_msgs/msg/detail/metrics_message__struct.hpp:23\x1b[m\x1b[K,\n'}
+[4.173308] (antonio_description) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/statistics_msgs/statistics_msgs/msg/metrics_message.hpp:7\x1b[m\x1b[K,\n'}
+[4.173418] (antonio_description) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/libstatistics_collector/libstatistics_collector/collector/generate_statistics_message.hpp:21\x1b[m\x1b[K,\n'}
+[4.173522] (antonio_description) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/topic_statistics/subscription_topic_statistics.hpp:23\x1b[m\x1b[K,\n'}
+[4.173625] (antonio_description) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/subscription.hpp:50\x1b[m\x1b[K,\n'}
+[4.173727] (antonio_description) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:25\x1b[m\x1b[K,\n'}
+[4.173830] (antonio_description) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25\x1b[m\x1b[K,\n'}
+[4.173941] (antonio_description) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18\x1b[m\x1b[K,\n'}
+[4.174045] (antonio_description) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20\x1b[m\x1b[K,\n'}
+[4.174147] (antonio_description) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37\x1b[m\x1b[K,\n'}
+[4.174250] (antonio_description) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25\x1b[m\x1b[K,\n'}
+[4.174353] (antonio_description) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21\x1b[m\x1b[K,\n'}
+[4.174455] (antonio_description) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155\x1b[m\x1b[K,\n'}
+[4.174558] (antonio_description) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/antonio/antonio_ws/Antonio/antonio_description/src/Wheels_odom_tf2_broadcaster.cpp:21\x1b[m\x1b[K:\n'}
+[4.174661] (antonio_description) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/humble/include/statistics_msgs/statistics_msgs/msg/detail/statistic_data_point__struct.hpp:27:11:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  \xe2\x80\x98\x1b[01m\x1b[Kstatistics_msgs::msg\x1b[m\x1b[K\xe2\x80\x99\n'}
+[4.174772] (antonio_description) StderrLine: {'line': b'   27 | namespace \x1b[01;36m\x1b[Kmsg\x1b[m\x1b[K\n'}
+[4.174875] (antonio_description) StderrLine: {'line': b'      |           \x1b[01;36m\x1b[K^~~\x1b[m\x1b[K\n'}
+[4.174976] (antonio_description) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/opt/ros/humble/include/tf2_msgs/tf2_msgs/msg/tf_message.hpp:7\x1b[m\x1b[K,\n'}
+[4.175079] (antonio_description) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/tf2_ros/tf2_ros/transform_broadcaster.h:43\x1b[m\x1b[K,\n'}
+[4.175181] (antonio_description) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/antonio/antonio_ws/Antonio/antonio_description/src/Wheels_odom_tf2_broadcaster.cpp:23\x1b[m\x1b[K:\n'}
+[4.175284] (antonio_description) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/humble/include/tf2_msgs/tf2_msgs/msg/detail/tf_message__struct.hpp:31:11:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  \xe2\x80\x98\x1b[01m\x1b[Ktf2_msgs::msg\x1b[m\x1b[K\xe2\x80\x99\n'}
+[4.175397] (antonio_description) StderrLine: {'line': b'   31 | namespace \x1b[01;36m\x1b[Kmsg\x1b[m\x1b[K\n'}
+[4.175499] (antonio_description) StderrLine: {'line': b'      |           \x1b[01;36m\x1b[K^~~\x1b[m\x1b[K\n'}
+[4.218044] (-) TimerEvent: {}
+[4.318500] (-) TimerEvent: {}
+[4.419877] (-) TimerEvent: {}
+[4.520447] (-) TimerEvent: {}
+[4.621564] (-) TimerEvent: {}
+[4.722010] (-) TimerEvent: {}
+[4.822426] (-) TimerEvent: {}
+[4.922842] (-) TimerEvent: {}
+[5.023203] (-) TimerEvent: {}
+[5.123672] (-) TimerEvent: {}
+[5.224101] (-) TimerEvent: {}
+[5.312526] (antonio_description) StderrLine: {'line': b'gmake[2]: *** [CMakeFiles/Wheels_odom_tf2_broadcaster.dir/build.make:76: CMakeFiles/Wheels_odom_tf2_broadcaster.dir/src/Wheels_odom_tf2_broadcaster.cpp.o] Error 1\n'}
+[5.312810] (antonio_description) StderrLine: {'line': b'gmake[1]: *** [CMakeFiles/Makefile2:137: CMakeFiles/Wheels_odom_tf2_broadcaster.dir/all] Error 2\n'}
+[5.313087] (antonio_description) StderrLine: {'line': b'gmake: *** [Makefile:146: all] Error 2\n'}
+[5.316353] (antonio_description) CommandEnded: {'returncode': 2}
+[5.324323] (-) TimerEvent: {}
+[5.425134] (-) TimerEvent: {}
+[5.504053] (antonio_description) JobEnded: {'identifier': 'antonio_description', 'rc': 2}
+[5.514993] (-) EventReactorShutdown: {}

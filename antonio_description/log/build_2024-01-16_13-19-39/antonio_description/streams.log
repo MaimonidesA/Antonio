@@ -1,0 +1,55 @@
+[0.122s] Invoking command in '/home/antonio/antonio_ws/Antonio/antonio_description/build/antonio_description': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/antonio/antonio_ws/Antonio/antonio_description/build/antonio_description -- -j4 -l4
+[0.203s] [ 50%] [32mBuilding CXX object CMakeFiles/Wheels_odom_tf2_broadcaster.dir/src/Wheels_odom_tf2_broadcaster.cpp.o[0m
+[4.318s] [01m[K/home/antonio/antonio_ws/Antonio/antonio_description/src/Wheels_odom_tf2_broadcaster.cpp:70:24:[m[K [01;31m[Kerror: [m[K‘[01m[Kturtlesim[m[K’ was not declared in this scope
+[4.318s]    70 |   rclcpp::Subscription<[01;31m[Kturtlesim[m[K::msg::Pose>::SharedPtr subscription_;
+[4.318s]       |                        [01;31m[K^~~~~~~~~[m[K
+[4.318s] [01m[K/home/antonio/antonio_ws/Antonio/antonio_description/src/Wheels_odom_tf2_broadcaster.cpp:70:44:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+[4.318s]    70 |   rclcpp::Subscription<turtlesim::msg::Pose[01;31m[K>[m[K::SharedPtr subscription_;
+[4.318s]       |                                            [01;31m[K^[m[K
+[4.319s] [01m[K/home/antonio/antonio_ws/Antonio/antonio_description/src/Wheels_odom_tf2_broadcaster.cpp:70:44:[m[K [01;31m[Kerror: [m[Ktemplate argument 3 is invalid
+[4.319s] [01m[K/home/antonio/antonio_ws/Antonio/antonio_description/src/Wheels_odom_tf2_broadcaster.cpp:70:44:[m[K [01;31m[Kerror: [m[Ktemplate argument 4 is invalid
+[4.319s] [01m[K/home/antonio/antonio_ws/Antonio/antonio_description/src/Wheels_odom_tf2_broadcaster.cpp:70:44:[m[K [01;31m[Kerror: [m[Ktemplate argument 5 is invalid
+[4.319s] [01m[K/home/antonio/antonio_ws/Antonio/antonio_description/src/Wheels_odom_tf2_broadcaster.cpp:70:47:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K;[m[K’ at end of member declaration
+[4.319s]    70 |   rclcpp::Subscription<turtlesim::msg::Pose>::[01;31m[KSharedPtr[m[K subscription_;
+[4.319s]       |                                               [01;31m[K^~~~~~~~~[m[K
+[4.319s]       |                                                        [32m[K;[m[K
+[4.322s] [01m[K/home/antonio/antonio_ws/Antonio/antonio_description/src/Wheels_odom_tf2_broadcaster.cpp:70:57:[m[K [01;31m[Kerror: [m[K‘[01m[Ksubscription_[m[K’ does not name a type; did you mean ‘[01m[Krmw_subscription_t[m[K’?
+[4.322s]    70 |   rclcpp::Subscription<turtlesim::msg::Pose>::SharedPtr [01;31m[Ksubscription_[m[K;
+[4.322s]       |                                                         [01;31m[K^~~~~~~~~~~~~[m[K
+[4.322s]       |                                                         [32m[Krmw_subscription_t[m[K
+[4.359s] [01m[K/home/antonio/antonio_ws/Antonio/antonio_description/src/Wheels_odom_tf2_broadcaster.cpp:[m[K In constructor ‘[01m[KFramePublisher::FramePublisher()[m[K’:
+[4.360s] [01m[K/home/antonio/antonio_ws/Antonio/antonio_description/src/Wheels_odom_tf2_broadcaster.cpp:35:61:[m[K [01;31m[Kerror: [m[K‘[01m[Knav_msgs[m[K’ was not declared in this scope
+[4.360s]    35 |      auto handle_turtle_pose = [this](const std::shared_ptr<[01;31m[Knav_msgs[m[K::msg::Odometry> msg) {
+[4.360s]       |                                                             [01;31m[K^~~~~~~~[m[K
+[4.360s] [01m[K/home/antonio/antonio_ws/Antonio/antonio_description/src/Wheels_odom_tf2_broadcaster.cpp:35:84:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+[4.360s]    35 |      auto handle_turtle_pose = [this](const std::shared_ptr<nav_msgs::msg::Odometry[01;31m[K>[m[K msg) {
+[4.361s]       |                                                                                    [01;31m[K^[m[K
+[4.362s] [01m[K/home/antonio/antonio_ws/Antonio/antonio_description/src/Wheels_odom_tf2_broadcaster.cpp:[m[K In lambda function:
+[4.362s] [01m[K/home/antonio/antonio_ws/Antonio/antonio_description/src/Wheels_odom_tf2_broadcaster.cpp:46:40:[m[K [01;31m[Kerror: [m[Kbase operand of ‘[01m[K->[m[K’ is not a pointer
+[4.362s]    46 |         t.transform.translation.x = msg[01;31m[K->[m[Kx;
+[4.363s]       |                                        [01;31m[K^~[m[K
+[4.363s] [01m[K/home/antonio/antonio_ws/Antonio/antonio_description/src/Wheels_odom_tf2_broadcaster.cpp:47:40:[m[K [01;31m[Kerror: [m[Kbase operand of ‘[01m[K->[m[K’ is not a pointer
+[4.363s]    47 |         t.transform.translation.y = msg[01;31m[K->[m[Ky;
+[4.363s]       |                                        [01;31m[K^~[m[K
+[4.363s] [01m[K/home/antonio/antonio_ws/Antonio/antonio_description/src/Wheels_odom_tf2_broadcaster.cpp:54:27:[m[K [01;31m[Kerror: [m[Kbase operand of ‘[01m[K->[m[K’ is not a pointer
+[4.364s]    54 |         q.setRPY(0, 0, msg[01;31m[K->[m[Ktheta);
+[4.364s]       |                           [01;31m[K^~[m[K
+[4.376s] [01m[K/home/antonio/antonio_ws/Antonio/antonio_description/src/Wheels_odom_tf2_broadcaster.cpp:[m[K In constructor ‘[01m[KFramePublisher::FramePublisher()[m[K’:
+[4.377s] [01m[K/home/antonio/antonio_ws/Antonio/antonio_description/src/Wheels_odom_tf2_broadcaster.cpp:63:5:[m[K [01;31m[Kerror: [m[K‘[01m[Ksubscription_[m[K’ was not declared in this scope; did you mean ‘[01m[Krmw_subscription_t[m[K’?
+[4.377s]    63 |     [01;31m[Ksubscription_[m[K = this->create_subscription<nav_msgs::msg::Odometry>(
+[4.377s]       |     [01;31m[K^~~~~~~~~~~~~[m[K
+[4.377s]       |     [32m[Krmw_subscription_t[m[K
+[4.384s] [01m[K/home/antonio/antonio_ws/Antonio/antonio_description/src/Wheels_odom_tf2_broadcaster.cpp:63:47:[m[K [01;31m[Kerror: [m[K‘[01m[Knav_msgs[m[K’ was not declared in this scope
+[4.384s]    63 |     subscription_ = this->create_subscription<[01;31m[Knav_msgs[m[K::msg::Odometry>(
+[4.384s]       |                                               [01;31m[K^~~~~~~~[m[K
+[4.384s] [01m[K/home/antonio/antonio_ws/Antonio/antonio_description/src/Wheels_odom_tf2_broadcaster.cpp:63:27:[m[K [01;31m[Kerror: [m[Kparse error in template argument list
+[4.384s]    63 |     subscription_ = this->[01;31m[Kcreate_subscription<nav_msgs::msg::Odometry>[m[K(
+[4.384s]       |                           [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[4.392s] [01m[K/home/antonio/antonio_ws/Antonio/antonio_description/src/Wheels_odom_tf2_broadcaster.cpp:64:7:[m[K [01;31m[Kerror: [m[K‘[01m[Ktopic_name[m[K’ was not declared in this scope; did you mean ‘[01m[Ktypename[m[K’?
+[4.392s]    64 |       [01;31m[Ktopic_name[m[K, 10,
+[4.392s]       |       [01;31m[K^~~~~~~~~~[m[K
+[4.392s]       |       [32m[Ktypename[m[K
+[5.149s] gmake[2]: *** [CMakeFiles/Wheels_odom_tf2_broadcaster.dir/build.make:76: CMakeFiles/Wheels_odom_tf2_broadcaster.dir/src/Wheels_odom_tf2_broadcaster.cpp.o] Error 1
+[5.149s] gmake[1]: *** [CMakeFiles/Makefile2:137: CMakeFiles/Wheels_odom_tf2_broadcaster.dir/all] Error 2
+[5.149s] gmake: *** [Makefile:146: all] Error 2
+[5.156s] Invoked command in '/home/antonio/antonio_ws/Antonio/antonio_description/build/antonio_description' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/antonio/antonio_ws/Antonio/antonio_description/build/antonio_description -- -j4 -l4

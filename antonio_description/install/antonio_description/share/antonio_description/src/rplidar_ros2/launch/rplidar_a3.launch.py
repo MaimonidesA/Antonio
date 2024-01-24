@@ -1,0 +1,1 @@
+/home/antonio/antonio_ws/Antonio/antonio_description/src/rplidar_ros2/launch/rplidar_a3.launch.py

@@ -1,0 +1,72 @@
+[0.126s] Invoking command in '/home/antonio/antonio_ws/Antonio/antonio_description/build/antonio_description': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/antonio/antonio_ws/Antonio/antonio_description/build/antonio_description -- -j4 -l4
+[0.187s] [35m[1mConsolidate compiler generated dependencies of target Wheels_odom_tf2_broadcaster[0m
+[0.212s] [ 50%] [32mBuilding CXX object CMakeFiles/Wheels_odom_tf2_broadcaster.dir/src/Wheels_odom_tf2_broadcaster.cpp.o[0m
+[3.774s] [01m[K/home/antonio/antonio_ws/Antonio/antonio_description/src/Wheels_odom_tf2_broadcaster.cpp:51:62:[m[K [01;31m[Kerror: [m[K‘[01m[Kpose_stamped[m[K’ is not a member of ‘[01m[Kgeometry_msgs::msg[m[K’; did you mean ‘[01m[KPoseStamped[m[K’?
+[3.774s]    51 |   void handle_pose(const std::shared_ptr<geometry_msgs::msg::[01;31m[Kpose_stamped[m[K> msg)
+[3.774s]       |                                                              [01;31m[K^~~~~~~~~~~~[m[K
+[3.774s]       |                                                              [32m[KPoseStamped[m[K
+[3.774s] [01m[K/home/antonio/antonio_ws/Antonio/antonio_description/src/Wheels_odom_tf2_broadcaster.cpp:51:74:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+[3.774s]    51 |   void handle_pose(const std::shared_ptr<geometry_msgs::msg::pose_stamped[01;31m[K>[m[K msg)
+[3.774s]       |                                                                          [01;31m[K^[m[K
+[3.782s] [01m[K/home/antonio/antonio_ws/Antonio/antonio_description/src/Wheels_odom_tf2_broadcaster.cpp:81:24:[m[K [01;31m[Kerror: [m[K‘[01m[Kturtlesim[m[K’ was not declared in this scope
+[3.782s]    81 |   rclcpp::Subscription<[01;31m[Kturtlesim[m[K::msg::Pose>::SharedPtr subscription_;
+[3.782s]       |                        [01;31m[K^~~~~~~~~[m[K
+[3.782s] [01m[K/home/antonio/antonio_ws/Antonio/antonio_description/src/Wheels_odom_tf2_broadcaster.cpp:81:44:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+[3.782s]    81 |   rclcpp::Subscription<turtlesim::msg::Pose[01;31m[K>[m[K::SharedPtr subscription_;
+[3.782s]       |                                            [01;31m[K^[m[K
+[3.782s] [01m[K/home/antonio/antonio_ws/Antonio/antonio_description/src/Wheels_odom_tf2_broadcaster.cpp:81:44:[m[K [01;31m[Kerror: [m[Ktemplate argument 3 is invalid
+[3.782s] [01m[K/home/antonio/antonio_ws/Antonio/antonio_description/src/Wheels_odom_tf2_broadcaster.cpp:81:44:[m[K [01;31m[Kerror: [m[Ktemplate argument 4 is invalid
+[3.782s] [01m[K/home/antonio/antonio_ws/Antonio/antonio_description/src/Wheels_odom_tf2_broadcaster.cpp:81:44:[m[K [01;31m[Kerror: [m[Ktemplate argument 5 is invalid
+[3.783s] [01m[K/home/antonio/antonio_ws/Antonio/antonio_description/src/Wheels_odom_tf2_broadcaster.cpp:81:47:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K;[m[K’ at end of member declaration
+[3.783s]    81 |   rclcpp::Subscription<turtlesim::msg::Pose>::[01;31m[KSharedPtr[m[K subscription_;
+[3.783s]       |                                               [01;31m[K^~~~~~~~~[m[K
+[3.783s]       |                                                        [32m[K;[m[K
+[3.786s] [01m[K/home/antonio/antonio_ws/Antonio/antonio_description/src/Wheels_odom_tf2_broadcaster.cpp:81:57:[m[K [01;31m[Kerror: [m[K‘[01m[Ksubscription_[m[K’ does not name a type; did you mean ‘[01m[Krmw_subscription_t[m[K’?
+[3.786s]    81 |   rclcpp::Subscription<turtlesim::msg::Pose>::SharedPtr [01;31m[Ksubscription_[m[K;
+[3.787s]       |                                                         [01;31m[K^~~~~~~~~~~~~[m[K
+[3.787s]       |                                                         [32m[Krmw_subscription_t[m[K
+[3.813s] [01m[K/home/antonio/antonio_ws/Antonio/antonio_description/src/Wheels_odom_tf2_broadcaster.cpp:[m[K In constructor ‘[01m[KFramePublisher::FramePublisher()[m[K’:
+[3.814s] [01m[K/home/antonio/antonio_ws/Antonio/antonio_description/src/Wheels_odom_tf2_broadcaster.cpp:45:5:[m[K [01;31m[Kerror: [m[K‘[01m[Ksubscription_[m[K’ was not declared in this scope; did you mean ‘[01m[Krmw_subscription_t[m[K’?
+[3.814s]    45 |     [01;31m[Ksubscription_[m[K = this->create_subscription<geometry_msgs::msg::pose_stamped>(
+[3.814s]       |     [01;31m[K^~~~~~~~~~~~~[m[K
+[3.815s]       |     [32m[Krmw_subscription_t[m[K
+[3.816s] [01m[K/home/antonio/antonio_ws/Antonio/antonio_description/src/Wheels_odom_tf2_broadcaster.cpp:45:67:[m[K [01;31m[Kerror: [m[K‘[01m[Kpose_stamped[m[K’ is not a member of ‘[01m[Kgeometry_msgs::msg[m[K’; did you mean ‘[01m[KPoseStamped[m[K’?
+[3.817s]    45 |     subscription_ = this->create_subscription<geometry_msgs::msg::[01;31m[Kpose_stamped[m[K>(
+[3.818s]       |                                                                   [01;31m[K^~~~~~~~~~~~[m[K
+[3.819s]       |                                                                   [32m[KPoseStamped[m[K
+[3.823s] [01m[K/home/antonio/antonio_ws/Antonio/antonio_description/src/Wheels_odom_tf2_broadcaster.cpp:45:80:[m[K [01;31m[Kerror: [m[Kno matching function for call to ‘[01m[KFramePublisher::create_subscription<<expression error> >(std::string&, int, std::_Bind_helper<false, void (FramePublisher::*)(int), FramePublisher*, const std::_Placeholder<1>&>::type)[m[K’
+[3.823s]    45 |     subscription_ = [01;31m[Kthis->create_subscription<geometry_msgs::msg::pose_stamped>([m[K
+[3.823s]       |                     [01;31m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^[m[K
+[3.824s]    46 | [01;31m[K      topic_name, 10,[m[K
+[3.824s]       |       [01;31m[K~~~~~~~~~~~~~~~[m[K                                                           
+[3.825s]    47 | [01;31m[K      std::bind(&FramePublisher::handle_pose, this, std::placeholders::_1))[m[K;
+[3.825s]       |       [01;31m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K     
+[3.825s] In file included from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors/single_threaded_executor.hpp:28[m[K,
+[3.825s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:22[m[K,
+[3.826s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155[m[K,
+[3.826s]                  from [01m[K/home/antonio/antonio_ws/Antonio/antonio_description/src/Wheels_odom_tf2_broadcaster.cpp:21[m[K:
+[3.826s] [01m[K/opt/ros/humble/include/rclcpp/rclcpp/node.hpp:219:3:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class MessageT, class CallbackT, class AllocatorT, class SubscriptionT, class MessageMemoryStrategyT> std::shared_ptr<ROSMessageT> rclcpp::Node::create_subscription(const string&, const rclcpp::QoS&, CallbackT&&, const rclcpp::SubscriptionOptionsWithAllocator<AllocatorT>&, typename MessageMemoryStrategyT::SharedPtr)[m[K’
+[3.826s]   219 |   [01;36m[Kcreate_subscription[m[K(
+[3.826s]       |   [01;36m[K^~~~~~~~~~~~~~~~~~~[m[K
+[3.827s] [01m[K/opt/ros/humble/include/rclcpp/rclcpp/node.hpp:219:3:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[3.827s] [01m[K/home/antonio/antonio_ws/Antonio/antonio_description/src/Wheels_odom_tf2_broadcaster.cpp:45:80:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+[3.827s]    45 |     subscription_ = [01;31m[Kthis->create_subscription<geometry_msgs::msg::pose_stamped>([m[K
+[3.827s]       |                     [01;31m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^[m[K
+[3.827s]    46 | [01;31m[K      topic_name, 10,[m[K
+[3.828s]       |       [01;31m[K~~~~~~~~~~~~~~~[m[K                                                           
+[3.828s]    47 | [01;31m[K      std::bind(&FramePublisher::handle_pose, this, std::placeholders::_1))[m[K;
+[3.828s]       |       [01;31m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K     
+[3.828s] [01m[K/home/antonio/antonio_ws/Antonio/antonio_description/src/Wheels_odom_tf2_broadcaster.cpp:[m[K In member function ‘[01m[Kvoid FramePublisher::handle_pose(int)[m[K’:
+[3.828s] [01m[K/home/antonio/antonio_ws/Antonio/antonio_description/src/Wheels_odom_tf2_broadcaster.cpp:63:36:[m[K [01;31m[Kerror: [m[Kbase operand of ‘[01m[K->[m[K’ is not a pointer
+[3.828s]    63 |     t.transform.translation.x = msg[01;31m[K->[m[Kx;
+[3.829s]       |                                    [01;31m[K^~[m[K
+[3.829s] [01m[K/home/antonio/antonio_ws/Antonio/antonio_description/src/Wheels_odom_tf2_broadcaster.cpp:64:36:[m[K [01;31m[Kerror: [m[Kbase operand of ‘[01m[K->[m[K’ is not a pointer
+[3.829s]    64 |     t.transform.translation.y = msg[01;31m[K->[m[Ky;
+[3.829s]       |                                    [01;31m[K^~[m[K
+[3.829s] [01m[K/home/antonio/antonio_ws/Antonio/antonio_description/src/Wheels_odom_tf2_broadcaster.cpp:71:23:[m[K [01;31m[Kerror: [m[Kbase operand of ‘[01m[K->[m[K’ is not a pointer
+[3.830s]    71 |     q.setRPY(0, 0, msg[01;31m[K->[m[Ktheta);
+[3.830s]       |                       [01;31m[K^~[m[K
+[4.912s] gmake[2]: *** [CMakeFiles/Wheels_odom_tf2_broadcaster.dir/build.make:76: CMakeFiles/Wheels_odom_tf2_broadcaster.dir/src/Wheels_odom_tf2_broadcaster.cpp.o] Error 1
+[4.912s] gmake[1]: *** [CMakeFiles/Makefile2:137: CMakeFiles/Wheels_odom_tf2_broadcaster.dir/all] Error 2
+[4.912s] gmake: *** [Makefile:146: all] Error 2
+[4.915s] Invoked command in '/home/antonio/antonio_ws/Antonio/antonio_description/build/antonio_description' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/antonio/antonio_ws/Antonio/antonio_description/build/antonio_description -- -j4 -l4

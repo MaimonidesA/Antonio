@@ -1,3 +1,0 @@
-/home/antonio/antonio_ws/Antonio/micro_ros_ws/Encoder_test/build/pioasm/CMakeFiles/pioasm.dir
-/home/antonio/antonio_ws/Antonio/micro_ros_ws/Encoder_test/build/pioasm/CMakeFiles/edit_cache.dir
-/home/antonio/antonio_ws/Antonio/micro_ros_ws/Encoder_test/build/pioasm/CMakeFiles/rebuild_cache.dir
