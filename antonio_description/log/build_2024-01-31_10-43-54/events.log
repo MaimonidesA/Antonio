@@ -1,0 +1,393 @@
+[0.000000] (-) TimerEvent: {}
+[0.000698] (antonio_description) JobQueued: {'identifier': 'antonio_description', 'dependencies': OrderedDict()}
+[0.000885] (antonio_description) JobStarted: {'identifier': 'antonio_description'}
+[0.099072] (-) TimerEvent: {}
+[0.199538] (-) TimerEvent: {}
+[0.299983] (-) TimerEvent: {}
+[0.400410] (-) TimerEvent: {}
+[0.500818] (-) TimerEvent: {}
+[0.601375] (-) TimerEvent: {}
+[0.701731] (-) TimerEvent: {}
+[0.802073] (-) TimerEvent: {}
+[0.902502] (-) TimerEvent: {}
+[1.002933] (-) TimerEvent: {}
+[1.103371] (-) TimerEvent: {}
+[1.203833] (-) TimerEvent: {}
+[1.304403] (-) TimerEvent: {}
+[1.404837] (-) TimerEvent: {}
+[1.505200] (-) TimerEvent: {}
+[1.605670] (-) TimerEvent: {}
+[1.706276] (-) TimerEvent: {}
+[1.806704] (-) TimerEvent: {}
+[1.907080] (-) TimerEvent: {}
+[2.007532] (-) TimerEvent: {}
+[2.108448] (-) TimerEvent: {}
+[2.208970] (-) TimerEvent: {}
+[2.310246] (-) TimerEvent: {}
+[2.411141] (-) TimerEvent: {}
+[2.511965] (-) TimerEvent: {}
+[2.612508] (-) TimerEvent: {}
+[2.713006] (-) TimerEvent: {}
+[2.813441] (-) TimerEvent: {}
+[2.913866] (-) TimerEvent: {}
+[3.014283] (-) TimerEvent: {}
+[3.114774] (-) TimerEvent: {}
+[3.215245] (-) TimerEvent: {}
+[3.315822] (-) TimerEvent: {}
+[3.365134] (antonio_description) JobProgress: {'identifier': 'antonio_description', 'progress': 'cmake'}
+[3.415930] (-) TimerEvent: {}
+[3.516351] (-) TimerEvent: {}
+[3.616867] (-) TimerEvent: {}
+[3.717606] (-) TimerEvent: {}
+[3.818272] (-) TimerEvent: {}
+[3.918932] (-) TimerEvent: {}
+[4.019508] (-) TimerEvent: {}
+[4.065102] (antonio_description) JobProgress: {'identifier': 'antonio_description', 'progress': 'build'}
+[4.068002] (antonio_description) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/antonio/antonio_ws/Antonio/antonio_description/build/antonio_description', '--', '-j4', '-l4'], 'cwd': '/home/antonio/antonio_ws/Antonio/antonio_description/build/antonio_description', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('USER', 'antonio'), ('SSH_CLIENT', '192.168.1.31 61994 22'), ('XDG_SESSION_TYPE', 'tty'), ('GIT_ASKPASS', '/home/antonio/.vscode-server/bin/8b3775030ed1a69b13e4f4c628c612102e30a681/extensions/git/dist/askpass.sh'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('BROWSER', '/home/antonio/.vscode-server/bin/8b3775030ed1a69b13e4f4c628c612102e30a681/bin/helpers/browser.sh'), ('MOTD_SHOWN', 'pam'), ('HOME', '/home/antonio'), ('TERM_PROGRAM_VERSION', '1.85.2'), ('VSCODE_IPC_HOOK_CLI', '/run/user/1000/vscode-ipc-da10b96a-bca7-4764-b6b3-17f3831cdc46.sock'), ('ROS_PYTHON_VERSION', '3'), ('VSCODE_GIT_ASKPASS_MAIN', '/home/antonio/.vscode-server/bin/8b3775030ed1a69b13e4f4c628c612102e30a681/extensions/git/dist/askpass-main.js'), ('VSCODE_GIT_ASKPASS_NODE', '/home/antonio/.vscode-server/bin/8b3775030ed1a69b13e4f4c628c612102e30a681/node'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('PICO_TOOLCHAIN_PATH', '...'), ('COLCON_PREFIX_PATH', '/home/antonio/antonio_ws/Antonio/antonio_description/install'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'antonio'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('TERM', 'xterm-256color'), ('XDG_SESSION_ID', '6'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/opt/ros/humble/bin:/home/antonio/.vscode-server/bin/8b3775030ed1a69b13e4f4c628c612102e30a681/bin/remote-cli:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('LANG', 'en_US.UTF-8'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('VSCODE_GIT_IPC_HANDLE', '/run/user/1000/vscode-git-13788dbbf9.sock'), ('TERM_PROGRAM', 'vscode'), ('AMENT_PREFIX_PATH', '/home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description:/opt/ros/humble'), ('SHELL', '/bin/bash'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('VSCODE_GIT_ASKPASS_EXTRA_ARGS', ''), ('PWD', '/home/antonio/antonio_ws/Antonio/antonio_description/build/antonio_description'), ('PICO_SDK_PATH', '/home/antonio/microros_ws/src/pico-sdk'), ('SSH_CONNECTION', '192.168.1.31 61994 192.168.1.47 22'), ('PYTHONPATH', '/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('COLCON', '1'), ('CMAKE_PREFIX_PATH', '/home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description:/opt/ros/humble')]), 'shell': False}
+[4.119700] (-) TimerEvent: {}
+[4.220577] (-) TimerEvent: {}
+[4.321043] (-) TimerEvent: {}
+[4.421784] (-) TimerEvent: {}
+[4.522468] (-) TimerEvent: {}
+[4.623023] (-) TimerEvent: {}
+[4.723422] (-) TimerEvent: {}
+[4.823953] (-) TimerEvent: {}
+[4.924958] (-) TimerEvent: {}
+[5.026694] (-) TimerEvent: {}
+[5.127175] (-) TimerEvent: {}
+[5.227784] (-) TimerEvent: {}
+[5.328266] (-) TimerEvent: {}
+[5.428779] (-) TimerEvent: {}
+[5.529302] (-) TimerEvent: {}
+[5.629884] (-) TimerEvent: {}
+[5.730419] (-) TimerEvent: {}
+[5.831238] (-) TimerEvent: {}
+[5.932044] (-) TimerEvent: {}
+[6.032505] (-) TimerEvent: {}
+[6.133067] (-) TimerEvent: {}
+[6.233555] (-) TimerEvent: {}
+[6.333944] (-) TimerEvent: {}
+[6.434371] (-) TimerEvent: {}
+[6.534982] (-) TimerEvent: {}
+[6.635548] (-) TimerEvent: {}
+[6.736000] (-) TimerEvent: {}
+[6.836750] (-) TimerEvent: {}
+[6.937500] (-) TimerEvent: {}
+[7.037947] (-) TimerEvent: {}
+[7.138495] (-) TimerEvent: {}
+[7.238934] (-) TimerEvent: {}
+[7.339379] (-) TimerEvent: {}
+[7.439808] (-) TimerEvent: {}
+[7.540434] (-) TimerEvent: {}
+[7.641252] (-) TimerEvent: {}
+[7.741753] (-) TimerEvent: {}
+[7.842358] (-) TimerEvent: {}
+[7.942813] (-) TimerEvent: {}
+[8.043249] (-) TimerEvent: {}
+[8.143780] (-) TimerEvent: {}
+[8.244512] (-) TimerEvent: {}
+[8.345066] (-) TimerEvent: {}
+[8.445777] (-) TimerEvent: {}
+[8.546423] (-) TimerEvent: {}
+[8.646936] (-) TimerEvent: {}
+[8.747516] (-) TimerEvent: {}
+[8.848366] (-) TimerEvent: {}
+[8.948882] (-) TimerEvent: {}
+[9.049502] (-) TimerEvent: {}
+[9.150239] (-) TimerEvent: {}
+[9.250757] (-) TimerEvent: {}
+[9.351236] (-) TimerEvent: {}
+[9.452011] (-) TimerEvent: {}
+[9.552735] (-) TimerEvent: {}
+[9.653477] (-) TimerEvent: {}
+[9.754443] (-) TimerEvent: {}
+[9.855131] (-) TimerEvent: {}
+[9.955766] (-) TimerEvent: {}
+[10.056208] (-) TimerEvent: {}
+[10.156925] (-) TimerEvent: {}
+[10.257632] (-) TimerEvent: {}
+[10.358276] (-) TimerEvent: {}
+[10.459129] (-) TimerEvent: {}
+[10.559723] (-) TimerEvent: {}
+[10.660316] (-) TimerEvent: {}
+[10.761349] (-) TimerEvent: {}
+[10.862447] (-) TimerEvent: {}
+[10.963176] (-) TimerEvent: {}
+[11.063758] (-) TimerEvent: {}
+[11.164235] (-) TimerEvent: {}
+[11.264627] (-) TimerEvent: {}
+[11.365055] (-) TimerEvent: {}
+[11.465580] (-) TimerEvent: {}
+[11.566436] (-) TimerEvent: {}
+[11.667288] (-) TimerEvent: {}
+[11.767796] (-) TimerEvent: {}
+[11.868597] (-) TimerEvent: {}
+[11.969091] (-) TimerEvent: {}
+[12.069621] (-) TimerEvent: {}
+[12.170134] (-) TimerEvent: {}
+[12.270747] (-) TimerEvent: {}
+[12.371263] (-) TimerEvent: {}
+[12.472054] (-) TimerEvent: {}
+[12.572860] (-) TimerEvent: {}
+[12.673518] (-) TimerEvent: {}
+[12.773973] (-) TimerEvent: {}
+[12.874567] (-) TimerEvent: {}
+[12.975177] (-) TimerEvent: {}
+[13.075656] (-) TimerEvent: {}
+[13.176183] (-) TimerEvent: {}
+[13.276583] (-) TimerEvent: {}
+[13.377008] (-) TimerEvent: {}
+[13.477840] (-) TimerEvent: {}
+[13.578662] (-) TimerEvent: {}
+[13.679283] (-) TimerEvent: {}
+[13.779975] (-) TimerEvent: {}
+[13.880517] (-) TimerEvent: {}
+[13.981062] (-) TimerEvent: {}
+[14.081944] (-) TimerEvent: {}
+[14.182765] (-) TimerEvent: {}
+[14.283208] (-) TimerEvent: {}
+[14.383643] (-) TimerEvent: {}
+[14.484293] (-) TimerEvent: {}
+[14.584986] (-) TimerEvent: {}
+[14.685501] (-) TimerEvent: {}
+[14.785970] (-) TimerEvent: {}
+[14.886797] (-) TimerEvent: {}
+[14.987698] (-) TimerEvent: {}
+[15.088495] (-) TimerEvent: {}
+[15.189023] (-) TimerEvent: {}
+[15.289534] (-) TimerEvent: {}
+[15.389995] (-) TimerEvent: {}
+[15.490439] (-) TimerEvent: {}
+[15.591411] (-) TimerEvent: {}
+[15.692274] (-) TimerEvent: {}
+[15.792747] (-) TimerEvent: {}
+[15.893598] (-) TimerEvent: {}
+[15.994707] (-) TimerEvent: {}
+[16.095454] (-) TimerEvent: {}
+[16.196079] (-) TimerEvent: {}
+[16.296885] (-) TimerEvent: {}
+[16.397596] (-) TimerEvent: {}
+[16.498147] (-) TimerEvent: {}
+[16.598593] (-) TimerEvent: {}
+[16.698962] (-) TimerEvent: {}
+[16.799395] (-) TimerEvent: {}
+[16.900064] (-) TimerEvent: {}
+[17.000499] (-) TimerEvent: {}
+[17.100943] (-) TimerEvent: {}
+[17.201476] (-) TimerEvent: {}
+[17.301905] (-) TimerEvent: {}
+[17.402337] (-) TimerEvent: {}
+[17.502683] (-) TimerEvent: {}
+[17.603123] (-) TimerEvent: {}
+[17.703551] (-) TimerEvent: {}
+[17.803946] (-) TimerEvent: {}
+[17.904359] (-) TimerEvent: {}
+[18.004807] (-) TimerEvent: {}
+[18.105360] (-) TimerEvent: {}
+[18.205872] (-) TimerEvent: {}
+[18.306467] (-) TimerEvent: {}
+[18.406860] (-) TimerEvent: {}
+[18.507339] (-) TimerEvent: {}
+[18.607803] (-) TimerEvent: {}
+[18.708747] (-) TimerEvent: {}
+[18.809227] (-) TimerEvent: {}
+[18.909656] (-) TimerEvent: {}
+[19.010288] (-) TimerEvent: {}
+[19.111195] (-) TimerEvent: {}
+[19.211687] (-) TimerEvent: {}
+[19.312192] (-) TimerEvent: {}
+[19.412612] (-) TimerEvent: {}
+[19.513065] (-) TimerEvent: {}
+[19.613672] (-) TimerEvent: {}
+[19.714738] (-) TimerEvent: {}
+[19.815396] (-) TimerEvent: {}
+[19.915840] (-) TimerEvent: {}
+[20.016187] (-) TimerEvent: {}
+[20.116720] (-) TimerEvent: {}
+[20.217441] (-) TimerEvent: {}
+[20.318156] (-) TimerEvent: {}
+[20.418710] (-) TimerEvent: {}
+[20.519333] (-) TimerEvent: {}
+[20.619871] (-) TimerEvent: {}
+[20.720695] (-) TimerEvent: {}
+[20.821326] (-) TimerEvent: {}
+[20.921966] (-) TimerEvent: {}
+[21.022367] (-) TimerEvent: {}
+[21.122991] (-) TimerEvent: {}
+[21.223789] (-) TimerEvent: {}
+[21.324669] (-) TimerEvent: {}
+[21.425102] (-) TimerEvent: {}
+[21.525564] (-) TimerEvent: {}
+[21.625941] (-) TimerEvent: {}
+[21.726376] (-) TimerEvent: {}
+[21.826810] (-) TimerEvent: {}
+[21.927191] (-) TimerEvent: {}
+[22.027563] (-) TimerEvent: {}
+[22.128086] (-) TimerEvent: {}
+[22.228584] (-) TimerEvent: {}
+[22.329045] (-) TimerEvent: {}
+[22.429493] (-) TimerEvent: {}
+[22.529977] (-) TimerEvent: {}
+[22.630578] (-) TimerEvent: {}
+[22.730970] (-) TimerEvent: {}
+[22.831556] (-) TimerEvent: {}
+[22.931954] (-) TimerEvent: {}
+[23.032482] (-) TimerEvent: {}
+[23.133093] (-) TimerEvent: {}
+[23.233871] (-) TimerEvent: {}
+[23.334333] (-) TimerEvent: {}
+[23.434885] (-) TimerEvent: {}
+[23.535781] (-) TimerEvent: {}
+[23.636391] (-) TimerEvent: {}
+[23.736773] (-) TimerEvent: {}
+[23.837209] (-) TimerEvent: {}
+[23.937608] (-) TimerEvent: {}
+[24.008853] (antonio_description) StdoutLine: {'line': b'[100%] Built target Wheels_odom_tf2_broadcaster\n'}
+[24.024815] (antonio_description) CommandEnded: {'returncode': 0}
+[24.037733] (-) TimerEvent: {}
+[24.056033] (antonio_description) JobProgress: {'identifier': 'antonio_description', 'progress': 'install'}
+[24.070365] (antonio_description) Command: {'cmd': ['/usr/bin/cmake', '--install', '/home/antonio/antonio_ws/Antonio/antonio_description/build/antonio_description'], 'cwd': '/home/antonio/antonio_ws/Antonio/antonio_description/build/antonio_description', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('USER', 'antonio'), ('SSH_CLIENT', '192.168.1.31 61994 22'), ('XDG_SESSION_TYPE', 'tty'), ('GIT_ASKPASS', '/home/antonio/.vscode-server/bin/8b3775030ed1a69b13e4f4c628c612102e30a681/extensions/git/dist/askpass.sh'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('BROWSER', '/home/antonio/.vscode-server/bin/8b3775030ed1a69b13e4f4c628c612102e30a681/bin/helpers/browser.sh'), ('MOTD_SHOWN', 'pam'), ('HOME', '/home/antonio'), ('TERM_PROGRAM_VERSION', '1.85.2'), ('VSCODE_IPC_HOOK_CLI', '/run/user/1000/vscode-ipc-da10b96a-bca7-4764-b6b3-17f3831cdc46.sock'), ('ROS_PYTHON_VERSION', '3'), ('VSCODE_GIT_ASKPASS_MAIN', '/home/antonio/.vscode-server/bin/8b3775030ed1a69b13e4f4c628c612102e30a681/extensions/git/dist/askpass-main.js'), ('VSCODE_GIT_ASKPASS_NODE', '/home/antonio/.vscode-server/bin/8b3775030ed1a69b13e4f4c628c612102e30a681/node'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('PICO_TOOLCHAIN_PATH', '...'), ('COLCON_PREFIX_PATH', '/home/antonio/antonio_ws/Antonio/antonio_description/install'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'antonio'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('TERM', 'xterm-256color'), ('XDG_SESSION_ID', '6'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/opt/ros/humble/bin:/home/antonio/.vscode-server/bin/8b3775030ed1a69b13e4f4c628c612102e30a681/bin/remote-cli:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('LANG', 'en_US.UTF-8'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('VSCODE_GIT_IPC_HANDLE', '/run/user/1000/vscode-git-13788dbbf9.sock'), ('TERM_PROGRAM', 'vscode'), ('AMENT_PREFIX_PATH', '/home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description:/opt/ros/humble'), ('SHELL', '/bin/bash'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('VSCODE_GIT_ASKPASS_EXTRA_ARGS', ''), ('PWD', '/home/antonio/antonio_ws/Antonio/antonio_description/build/antonio_description'), ('PICO_SDK_PATH', '/home/antonio/microros_ws/src/pico-sdk'), ('SSH_CONNECTION', '192.168.1.31 61994 192.168.1.47 22'), ('PYTHONPATH', '/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('COLCON', '1'), ('CMAKE_PREFIX_PATH', '/home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description:/opt/ros/humble')]), 'shell': False}
+[24.137937] (-) TimerEvent: {}
+[24.224954] (antonio_description) StdoutLine: {'line': b'-- Install configuration: ""\n'}
+[24.238061] (-) TimerEvent: {}
+[24.284628] (antonio_description) StdoutLine: {'line': b'-- Execute custom install script\n'}
+[24.338228] (-) TimerEvent: {}
+[24.400992] (antonio_description) StdoutLine: {'line': b'-- Up-to-date symlink: /home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/antonio_description/src/Wheels_odom_tf2_broadcaster.cpp\n'}
+[24.401911] (antonio_description) StdoutLine: {'line': b'-- Up-to-date symlink: /home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/antonio_description/src/description/antonio_description.urdf\n'}
+[24.403197] (antonio_description) StdoutLine: {'line': b'-- Up-to-date symlink: /home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/antonio_description/src/rplidar_ros2/.git/FETCH_HEAD\n'}
+[24.403937] (antonio_description) StdoutLine: {'line': b'-- Up-to-date symlink: /home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/antonio_description/src/rplidar_ros2/.git/HEAD\n'}
+[24.404675] (antonio_description) StdoutLine: {'line': b'-- Up-to-date symlink: /home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/antonio_description/src/rplidar_ros2/.git/config\n'}
+[24.405432] (antonio_description) StdoutLine: {'line': b'-- Up-to-date symlink: /home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/antonio_description/src/rplidar_ros2/.git/description\n'}
+[24.406686] (antonio_description) StdoutLine: {'line': b'-- Up-to-date symlink: /home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/antonio_description/src/rplidar_ros2/.git/hooks/applypatch-msg.sample\n'}
+[24.407326] (antonio_description) StdoutLine: {'line': b'-- Up-to-date symlink: /home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/antonio_description/src/rplidar_ros2/.git/hooks/commit-msg.sample\n'}
+[24.408008] (antonio_description) StdoutLine: {'line': b'-- Up-to-date symlink: /home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/antonio_description/src/rplidar_ros2/.git/hooks/fsmonitor-watchman.sample\n'}
+[24.408703] (antonio_description) StdoutLine: {'line': b'-- Up-to-date symlink: /home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/antonio_description/src/rplidar_ros2/.git/hooks/post-update.sample\n'}
+[24.438395] (-) TimerEvent: {}
+[24.484543] (antonio_description) StdoutLine: {'line': b'-- Up-to-date symlink: /home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/antonio_description/src/rplidar_ros2/.git/hooks/pre-applypatch.sample\n'}
+[24.507847] (antonio_description) StdoutLine: {'line': b'-- Up-to-date symlink: /home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/antonio_description/src/rplidar_ros2/.git/hooks/pre-commit.sample\n'}
+[24.538532] (-) TimerEvent: {}
+[24.557034] (antonio_description) StdoutLine: {'line': b'-- Up-to-date symlink: /home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/antonio_description/src/rplidar_ros2/.git/hooks/pre-merge-commit.sample\n'}
+[24.558172] (antonio_description) StdoutLine: {'line': b'-- Up-to-date symlink: /home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/antonio_description/src/rplidar_ros2/.git/hooks/pre-push.sample\n'}
+[24.559262] (antonio_description) StdoutLine: {'line': b'-- Up-to-date symlink: /home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/antonio_description/src/rplidar_ros2/.git/hooks/pre-rebase.sample\n'}
+[24.560046] (antonio_description) StdoutLine: {'line': b'-- Up-to-date symlink: /home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/antonio_description/src/rplidar_ros2/.git/hooks/pre-receive.sample\n'}
+[24.561189] (antonio_description) StdoutLine: {'line': b'-- Up-to-date symlink: /home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/antonio_description/src/rplidar_ros2/.git/hooks/prepare-commit-msg.sample\n'}
+[24.562128] (antonio_description) StdoutLine: {'line': b'-- Up-to-date symlink: /home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/antonio_description/src/rplidar_ros2/.git/hooks/push-to-checkout.sample\n'}
+[24.563027] (antonio_description) StdoutLine: {'line': b'-- Up-to-date symlink: /home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/antonio_description/src/rplidar_ros2/.git/hooks/update.sample\n'}
+[24.563660] (antonio_description) StdoutLine: {'line': b'-- Up-to-date symlink: /home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/antonio_description/src/rplidar_ros2/.git/index\n'}
+[24.564936] (antonio_description) StdoutLine: {'line': b'-- Up-to-date symlink: /home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/antonio_description/src/rplidar_ros2/.git/info/exclude\n'}
+[24.566218] (antonio_description) StdoutLine: {'line': b'-- Up-to-date symlink: /home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/antonio_description/src/rplidar_ros2/.git/logs/HEAD\n'}
+[24.567424] (antonio_description) StdoutLine: {'line': b'-- Up-to-date symlink: /home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/antonio_description/src/rplidar_ros2/.git/logs/refs/heads/ros2\n'}
+[24.568580] (antonio_description) StdoutLine: {'line': b'-- Up-to-date symlink: /home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/antonio_description/src/rplidar_ros2/.git/logs/refs/remotes/origin/HEAD\n'}
+[24.570130] (antonio_description) StdoutLine: {'line': b'-- Up-to-date symlink: /home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/antonio_description/src/rplidar_ros2/.git/objects/pack/pack-400e6c25f58ef5991c4a2a00f2b38d071276b907.idx\n'}
+[24.570703] (antonio_description) StdoutLine: {'line': b'-- Up-to-date symlink: /home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/antonio_description/src/rplidar_ros2/.git/objects/pack/pack-400e6c25f58ef5991c4a2a00f2b38d071276b907.pack\n'}
+[24.571298] (antonio_description) StdoutLine: {'line': b'-- Up-to-date symlink: /home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/antonio_description/src/rplidar_ros2/.git/objects/pack/pack-e16675e99140ead924424ea9321b1b862b2ff969.idx\n'}
+[24.571858] (antonio_description) StdoutLine: {'line': b'-- Up-to-date symlink: /home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/antonio_description/src/rplidar_ros2/.git/objects/pack/pack-e16675e99140ead924424ea9321b1b862b2ff969.pack\n'}
+[24.572431] (antonio_description) StdoutLine: {'line': b'-- Up-to-date symlink: /home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/antonio_description/src/rplidar_ros2/.git/packed-refs\n'}
+[24.573561] (antonio_description) StdoutLine: {'line': b'-- Up-to-date symlink: /home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/antonio_description/src/rplidar_ros2/.git/refs/heads/ros2\n'}
+[24.574673] (antonio_description) StdoutLine: {'line': b'-- Up-to-date symlink: /home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/antonio_description/src/rplidar_ros2/.git/refs/remotes/origin/HEAD\n'}
+[24.638669] (-) TimerEvent: {}
+[24.640020] (antonio_description) StdoutLine: {'line': b'-- Up-to-date symlink: /home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/antonio_description/src/rplidar_ros2/.gitignore\n'}
+[24.640549] (antonio_description) StdoutLine: {'line': b'-- Up-to-date symlink: /home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/antonio_description/src/rplidar_ros2/CHANGELOG.rst\n'}
+[24.641049] (antonio_description) StdoutLine: {'line': b'-- Up-to-date symlink: /home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/antonio_description/src/rplidar_ros2/CMakeLists.txt\n'}
+[24.641567] (antonio_description) StdoutLine: {'line': b'-- Up-to-date symlink: /home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/antonio_description/src/rplidar_ros2/LICENSE\n'}
+[24.642030] (antonio_description) StdoutLine: {'line': b'-- Up-to-date symlink: /home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/antonio_description/src/rplidar_ros2/README.md\n'}
+[24.642799] (antonio_description) StdoutLine: {'line': b'-- Up-to-date symlink: /home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/antonio_description/src/rplidar_ros2/include/rplidar_node.hpp\n'}
+[24.643259] (antonio_description) StdoutLine: {'line': b'-- Up-to-date symlink: /home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/antonio_description/src/rplidar_ros2/include/visibility.h\n'}
+[24.646093] (antonio_description) StdoutLine: {'line': b'-- Up-to-date symlink: /home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/antonio_description/src/rplidar_ros2/launch/rplidar.launch.py\n'}
+[24.646614] (antonio_description) StdoutLine: {'line': b'-- Up-to-date symlink: /home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/antonio_description/src/rplidar_ros2/launch/rplidar_a3.launch.py\n'}
+[24.647112] (antonio_description) StdoutLine: {'line': b'-- Up-to-date symlink: /home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/antonio_description/src/rplidar_ros2/launch/rplidar_s1.launch.py\n'}
+[24.647610] (antonio_description) StdoutLine: {'line': b'-- Up-to-date symlink: /home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/antonio_description/src/rplidar_ros2/launch/rplidar_s1_tcp.launch.py\n'}
+[24.658941] (antonio_description) StdoutLine: {'line': b'-- Up-to-date symlink: /home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/antonio_description/src/rplidar_ros2/launch/test_rplidar_a3.launch.py\n'}
+[24.661474] (antonio_description) StdoutLine: {'line': b'-- Up-to-date symlink: /home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/antonio_description/src/rplidar_ros2/launch/view_rplidar.launch.py\n'}
+[24.662038] (antonio_description) StdoutLine: {'line': b'-- Up-to-date symlink: /home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/antonio_description/src/rplidar_ros2/launch/view_rplidar_a3.launch.py\n'}
+[24.662555] (antonio_description) StdoutLine: {'line': b'-- Up-to-date symlink: /home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/antonio_description/src/rplidar_ros2/launch/view_rplidar_s1.launch.py\n'}
+[24.663137] (antonio_description) StdoutLine: {'line': b'-- Up-to-date symlink: /home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/antonio_description/src/rplidar_ros2/launch/view_rplidar_s1_tcp.launch.py\n'}
+[24.675547] (antonio_description) StdoutLine: {'line': b'-- Up-to-date symlink: /home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/antonio_description/src/rplidar_ros2/package.xml\n'}
+[24.677845] (antonio_description) StdoutLine: {'line': b'-- Up-to-date symlink: /home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/antonio_description/src/rplidar_ros2/rplidar_A1.png\n'}
+[24.678403] (antonio_description) StdoutLine: {'line': b'-- Up-to-date symlink: /home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/antonio_description/src/rplidar_ros2/rplidar_A2.png\n'}
+[24.679158] (antonio_description) StdoutLine: {'line': b'-- Up-to-date symlink: /home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/antonio_description/src/rplidar_ros2/rviz/rplidar.rviz\n'}
+[24.679905] (antonio_description) StdoutLine: {'line': b'-- Up-to-date symlink: /home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/antonio_description/src/rplidar_ros2/scripts/create_udev_rules.sh\n'}
+[24.680423] (antonio_description) StdoutLine: {'line': b'-- Up-to-date symlink: /home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/antonio_description/src/rplidar_ros2/scripts/delete_udev_rules.sh\n'}
+[24.680934] (antonio_description) StdoutLine: {'line': b'-- Up-to-date symlink: /home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/antonio_description/src/rplidar_ros2/scripts/rplidar.rules\n'}
+[24.681635] (antonio_description) StdoutLine: {'line': b'-- Up-to-date symlink: /home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/antonio_description/src/rplidar_ros2/sdk/README.txt\n'}
+[24.682356] (antonio_description) StdoutLine: {'line': b'-- Up-to-date symlink: /home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/antonio_description/src/rplidar_ros2/sdk/include/rplidar.h\n'}
+[24.683559] (antonio_description) StdoutLine: {'line': b'-- Up-to-date symlink: /home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/antonio_description/src/rplidar_ros2/sdk/include/rplidar_cmd.h\n'}
+[24.684055] (antonio_description) StdoutLine: {'line': b'-- Up-to-date symlink: /home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/antonio_description/src/rplidar_ros2/sdk/include/rplidar_driver.h\n'}
+[24.684554] (antonio_description) StdoutLine: {'line': b'-- Up-to-date symlink: /home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/antonio_description/src/rplidar_ros2/sdk/include/rplidar_protocol.h\n'}
+[24.717394] (antonio_description) StdoutLine: {'line': b'-- Up-to-date symlink: /home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/antonio_description/src/rplidar_ros2/sdk/include/rptypes.h\n'}
+[24.723134] (antonio_description) StdoutLine: {'line': b'-- Up-to-date symlink: /home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/antonio_description/src/rplidar_ros2/sdk/src/arch/linux/arch_linux.h\n'}
+[24.723589] (antonio_description) StdoutLine: {'line': b'-- Up-to-date symlink: /home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/antonio_description/src/rplidar_ros2/sdk/src/arch/linux/net_serial.cpp\n'}
+[24.724109] (antonio_description) StdoutLine: {'line': b'-- Up-to-date symlink: /home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/antonio_description/src/rplidar_ros2/sdk/src/arch/linux/net_serial.h\n'}
+[24.724642] (antonio_description) StdoutLine: {'line': b'-- Up-to-date symlink: /home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/antonio_description/src/rplidar_ros2/sdk/src/arch/linux/net_socket.cpp\n'}
+[24.738795] (-) TimerEvent: {}
+[24.742679] (antonio_description) StdoutLine: {'line': b'-- Up-to-date symlink: /home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/antonio_description/src/rplidar_ros2/sdk/src/arch/linux/thread.hpp\n'}
+[24.743872] (antonio_description) StdoutLine: {'line': b'-- Up-to-date symlink: /home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/antonio_description/src/rplidar_ros2/sdk/src/arch/linux/timer.cpp\n'}
+[24.747626] (antonio_description) StdoutLine: {'line': b'-- Up-to-date symlink: /home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/antonio_description/src/rplidar_ros2/sdk/src/arch/linux/timer.h\n'}
+[24.748679] (antonio_description) StdoutLine: {'line': b'-- Up-to-date symlink: /home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/antonio_description/src/rplidar_ros2/sdk/src/arch/macOS/arch_macOS.h\n'}
+[24.749153] (antonio_description) StdoutLine: {'line': b'-- Up-to-date symlink: /home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/antonio_description/src/rplidar_ros2/sdk/src/arch/macOS/net_serial.cpp\n'}
+[24.749664] (antonio_description) StdoutLine: {'line': b'-- Up-to-date symlink: /home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/antonio_description/src/rplidar_ros2/sdk/src/arch/macOS/net_serial.h\n'}
+[24.750186] (antonio_description) StdoutLine: {'line': b'-- Up-to-date symlink: /home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/antonio_description/src/rplidar_ros2/sdk/src/arch/macOS/net_socket.cpp\n'}
+[24.767718] (antonio_description) StdoutLine: {'line': b'-- Up-to-date symlink: /home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/antonio_description/src/rplidar_ros2/sdk/src/arch/macOS/thread.hpp\n'}
+[24.768974] (antonio_description) StdoutLine: {'line': b'-- Up-to-date symlink: /home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/antonio_description/src/rplidar_ros2/sdk/src/arch/macOS/timer.cpp\n'}
+[24.772047] (antonio_description) StdoutLine: {'line': b'-- Up-to-date symlink: /home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/antonio_description/src/rplidar_ros2/sdk/src/arch/macOS/timer.h\n'}
+[24.773177] (antonio_description) StdoutLine: {'line': b'-- Up-to-date symlink: /home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/antonio_description/src/rplidar_ros2/sdk/src/arch/win32/arch_win32.h\n'}
+[24.773641] (antonio_description) StdoutLine: {'line': b'-- Up-to-date symlink: /home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/antonio_description/src/rplidar_ros2/sdk/src/arch/win32/net_serial.cpp\n'}
+[24.774251] (antonio_description) StdoutLine: {'line': b'-- Up-to-date symlink: /home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/antonio_description/src/rplidar_ros2/sdk/src/arch/win32/net_serial.h\n'}
+[24.774846] (antonio_description) StdoutLine: {'line': b'-- Up-to-date symlink: /home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/antonio_description/src/rplidar_ros2/sdk/src/arch/win32/net_socket.cpp\n'}
+[24.794057] (antonio_description) StdoutLine: {'line': b'-- Up-to-date symlink: /home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/antonio_description/src/rplidar_ros2/sdk/src/arch/win32/timer.cpp\n'}
+[24.794413] (antonio_description) StdoutLine: {'line': b'-- Up-to-date symlink: /home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/antonio_description/src/rplidar_ros2/sdk/src/arch/win32/timer.h\n'}
+[24.795121] (antonio_description) StdoutLine: {'line': b'-- Up-to-date symlink: /home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/antonio_description/src/rplidar_ros2/sdk/src/arch/win32/winthread.hpp\n'}
+[24.801361] (antonio_description) StdoutLine: {'line': b'-- Up-to-date symlink: /home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/antonio_description/src/rplidar_ros2/sdk/src/hal/abs_rxtx.h\n'}
+[24.801900] (antonio_description) StdoutLine: {'line': b'-- Up-to-date symlink: /home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/antonio_description/src/rplidar_ros2/sdk/src/hal/assert.h\n'}
+[24.802470] (antonio_description) StdoutLine: {'line': b'-- Up-to-date symlink: /home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/antonio_description/src/rplidar_ros2/sdk/src/hal/byteops.h\n'}
+[24.802973] (antonio_description) StdoutLine: {'line': b'-- Up-to-date symlink: /home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/antonio_description/src/rplidar_ros2/sdk/src/hal/event.h\n'}
+[24.819296] (antonio_description) StdoutLine: {'line': b'-- Up-to-date symlink: /home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/antonio_description/src/rplidar_ros2/sdk/src/hal/locker.h\n'}
+[24.820946] (antonio_description) StdoutLine: {'line': b'-- Up-to-date symlink: /home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/antonio_description/src/rplidar_ros2/sdk/src/hal/socket.h\n'}
+[24.821503] (antonio_description) StdoutLine: {'line': b'-- Up-to-date symlink: /home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/antonio_description/src/rplidar_ros2/sdk/src/hal/thread.cpp\n'}
+[24.821801] (antonio_description) StdoutLine: {'line': b'-- Up-to-date symlink: /home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/antonio_description/src/rplidar_ros2/sdk/src/hal/thread.h\n'}
+[24.822325] (antonio_description) StdoutLine: {'line': b'-- Up-to-date symlink: /home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/antonio_description/src/rplidar_ros2/sdk/src/hal/types.h\n'}
+[24.822946] (antonio_description) StdoutLine: {'line': b'-- Up-to-date symlink: /home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/antonio_description/src/rplidar_ros2/sdk/src/hal/util.h\n'}
+[24.835929] (antonio_description) StdoutLine: {'line': b'-- Up-to-date symlink: /home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/antonio_description/src/rplidar_ros2/sdk/src/rplidar_driver.cpp\n'}
+[24.836288] (antonio_description) StdoutLine: {'line': b'-- Up-to-date symlink: /home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/antonio_description/src/rplidar_ros2/sdk/src/rplidar_driver_TCP.h\n'}
+[24.838158] (antonio_description) StdoutLine: {'line': b'-- Up-to-date symlink: /home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/antonio_description/src/rplidar_ros2/sdk/src/rplidar_driver_impl.h\n'}
+[24.838678] (antonio_description) StdoutLine: {'line': b'-- Up-to-date symlink: /home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/antonio_description/src/rplidar_ros2/sdk/src/rplidar_driver_serial.h\n'}
+[24.838815] (-) TimerEvent: {}
+[24.839351] (antonio_description) StdoutLine: {'line': b'-- Up-to-date symlink: /home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/antonio_description/src/rplidar_ros2/sdk/src/sdkcommon.h\n'}
+[24.840728] (antonio_description) StdoutLine: {'line': b'-- Up-to-date symlink: /home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/antonio_description/src/rplidar_ros2/src/rplidar_node.cpp\n'}
+[24.841183] (antonio_description) StdoutLine: {'line': b'-- Up-to-date symlink: /home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/antonio_description/src/rplidar_ros2/src/standalone_rplidar.cpp\n'}
+[24.843727] (antonio_description) StdoutLine: {'line': b'-- Symlinking: /home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/antonio_description/launch/__pycache__/display.launch.cpython-310.pyc\n'}
+[24.857886] (antonio_description) StdoutLine: {'line': b'-- Up-to-date symlink: /home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/antonio_description/launch/display.launch.py\n'}
+[24.858705] (antonio_description) StdoutLine: {'line': b'-- Up-to-date symlink: /home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/antonio_description/rviz/urdf_config.rviz\n'}
+[24.860374] (antonio_description) StdoutLine: {'line': b'-- Up-to-date symlink: /home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/antonio_description/config/ekf.yaml\n'}
+[24.860945] (antonio_description) StdoutLine: {'line': b'-- Up-to-date symlink: /home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/antonio_description/config/nav2_params.yaml\n'}
+[24.862493] (antonio_description) StdoutLine: {'line': b'-- Up-to-date symlink: /home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/antonio_description/world/antonio_world.sdf\n'}
+[24.896270] (antonio_description) StdoutLine: {'line': b'-- Up-to-date symlink: /home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/lib/antonio_description/Wheels_odom_tf2_broadcaster\n'}
+[24.896649] (antonio_description) StdoutLine: {'line': b'-- Up-to-date symlink: /home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/ament_index/resource_index/package_run_dependencies/antonio_description\n'}
+[24.898222] (antonio_description) StdoutLine: {'line': b'-- Up-to-date symlink: /home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/ament_index/resource_index/parent_prefix_path/antonio_description\n'}
+[24.899421] (antonio_description) StdoutLine: {'line': b'-- Up-to-date symlink: /home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/antonio_description/environment/ament_prefix_path.sh\n'}
+[24.900117] (antonio_description) StdoutLine: {'line': b'-- Up-to-date symlink: /home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/antonio_description/environment/ament_prefix_path.dsv\n'}
+[24.900819] (antonio_description) StdoutLine: {'line': b'-- Up-to-date symlink: /home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/antonio_description/environment/path.sh\n'}
+[24.901210] (antonio_description) StdoutLine: {'line': b'-- Up-to-date symlink: /home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/antonio_description/environment/path.dsv\n'}
+[24.901968] (antonio_description) StdoutLine: {'line': b'-- Up-to-date symlink: /home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/antonio_description/local_setup.bash\n'}
+[24.902547] (antonio_description) StdoutLine: {'line': b'-- Up-to-date symlink: /home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/antonio_description/local_setup.sh\n'}
+[24.919417] (antonio_description) StdoutLine: {'line': b'-- Up-to-date symlink: /home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/antonio_description/local_setup.zsh\n'}
+[24.920351] (antonio_description) StdoutLine: {'line': b'-- Up-to-date symlink: /home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/antonio_description/local_setup.dsv\n'}
+[24.920613] (antonio_description) StdoutLine: {'line': b'-- Symlinking: /home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/antonio_description/package.dsv\n'}
+[24.932192] (antonio_description) StdoutLine: {'line': b'-- Up-to-date symlink: /home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/ament_index/resource_index/packages/antonio_description\n'}
+[24.933046] (antonio_description) StdoutLine: {'line': b'-- Up-to-date symlink: /home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/antonio_description/cmake/antonio_descriptionConfig.cmake\n'}
+[24.933581] (antonio_description) StdoutLine: {'line': b'-- Up-to-date symlink: /home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/antonio_description/cmake/antonio_descriptionConfig-version.cmake\n'}
+[24.934325] (antonio_description) StdoutLine: {'line': b'-- Up-to-date symlink: /home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/antonio_description/package.xml\n'}
+[24.936643] (antonio_description) CommandEnded: {'returncode': 0}
+[24.938930] (-) TimerEvent: {}
+[25.039404] (-) TimerEvent: {}
+[25.139826] (-) TimerEvent: {}
+[25.240313] (-) TimerEvent: {}
+[25.340820] (-) TimerEvent: {}
+[25.441381] (-) TimerEvent: {}
+[25.541879] (-) TimerEvent: {}
+[25.642707] (-) TimerEvent: {}
+[25.743331] (-) TimerEvent: {}
+[25.844107] (-) TimerEvent: {}
+[25.945079] (-) TimerEvent: {}
+[26.019866] (antonio_description) JobEnded: {'identifier': 'antonio_description', 'rc': 0}
+[26.021087] (-) EventReactorShutdown: {}

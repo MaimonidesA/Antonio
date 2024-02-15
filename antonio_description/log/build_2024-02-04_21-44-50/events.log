@@ -1,0 +1,144 @@
+[0.000000] (-) TimerEvent: {}
+[0.000272] (antonio_description) JobQueued: {'identifier': 'antonio_description', 'dependencies': OrderedDict()}
+[0.000881] (antonio_description) JobStarted: {'identifier': 'antonio_description'}
+[0.099227] (-) TimerEvent: {}
+[0.141932] (antonio_description) JobProgress: {'identifier': 'antonio_description', 'progress': 'cmake'}
+[0.166045] (antonio_description) JobProgress: {'identifier': 'antonio_description', 'progress': 'build'}
+[0.167253] (antonio_description) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/antonio/antonio_ws/Antonio/antonio_description/build/antonio_description', '--', '-j4', '-l4'], 'cwd': '/home/antonio/antonio_ws/Antonio/antonio_description/build/antonio_description', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('USER', 'antonio'), ('SSH_CLIENT', '192.168.1.31 62080 22'), ('XDG_SESSION_TYPE', 'tty'), ('GIT_ASKPASS', '/home/antonio/.vscode-server/bin/8b3775030ed1a69b13e4f4c628c612102e30a681/extensions/git/dist/askpass.sh'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('BROWSER', '/home/antonio/.vscode-server/bin/8b3775030ed1a69b13e4f4c628c612102e30a681/bin/helpers/browser.sh'), ('MOTD_SHOWN', 'pam'), ('HOME', '/home/antonio'), ('TERM_PROGRAM_VERSION', '1.85.2'), ('VSCODE_IPC_HOOK_CLI', '/run/user/1000/vscode-ipc-9efa96d4-1494-46a1-8a8b-695a3ab50b4d.sock'), ('ROS_PYTHON_VERSION', '3'), ('VSCODE_GIT_ASKPASS_MAIN', '/home/antonio/.vscode-server/bin/8b3775030ed1a69b13e4f4c628c612102e30a681/extensions/git/dist/askpass-main.js'), ('VSCODE_GIT_ASKPASS_NODE', '/home/antonio/.vscode-server/bin/8b3775030ed1a69b13e4f4c628c612102e30a681/node'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('PICO_TOOLCHAIN_PATH', '...'), ('COLCON_PREFIX_PATH', '/home/antonio/antonio_ws/Antonio/antonio_description/install'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'antonio'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('TERM', 'xterm-256color'), ('XDG_SESSION_ID', '253'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/opt/ros/humble/bin:/home/antonio/.vscode-server/bin/8b3775030ed1a69b13e4f4c628c612102e30a681/bin/remote-cli:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('LANG', 'en_US.UTF-8'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('VSCODE_GIT_IPC_HANDLE', '/run/user/1000/vscode-git-13788dbbf9.sock'), ('TERM_PROGRAM', 'vscode'), ('AMENT_PREFIX_PATH', '/home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description:/opt/ros/humble'), ('SHELL', '/bin/bash'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('VSCODE_GIT_ASKPASS_EXTRA_ARGS', ''), ('PWD', '/home/antonio/antonio_ws/Antonio/antonio_description/build/antonio_description'), ('PICO_SDK_PATH', '/home/antonio/microros_ws/src/pico-sdk'), ('SSH_CONNECTION', '192.168.1.31 62080 192.168.1.47 22'), ('PYTHONPATH', '/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('COLCON', '1'), ('CMAKE_PREFIX_PATH', '/home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description:/opt/ros/humble')]), 'shell': False}
+[0.199346] (-) TimerEvent: {}
+[0.299830] (-) TimerEvent: {}
+[0.400534] (-) TimerEvent: {}
+[0.500966] (-) TimerEvent: {}
+[0.601413] (-) TimerEvent: {}
+[0.701855] (-) TimerEvent: {}
+[0.787348] (antonio_description) StdoutLine: {'line': b'[ 50%] \x1b[32mBuilding CXX object CMakeFiles/Wheels_odom_tf2_broadcaster.dir/src/Wheels_odom_tf2_broadcaster.cpp.o\x1b[0m\n'}
+[0.801968] (-) TimerEvent: {}
+[0.902405] (-) TimerEvent: {}
+[1.002823] (-) TimerEvent: {}
+[1.103258] (-) TimerEvent: {}
+[1.203734] (-) TimerEvent: {}
+[1.304164] (-) TimerEvent: {}
+[1.404679] (-) TimerEvent: {}
+[1.505112] (-) TimerEvent: {}
+[1.605743] (-) TimerEvent: {}
+[1.706476] (-) TimerEvent: {}
+[1.807598] (-) TimerEvent: {}
+[1.908610] (-) TimerEvent: {}
+[2.009258] (-) TimerEvent: {}
+[2.110167] (-) TimerEvent: {}
+[2.210791] (-) TimerEvent: {}
+[2.311244] (-) TimerEvent: {}
+[2.411885] (-) TimerEvent: {}
+[2.512695] (-) TimerEvent: {}
+[2.613465] (-) TimerEvent: {}
+[2.714047] (-) TimerEvent: {}
+[2.814884] (-) TimerEvent: {}
+[2.915475] (-) TimerEvent: {}
+[3.016209] (-) TimerEvent: {}
+[3.116833] (-) TimerEvent: {}
+[3.217256] (-) TimerEvent: {}
+[3.317769] (-) TimerEvent: {}
+[3.418158] (-) TimerEvent: {}
+[3.518608] (-) TimerEvent: {}
+[3.619125] (-) TimerEvent: {}
+[3.719598] (-) TimerEvent: {}
+[3.820009] (-) TimerEvent: {}
+[3.920680] (-) TimerEvent: {}
+[4.021287] (-) TimerEvent: {}
+[4.121914] (-) TimerEvent: {}
+[4.222386] (-) TimerEvent: {}
+[4.322771] (-) TimerEvent: {}
+[4.423166] (-) TimerEvent: {}
+[4.523552] (-) TimerEvent: {}
+[4.623950] (-) TimerEvent: {}
+[4.724336] (-) TimerEvent: {}
+[4.824734] (-) TimerEvent: {}
+[4.925132] (-) TimerEvent: {}
+[5.025524] (-) TimerEvent: {}
+[5.125904] (-) TimerEvent: {}
+[5.226298] (-) TimerEvent: {}
+[5.326684] (-) TimerEvent: {}
+[5.427098] (-) TimerEvent: {}
+[5.527496] (-) TimerEvent: {}
+[5.627897] (-) TimerEvent: {}
+[5.728284] (-) TimerEvent: {}
+[5.828674] (-) TimerEvent: {}
+[5.929058] (-) TimerEvent: {}
+[6.029444] (-) TimerEvent: {}
+[6.129826] (-) TimerEvent: {}
+[6.230220] (-) TimerEvent: {}
+[6.330597] (-) TimerEvent: {}
+[6.430996] (-) TimerEvent: {}
+[6.531392] (-) TimerEvent: {}
+[6.631793] (-) TimerEvent: {}
+[6.732184] (-) TimerEvent: {}
+[6.832590] (-) TimerEvent: {}
+[6.932992] (-) TimerEvent: {}
+[7.033381] (-) TimerEvent: {}
+[7.133802] (-) TimerEvent: {}
+[7.234196] (-) TimerEvent: {}
+[7.334567] (-) TimerEvent: {}
+[7.434954] (-) TimerEvent: {}
+[7.494250] (antonio_description) StderrLine: {'line': b'\x1b[01m\x1b[K/home/antonio/antonio_ws/Antonio/antonio_description/src/Wheels_odom_tf2_broadcaster.cpp:\x1b[m\x1b[K In constructor \xe2\x80\x98\x1b[01m\x1b[KFramePublisher::FramePublisher()\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[7.494574] (antonio_description) StderrLine: {'line': b'\x1b[01m\x1b[K/home/antonio/antonio_ws/Antonio/antonio_description/src/Wheels_odom_tf2_broadcaster.cpp:40:6:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Ksub_Z_pose_\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope\n'}
+[7.494750] (antonio_description) StderrLine: {'line': b'   40 |      \x1b[01;31m\x1b[Ksub_Z_pose_\x1b[m\x1b[K = this->create_subscription<geometry_msgs::msg::Pose>(\n'}
+[7.494915] (antonio_description) StderrLine: {'line': b'      |      \x1b[01;31m\x1b[K^~~~~~~~~~~\x1b[m\x1b[K\n'}
+[7.535077] (-) TimerEvent: {}
+[7.635472] (-) TimerEvent: {}
+[7.735879] (-) TimerEvent: {}
+[7.836270] (-) TimerEvent: {}
+[7.936663] (-) TimerEvent: {}
+[8.037037] (-) TimerEvent: {}
+[8.137443] (-) TimerEvent: {}
+[8.237839] (-) TimerEvent: {}
+[8.338245] (-) TimerEvent: {}
+[8.438616] (-) TimerEvent: {}
+[8.538998] (-) TimerEvent: {}
+[8.639404] (-) TimerEvent: {}
+[8.739902] (-) TimerEvent: {}
+[8.840293] (-) TimerEvent: {}
+[8.940683] (-) TimerEvent: {}
+[9.041058] (-) TimerEvent: {}
+[9.141437] (-) TimerEvent: {}
+[9.241834] (-) TimerEvent: {}
+[9.342244] (-) TimerEvent: {}
+[9.442625] (-) TimerEvent: {}
+[9.543024] (-) TimerEvent: {}
+[9.643399] (-) TimerEvent: {}
+[9.743804] (-) TimerEvent: {}
+[9.844172] (-) TimerEvent: {}
+[9.944537] (-) TimerEvent: {}
+[10.044923] (-) TimerEvent: {}
+[10.145299] (-) TimerEvent: {}
+[10.245719] (-) TimerEvent: {}
+[10.346076] (-) TimerEvent: {}
+[10.446415] (-) TimerEvent: {}
+[10.546801] (-) TimerEvent: {}
+[10.647199] (-) TimerEvent: {}
+[10.747591] (-) TimerEvent: {}
+[10.848004] (-) TimerEvent: {}
+[10.948390] (-) TimerEvent: {}
+[11.048774] (-) TimerEvent: {}
+[11.149171] (-) TimerEvent: {}
+[11.249564] (-) TimerEvent: {}
+[11.349953] (-) TimerEvent: {}
+[11.450340] (-) TimerEvent: {}
+[11.550736] (-) TimerEvent: {}
+[11.651128] (-) TimerEvent: {}
+[11.751520] (-) TimerEvent: {}
+[11.851913] (-) TimerEvent: {}
+[11.952319] (-) TimerEvent: {}
+[12.052710] (-) TimerEvent: {}
+[12.153096] (-) TimerEvent: {}
+[12.253490] (-) TimerEvent: {}
+[12.353890] (-) TimerEvent: {}
+[12.454283] (-) TimerEvent: {}
+[12.523766] (antonio_description) StderrLine: {'line': b'gmake[2]: *** [CMakeFiles/Wheels_odom_tf2_broadcaster.dir/build.make:76: CMakeFiles/Wheels_odom_tf2_broadcaster.dir/src/Wheels_odom_tf2_broadcaster.cpp.o] Error 1\n'}
+[12.524054] (antonio_description) StderrLine: {'line': b'gmake[1]: *** [CMakeFiles/Makefile2:137: CMakeFiles/Wheels_odom_tf2_broadcaster.dir/all] Error 2\n'}
+[12.524241] (antonio_description) StderrLine: {'line': b'gmake: *** [Makefile:146: all] Error 2\n'}
+[12.527874] (antonio_description) CommandEnded: {'returncode': 2}
+[12.554371] (-) TimerEvent: {}
+[12.654753] (-) TimerEvent: {}
+[12.753516] (antonio_description) JobEnded: {'identifier': 'antonio_description', 'rc': 2}
+[12.754860] (-) TimerEvent: {}
+[12.764302] (-) EventReactorShutdown: {}

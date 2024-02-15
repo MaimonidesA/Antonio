@@ -5,7 +5,9 @@
             "includePath": [
                 "${workspaceFolder}/**",
                 "~/pico/pico-sdk/src/common/pico_stdlib/include/**",
-                "~/pico/pico-sdk/**"
+                "~/pico/pico-sdk/**",
+                "/home/antonio/pico/pico-sdk/src/rp2_common/hardware_spi/include",
+                "/home/antonio/pico/pico-sdk/src/common/pico_binary_info/include"
             ],
             "defines": [],
             "compilerPath": "/usr/bin/clang-14",

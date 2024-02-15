@@ -1,0 +1,103 @@
+[5.899s] DEBUG:colcon:Command line arguments: ['/usr/bin/colcon', 'build']
+[5.899s] DEBUG:colcon:Parsed command line arguments: Namespace(log_base=None, log_level=None, verb_name='build', build_base='build', install_base='install', merge_install=False, symlink_install=False, test_result_base=None, continue_on_error=False, executor='parallel', parallel_workers=4, event_handlers=None, ignore_user_meta=False, metas=['./colcon.meta'], base_paths=['.'], packages_ignore=None, packages_ignore_regex=None, paths=None, packages_up_to=None, packages_up_to_regex=None, packages_above=None, packages_above_and_dependencies=None, packages_above_depth=None, packages_select_by_dep=None, packages_skip_by_dep=None, packages_skip_up_to=None, packages_select_build_failed=False, packages_skip_build_finished=False, packages_select_test_failures=False, packages_skip_test_passed=False, packages_select=None, packages_skip=None, packages_select_regex=None, packages_skip_regex=None, packages_start=None, packages_end=None, allow_overriding=[], cmake_args=None, cmake_target=None, cmake_target_skip_unavailable=False, cmake_clean_cache=False, cmake_clean_first=False, cmake_force_configure=False, ament_cmake_args=None, catkin_cmake_args=None, catkin_skip_building_tests=False, verb_parser=<colcon_defaults.argument_parser.defaults.DefaultArgumentsDecorator object at 0x7f0774fce860>, verb_extension=<colcon_core.verb.build.BuildVerb object at 0x7f0774fcfcd0>, main=<bound method BuildVerb.main of <colcon_core.verb.build.BuildVerb object at 0x7f0774fcfcd0>>)
+[6.000s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) check parameters
+[6.000s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) check parameters
+[6.000s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) check parameters
+[6.000s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) check parameters
+[6.000s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) discover
+[6.001s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) discover
+[6.001s] INFO:colcon.colcon_core.package_discovery:Crawling recursively for packages in '/home/antonio/antonio_ws/Antonio/antonio_description'
+[6.001s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ignore', 'ignore_ament_install']
+[6.001s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore'
+[6.001s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore_ament_install'
+[6.001s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_pkg']
+[6.001s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_pkg'
+[6.001s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_meta']
+[6.001s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_meta'
+[6.001s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ros']
+[6.001s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ros'
+[6.106s] DEBUG:colcon.colcon_core.package_identification:Package '.' with type 'ros.ament_cmake' and name 'antonio_description'
+[6.106s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) using defaults
+[6.106s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) discover
+[6.106s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) using defaults
+[6.106s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) discover
+[6.106s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) using defaults
+[6.269s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) check parameters
+[6.269s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) discover
+[6.372s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 358 installed packages in /opt/ros/humble
+[6.376s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) using defaults
+[10.041s] Level 5:colcon.colcon_core.verb:set package 'antonio_description' build argument 'cmake_args' from command line to 'None'
+[10.041s] Level 5:colcon.colcon_core.verb:set package 'antonio_description' build argument 'cmake_target' from command line to 'None'
+[10.041s] Level 5:colcon.colcon_core.verb:set package 'antonio_description' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[10.041s] Level 5:colcon.colcon_core.verb:set package 'antonio_description' build argument 'cmake_clean_cache' from command line to 'False'
+[10.041s] Level 5:colcon.colcon_core.verb:set package 'antonio_description' build argument 'cmake_clean_first' from command line to 'False'
+[10.041s] Level 5:colcon.colcon_core.verb:set package 'antonio_description' build argument 'cmake_force_configure' from command line to 'False'
+[10.041s] Level 5:colcon.colcon_core.verb:set package 'antonio_description' build argument 'ament_cmake_args' from command line to 'None'
+[10.041s] Level 5:colcon.colcon_core.verb:set package 'antonio_description' build argument 'catkin_cmake_args' from command line to 'None'
+[10.041s] Level 5:colcon.colcon_core.verb:set package 'antonio_description' build argument 'catkin_skip_building_tests' from command line to 'False'
+[10.041s] DEBUG:colcon.colcon_core.verb:Building package 'antonio_description' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/antonio/antonio_ws/Antonio/antonio_description/build/antonio_description', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description', 'merge_install': False, 'path': '/home/antonio/antonio_ws/Antonio/antonio_description', 'symlink_install': False, 'test_result_base': None}
+[10.064s] INFO:colcon.colcon_core.executor:Executing jobs using 'parallel' executor
+[10.089s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete
+[10.089s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/antonio/antonio_ws/Antonio/antonio_description' with build type 'ament_cmake'
+[10.089s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/antonio/antonio_ws/Antonio/antonio_description'
+[10.184s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_core.shell.bat': Not used on non-Windows systems
+[10.185s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[10.185s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[10.306s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/antonio/antonio_ws/Antonio/antonio_description/build/antonio_description': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/antonio/antonio_ws/Antonio/antonio_description/build/antonio_description -- -j4 -l4
+[11.043s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/antonio/antonio_ws/Antonio/antonio_description/build/antonio_description' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/antonio/antonio_ws/Antonio/antonio_description/build/antonio_description -- -j4 -l4
+[11.085s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/antonio/antonio_ws/Antonio/antonio_description/build/antonio_description': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/antonio/antonio_ws/Antonio/antonio_description/build/antonio_description
+[11.231s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(antonio_description)
+[11.231s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/antonio/antonio_ws/Antonio/antonio_description/build/antonio_description' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/antonio/antonio_ws/Antonio/antonio_description/build/antonio_description
+[11.326s] Level 1:colcon.colcon_core.environment:checking '/home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description' for CMake module files
+[11.329s] Level 1:colcon.colcon_core.environment:checking '/home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description' for CMake config files
+[11.330s] Level 1:colcon.colcon_core.shell:create_environment_hook('antonio_description', 'cmake_prefix_path')
+[11.379s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/antonio_description/hook/cmake_prefix_path.ps1'
+[11.409s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/antonio_description/hook/cmake_prefix_path.dsv'
+[11.425s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/antonio_description/hook/cmake_prefix_path.sh'
+[11.428s] Level 1:colcon.colcon_core.environment:checking '/home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/lib'
+[11.428s] Level 1:colcon.colcon_core.environment:checking '/home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/bin'
+[11.428s] Level 1:colcon.colcon_core.environment:checking '/home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/lib/pkgconfig/antonio_description.pc'
+[11.429s] Level 1:colcon.colcon_core.environment:checking '/home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/lib/python3.10/site-packages'
+[11.430s] Level 1:colcon.colcon_core.environment:checking '/home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/bin'
+[11.469s] INFO:colcon.colcon_core.shell:Creating package script '/home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/antonio_description/package.ps1'
+[11.472s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/antonio_description/package.dsv'
+[11.473s] INFO:colcon.colcon_core.shell:Creating package script '/home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/antonio_description/package.sh'
+[11.475s] INFO:colcon.colcon_core.shell:Creating package script '/home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/antonio_description/package.bash'
+[11.502s] INFO:colcon.colcon_core.shell:Creating package script '/home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/antonio_description/package.zsh'
+[11.549s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/colcon-core/packages/antonio_description)
+[11.641s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(antonio_description)
+[11.674s] Level 1:colcon.colcon_core.environment:checking '/home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description' for CMake module files
+[11.675s] Level 1:colcon.colcon_core.environment:checking '/home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description' for CMake config files
+[11.675s] Level 1:colcon.colcon_core.shell:create_environment_hook('antonio_description', 'cmake_prefix_path')
+[11.701s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/antonio_description/hook/cmake_prefix_path.ps1'
+[11.702s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/antonio_description/hook/cmake_prefix_path.dsv'
+[11.709s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/antonio_description/hook/cmake_prefix_path.sh'
+[11.717s] Level 1:colcon.colcon_core.environment:checking '/home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/lib'
+[11.717s] Level 1:colcon.colcon_core.environment:checking '/home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/bin'
+[11.717s] Level 1:colcon.colcon_core.environment:checking '/home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/lib/pkgconfig/antonio_description.pc'
+[11.718s] Level 1:colcon.colcon_core.environment:checking '/home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/lib/python3.10/site-packages'
+[11.718s] Level 1:colcon.colcon_core.environment:checking '/home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/bin'
+[11.743s] INFO:colcon.colcon_core.shell:Creating package script '/home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/antonio_description/package.ps1'
+[11.744s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/antonio_description/package.dsv'
+[11.745s] INFO:colcon.colcon_core.shell:Creating package script '/home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/antonio_description/package.sh'
+[11.745s] INFO:colcon.colcon_core.shell:Creating package script '/home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/antonio_description/package.bash'
+[11.746s] INFO:colcon.colcon_core.shell:Creating package script '/home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/antonio_description/package.zsh'
+[11.746s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/antonio/antonio_ws/Antonio/antonio_description/install/antonio_description/share/colcon-core/packages/antonio_description)
+[11.747s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:closing loop
+[11.747s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:loop closed
+[11.747s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete finished with '0'
+[11.747s] DEBUG:colcon.colcon_core.event_reactor:joining thread
+[11.822s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.terminal_notifier': Not used on non-Darwin systems
+[11.822s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.win32': Not used on non-Windows systems
+[11.822s] INFO:colcon.colcon_notification.desktop_notification:Sending desktop notification using 'notify2'
+[12.593s] DEBUG:colcon.colcon_core.event_reactor:joined thread
+[12.621s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/antonio/antonio_ws/Antonio/antonio_description/install/local_setup.ps1'
+[12.636s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/antonio/antonio_ws/Antonio/antonio_description/install/_local_setup_util_ps1.py'
+[12.652s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/antonio/antonio_ws/Antonio/antonio_description/install/setup.ps1'
+[12.690s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/antonio/antonio_ws/Antonio/antonio_description/install/local_setup.sh'
+[12.709s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/antonio/antonio_ws/Antonio/antonio_description/install/_local_setup_util_sh.py'
+[12.710s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/antonio/antonio_ws/Antonio/antonio_description/install/setup.sh'
+[12.747s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/antonio/antonio_ws/Antonio/antonio_description/install/local_setup.bash'
+[12.767s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/antonio/antonio_ws/Antonio/antonio_description/install/setup.bash'
+[12.798s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/antonio/antonio_ws/Antonio/antonio_description/install/local_setup.zsh'
+[12.823s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/antonio/antonio_ws/Antonio/antonio_description/install/setup.zsh'

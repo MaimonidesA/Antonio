@@ -1,0 +1,7 @@
+[01m[K/home/antonio/antonio_ws/Antonio/antonio_description/src/Wheels_odom_tf2_broadcaster.cpp:[m[K In constructor ‘[01m[KFramePublisher::FramePublisher()[m[K’:
+[01m[K/home/antonio/antonio_ws/Antonio/antonio_description/src/Wheels_odom_tf2_broadcaster.cpp:40:6:[m[K [01;31m[Kerror: [m[K‘[01m[Ksub_Z_pose_[m[K’ was not declared in this scope
+   40 |      [01;31m[Ksub_Z_pose_[m[K = this->create_subscription<geometry_msgs::msg::Pose>(
+      |      [01;31m[K^~~~~~~~~~~[m[K
+gmake[2]: *** [CMakeFiles/Wheels_odom_tf2_broadcaster.dir/build.make:76: CMakeFiles/Wheels_odom_tf2_broadcaster.dir/src/Wheels_odom_tf2_broadcaster.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:137: CMakeFiles/Wheels_odom_tf2_broadcaster.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

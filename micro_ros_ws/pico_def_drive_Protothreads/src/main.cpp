@@ -1,18 +1,13 @@
-
-
 #include "main.h"
-
 
 #include <math.h>
 #include <stdio.h>
-
 
 #include "hardware/pwm.h"
 #include "hardware/i2c.h"
 #include "hardware/dma.h"
 #include "hardware/gpio.h"
 #include "hardware/sync.h"
-
 
 #include "ICM20600.h"
 
@@ -138,7 +133,7 @@ geometry_msgs__msg__Pose Robot_position(double Right_ticks, double Left_ticks){
     double Right_distance = (Wheel_Circumference / Ticks_per_cycle) * Right_ticks;
     double Left_distance = (Wheel_Circumference / Ticks_per_cycle) * Left_ticks;
     position.orientation.z += (Right_distance - Left_distance) /  Distance_between_wheels;
-    if(position.orientation.z > 2*M_PI){position.orientation.z -= 2*M_PI;}else if(position.orientation.z < 0){position.orientation.z += 2*M_PI;}
+    //if(position.orientation.z > 2*M_PI){position.orientation.z -= 2*M_PI;}else if(position.orientation.z < 0){position.orientation.z += 2*M_PI;}
     Average_distance = (Right_distance + Left_distance) / 2;
     xRight_ticks = 0;
     xLeft_ticks = 0;
@@ -315,6 +310,7 @@ nav_msgs__msg__Odometry update_odom(double Linear, double angular, double positi
 //Update header   
     int64_t time = rmw_uros_epoch_nanos();
     OdomMsg.header.stamp.sec = time / 1000000000;
+    OdomMsg.header.stamp.nanosec = time;
     rosidl_runtime_c__String__assign(&OdomMsg.header.frame_id, "Wheels/odom");
     rosidl_runtime_c__String__assign(&OdomMsg.child_frame_id, "base_link");
 //TWIST
@@ -333,9 +329,9 @@ nav_msgs__msg__Odometry update_odom(double Linear, double angular, double positi
 	q = m;
 	OdomMsg.pose.pose.orientation.x = q.x();
 	OdomMsg.pose.pose.orientation.y = q.y();
-	OdomMsg.pose.pose.orientation.z = q.z();
+	//OdomMsg.pose.pose.orientation.z = q.z();
 	OdomMsg.pose.pose.orientation.w = q.w();
-   // OdomMsg.pose.pose.orientation.z = Angle;
+    OdomMsg.pose.pose.orientation.z = position.orientation.z;
 
     return OdomMsg;
 }
@@ -442,7 +438,7 @@ int main(){
     stdio_init_all();
     setupOdomMsg();
     Motor_init();
-//   geometry_msgs__msg__Twist__init(&Twist_msg);
+
     rmw_uros_set_custom_transport(
 		true,
 		NULL,
@@ -509,7 +505,7 @@ int main(){
         timer_callback);
 
     rclc_executor_init(&executor, &support.context, 3, &allocator);
-    rclc_executor_add_timer(&exceutor, &timer);
+    rclc_executor_add_timer(&executor, &timer);
     //* Add subscription to the executor
     rc = rclc_executor_add_subscription(&executor, &subscriber, &Twist_msg, &subscription_callback, ON_NEW_DATA);
 

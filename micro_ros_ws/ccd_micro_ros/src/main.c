@@ -41,7 +41,7 @@ typedef signed int fix15 ;
 
 //#define DMA_channel_2_write_address_pointer 0x58400000
 
-#define ADC_GPIO 26
+#define ADC_GPIO 26   //pin 31  ADC
 
 const uint LED_PIN = 25;
 

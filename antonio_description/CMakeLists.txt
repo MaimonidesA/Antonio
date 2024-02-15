@@ -12,6 +12,7 @@ find_package(nav_msgs REQUIRED)
 find_package(rclcpp REQUIRED)
 find_package(tf2 REQUIRED)
 find_package(tf2_ros REQUIRED)
+find_package(sensor_msgs REQUIRED)
 #find_package(rplidar_ros2 REQUIRED)
 # uncomment the following section in order to fill in
 # further dependencies manually.
@@ -21,6 +22,7 @@ add_executable(Wheels_odom_tf2_broadcaster src/Wheels_odom_tf2_broadcaster.cpp)
 ament_target_dependencies(
     Wheels_odom_tf2_broadcaster
     geometry_msgs
+    sensor_msgs
     nav_msgs
     rclcpp
     tf2

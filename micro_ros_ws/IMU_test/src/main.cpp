@@ -186,48 +186,7 @@ int main() {
         
         printf("%f, %f, %f, %f, %f, %f,  %f, %f, %f, %f, %f\n"
         ,G, Delta_Time, X_position, Linear_velocity, Acc_X, Pitch, roll, acceleration_Z, clibrate_Acc_X, chige_betwin_megur_A, kalman_Acc_X);
-        //printf("%f, ", Accelerometer_Pitch);//    3*/
-       // printf("%f, ", gyro_roll);//**************5*/
-        //printf("%f, ", Accelerometer_roll);//*****6*/
-       // printf(" %f, \n", clibrate_Acc_X);//******12
     }
-   
-
 }
 
-   //<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<   Set up DMA channels   >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-   /* uint sample_channel = dma_claim_unused_channel(true);
-    uint control_channel = dma_claim_unused_channel(true);
-    dma_channel_config c2 = dma_channel_get_default_config(sample_channel);
-    dma_channel_config c3 = dma_channel_get_default_config(control_channel);
 
-    //----------------------------Channel 2.-------------------------
-    channel_config_set_transfer_data_size(&c2, DMA_SIZE_8);
-    channel_config_set_read_increment(&c2, false);
-    channel_config_set_write_increment(&c2, true);
-
-    channel_config_set_dreq(&c2, DREQ_I2C0_RX);
-
-    dma_channel_configure(
-        sample_channel,
-        &c2,
-        Pixel_array_buffer, 
-        &i2c_hw->fifo,
-        Number_of_pixels,
-        false
-        );//_____________________________________________
-
-    //--------------------------Channel 3.------------------
-    channel_config_set_transfer_data_size(&c3, DMA_SIZE_32);
-    channel_config_set_read_increment(&c3, false);
-    channel_config_set_write_increment(&c3, false);
-    channel_config_set_chain_to(&c3, sample_channel);
-
-    dma_channel_configure(
-       control_channel,
-       &c3,
-       &dma_hw->ch[sample_channel].write_addr, 
-       &First_pixel_buffer_pointer,
-       1,
-       true
-       );//____________________________________________*/

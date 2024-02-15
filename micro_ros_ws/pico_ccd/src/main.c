@@ -78,7 +78,6 @@ void CCD_Timers()
     pwm_set_chan_level(slice_num_0, 0, 31);
 
      pwm_set_output_polarity(slice_num_0, true, true);
-    //___________________________________________________//
     
     //************  ICG timer: 133 hertz********************//
     gpio_set_function(5, GPIO_FUNC_PWM);
@@ -91,7 +90,6 @@ void CCD_Timers()
     pwm_set_wrap(slice_num_5, WRAPVAL);
     pwm_set_clkdiv(slice_num_5, CLKDIV);
     pwm_set_chan_level(slice_num_5, PWM_CHAN_B, 86);
-    //_________________________________________________//
     
     //***************SH timer ******************************//
     gpio_set_function(6, GPIO_FUNC_PWM);
@@ -101,7 +99,6 @@ void CCD_Timers()
     pwm_set_chan_level(slice_num_6, 0, 500);   //Typical  500
 
      pwm_set_output_polarity(slice_num_6, true, true);
-    //_______________________________________________________//
 
     printf("<<<<<<<<all the timers are ready>>>>>>>>.\n ");
      vTaskDelay(500);
@@ -175,6 +172,7 @@ void Data_manipulation(){
   
     int Laser_height_array[10];
     int Count = 0;
+    printf("Start measure laser hiding  ----:  \n");
     while (1)
     {
         uint8_t Average_pixels = 0;

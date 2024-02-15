@@ -1,6 +1,12 @@
 {
     "files.associations": {
-        "ctime": "cpp"
+        "ctime": "cpp",
+        "nnls": "cpp",
+        "cmath": "cpp",
+        "pose_with_covariance_stamped__struct.h": "c",
+        "pose.h": "c",
+        "odometry.h": "c",
+        "random": "c"
     },
     "ros.distro": "humble",
     "cmake.sourceDirectory": "/home/antonio/antonio_ws/Antonio/micro_ros_ws/pico_def_drive_freeRTOS"
