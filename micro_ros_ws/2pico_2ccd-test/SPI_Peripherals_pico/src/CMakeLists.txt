@@ -15,6 +15,7 @@
          hardware_dma
          hardware_timer
          hardware_spi
+         pico_binary_info
          )
 #include(${CMAKE_CURRENT_SOURCE_DIR}/../../../../../cmale_Modules/ccd.cmake)
 

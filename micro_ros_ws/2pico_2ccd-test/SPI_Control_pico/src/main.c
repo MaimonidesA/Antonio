@@ -10,7 +10,7 @@
 #include "hardware/timer.h"
 #include "hardware/spi.h"
 //#include "pico/cyw43_arch.h"
-//#include "pico/binary_info.h"
+
 
 
 // === the fixed point macros (16.15) ========================================
@@ -26,22 +26,25 @@ typedef signed int fix15 ;
 //#define DMA_channel_2_write_address_pointer 0x58400000
 
 
-#define LED_PIN  25
+#define Power_LED  1            //pin 2
+#define laserDetection_LED 2    //pin 4
 #define ADC_GPIO 26
 
 #define WRAPVAL 65502
 #define CLKDIV 14.5f
-#define Number_of_pixels 3694
+#define Number_of_pixels 3693
 
 //SPI variables.
-#define SPI_PORT spi0
-#define BUF_LEN     128
+//#define spi_default spi0
+#define BUF_LEN     4
 #define SPI_RW_LEN  1
-#define MISO 16
+#define MISO 19
 #define CS_1   17
 #define SCLK 18
-#define MOSI 19
-uint8_t out_buf [BUF_LEN], in_buf [BUF_LEN];
+#define MOSI 16
+uint8_t out_buf[BUF_LEN], in_buf[BUF_LEN];
+
+float Control_height = 0;
 
 //PWM variables.
 uint slice_num_0 = 0;       // pin 1 Main timer
@@ -61,16 +64,17 @@ uint8_t Pixel_array_buffer[Number_of_pixels];
 uint8_t * First_pixel_buffer_pointer = &Pixel_array_buffer[0];
 
 bool Pixel_array_buffer_1_flag = false; //*******************If true writing to buffer one. if false writing to  buffer 2. 
-
+uint8_t laserDetection = 0;
+int Laser_height_average = 0;
 
 void SPI_init(){
      // Enable SPI0 at 1 MHz
-  spi_init (SPI_PORT, 1 * 1000000);
+  spi_init (spi_default, 1 * 2000000);
 
   // Assign SPI functions to the default SPI pins
-  gpio_set_function (PICO_DEFAULT_SPI_RX_PIN, GPIO_FUNC_SPI);
-  gpio_set_function (PICO_DEFAULT_SPI_SCK_PIN, GPIO_FUNC_SPI);
-  gpio_set_function (PICO_DEFAULT_SPI_TX_PIN, GPIO_FUNC_SPI);
+  gpio_set_function (MISO, GPIO_FUNC_SPI);
+  gpio_set_function (SCLK, GPIO_FUNC_SPI);
+  gpio_set_function (MOSI, GPIO_FUNC_SPI);
 
    // Configure Chip Select
   gpio_init(CS_1); // Initialise CS Pin
@@ -79,13 +83,22 @@ void SPI_init(){
 }
 
 float ccd_spi_read(int chip_select){
+    for(uint8_t i = 0 ; i < BUF_LEN ; i++)
+        {
+        gpio_put(chip_select, 0);
+        //spi_read_blocking (spi_default, 0, &in_buf[i], 1);
+        spi_write_read_blocking (spi_default, out_buf, &in_buf[i], 1);
+        gpio_put(chip_select, 1);
+        }
+    laserDetection = (in_buf[2]);
+    uint16_t ccd_in = ((uint16_t)in_buf[0]) | (((uint16_t)in_buf[1]) << 8 )/* | ((uint32_t) in_buf[2] >> 4)*/;
+     
     
-    gpio_put(CS_1, 0);
-    spi_write_blocking(SPI_PORT, &out_buf[0], 1);
-    spi_read_blocking(SPI_PORT, 0, in_buf, BUF_LEN);
-    gpio_put(CS_1, 1);
-    fix15 raw_ccd_in = ((uint32_t) in_buf[0] << 12) | ((uint32_t) in_buf[1] << 4) | ((uint32_t) in_buf[2] >> 4);
-    float ccd_in = fix2float15(raw_ccd_in); 
+    if (laserDetection == 1) {
+        
+        gpio_put(laserDetection_LED, 1);}
+    //else{gpio_put(laserDetection_LED, 0);}
+    
     return ccd_in;
 }
 
@@ -93,18 +106,20 @@ void on_pwm_5_wrap() // PWM interrupt
 { 
     pwm_set_counter(slice_num_0, 0);
     pwm_clear_irq(slice_num_5);
-    
+
     pwm_set_counter(slice_num_6, 0);
 
-     if (!ADC_Status) { adc_run(true);
+    if (!ADC_Status) { adc_run(true);
         ADC_Status = true;
     }
-    
     pwm_retard_count(slice_num_0);
     pwm_retard_count(slice_num_0);
+
     for (size_t i = 0; i < 750; i++){
         pwm_retard_count(slice_num_6);
-    }  
+    } 
+
+
 
     Pixel_array_buffer_1_flag = !Pixel_array_buffer_1_flag;
 }
@@ -141,7 +156,7 @@ void CCD_Timers()
     gpio_set_function(6, GPIO_FUNC_PWM);
     
     pwm_set_enabled(slice_num_6, true);
-    pwm_set_wrap(slice_num_6, 7500);   //Typical  1250
+    pwm_set_wrap(slice_num_6, 2500);   //Typical  1250
     pwm_set_chan_level(slice_num_6, 0, 500);   //Typical  500
 
      pwm_set_output_polarity(slice_num_6, true, true);
@@ -155,7 +170,7 @@ void ADC_DMA_config(){
     printf("<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<Arming ADC DMA>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\n");
     sleep_ms(100);
 
-// <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<  ADC configuration. >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+    // <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<  ADC configuration. >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
    adc_gpio_init(ADC_GPIO);
    adc_init();
 
@@ -166,7 +181,7 @@ void ADC_DMA_config(){
 
     sleep_ms(100);
 
-//<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<   Set up DMA channels   >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+    //<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<   Set up DMA channels   >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
     sample_channel = dma_claim_unused_channel(true);
     control_channel = dma_claim_unused_channel(true);
     dma_channel_config c2 = dma_channel_get_default_config(sample_channel);
@@ -206,7 +221,6 @@ void ADC_DMA_config(){
 
 }//_____________________________________________________________________________*/
 
-
 void Data_manipulation(){
     
     uint8_t Average_pixels = 0;
@@ -214,27 +228,29 @@ void Data_manipulation(){
     int Laser_coverants_pixels_count = 0;
     int Laser_index_sum = 0;
     int Laser_height = 0;
-    int Laser_height_average = 0;
+    Laser_height_average = 0;
 
     dma_channel_wait_for_finish_blocking(sample_channel);
     adc_run(false);
     adc_fifo_drain();
     for (size_t i = 0; i < Number_of_pixels; i++)
     {
-        if (  i > 31 && i < 3648 ){
+        if (  i > 31 && i < 3679 ){
          sum_pixels = sum_pixels + Pixel_array_buffer[i]; 
         }  
     }
     Average_pixels = sum_pixels / 3648;
     for (int i = 0; i < Number_of_pixels; i++)
     {
-        if (((int)(Pixel_array_buffer[i]) + 30) < ((int)(Average_pixels))) {
-            Laser_index_sum = Laser_index_sum + i;
+        if (((int)(Pixel_array_buffer[i]) + 40) < ((int)(Average_pixels))) {
+            Laser_index_sum += i;
             Laser_coverants_pixels_count++;
+            gpio_put(laserDetection_LED, 1);
         }
     }
     Laser_height = (Laser_index_sum / Laser_coverants_pixels_count);
-
+    gpio_put(laserDetection_LED, 0);
+    
     if (Count < 10 && Laser_height != 0) {
        Laser_height_array[Count] = Laser_height;
        Count++;
@@ -243,13 +259,23 @@ void Data_manipulation(){
         {
             Laser_height_average = Laser_height_average + Laser_height_array[i];
         }
-    printf("Local laser hiding  ----: %d \n", ((Laser_height_average * 8)/10000));
+    Control_height = (Laser_height_average * 8)/10000;
+   // printf("%d \n,",Laser_height_average);
+    gpio_put(laserDetection_LED, 1);
     Count = 0;
     }
+    if(Laser_height = 0){
+        gpio_put(laserDetection_LED, 0);
+    }
     dma_channel_start(control_channel) ;
-    ADC_Status = false;
-     printf("Local laser print hiding  ----: %d \n", ((Laser_height_average * 8)/10000));
-    
+    ADC_Status = false;    
+}
+
+void init_Pixel_buffer(){
+    for (int i = 0; i < Number_of_pixels; i++)
+        {
+            Pixel_array_buffer[i] = 0;
+        }
 }
 
 int main()
@@ -266,14 +292,28 @@ int main()
     pwm_set_mask_enabled((1u << slice_num_0) | (1u << slice_num_5) | (1u << slice_num_6));   
 
     SPI_init();
-    gpio_init(LED_PIN);
-    gpio_set_dir(LED_PIN, GPIO_OUT);
-    gpio_put(LED_PIN, 1);
+    gpio_init(Power_LED);
+    gpio_set_dir(Power_LED, GPIO_OUT);
+    gpio_put(Power_LED, 1);
+
+    gpio_init(laserDetection_LED);
+    gpio_set_dir(laserDetection_LED, GPIO_OUT);
+
+    init_Pixel_buffer();
     
     while (1)
     {
       Data_manipulation();
-      printf("CS_1 laser hiding  ----: %f \n", ccd_spi_read(CS_1));
+      uint16_t ccd_in = ccd_spi_read(CS_1);
+      //printf("%f,\n",Control_height);
+      printf("ccd_in :%d", ccd_in);
+     for(uint8_t i = 0 ; i < BUF_LEN ; i++)
+        {
+        
+        printf(" in_buf[%d] %d,",i, in_buf[i]);
+        if (i  == 3){printf("\n");}
+        }
+     
     }
     return 0;
 }
