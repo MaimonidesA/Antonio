@@ -18,6 +18,17 @@ find_package(sensor_msgs REQUIRED)
 # further dependencies manually.
 # find_package(<dependency> REQUIRED)
 
+add_executable(imu-base_linck-tf2_brodcaster src/imu-base_linck-tf2_brodcaster.cpp)
+ament_target_dependencies(
+    imu-base_linck-tf2_brodcaster
+    geometry_msgs
+    sensor_msgs
+    nav_msgs
+    rclcpp
+    tf2
+    tf2_ros
+)
+
 add_executable(Wheels_odom_tf2_broadcaster src/Wheels_odom_tf2_broadcaster.cpp)
 ament_target_dependencies(
     Wheels_odom_tf2_broadcaster
@@ -29,12 +40,49 @@ ament_target_dependencies(
     tf2_ros
 )
 
+add_executable(imu_camera_link-tf2_brodcaster src/imu_camera_link-tf2_brodcaster.cpp)
+ament_target_dependencies(
+  imu_camera_link-tf2_brodcaster
+    geometry_msgs
+    sensor_msgs
+    nav_msgs
+    rclcpp
+    tf2
+    tf2_ros
+)
+
+add_executable(antonio_odom_tf2_broadcaster src/antonio_odom_tf2_broadcaster.cpp)
+ament_target_dependencies(
+    antonio_odom_tf2_broadcaster
+    geometry_msgs
+    sensor_msgs
+    nav_msgs
+    rclcpp
+    tf2
+    tf2_ros
+)
+
+add_executable(antonio_odom src/antonio_odom.cpp)
+ament_target_dependencies(
+    antonio_odom
+    geometry_msgs
+    sensor_msgs
+    nav_msgs
+    rclcpp
+    tf2
+    tf2_ros
+)
+
 install(
-  DIRECTORY src launch rviz config world
+  DIRECTORY src launch rviz config world map
   DESTINATION share/${PROJECT_NAME}
 )
 install(TARGETS
+    antonio_odom
+    antonio_odom_tf2_broadcaster
     Wheels_odom_tf2_broadcaster
+    imu-base_linck-tf2_brodcaster
+    imu_camera_link-tf2_brodcaster
    DESTINATION lib/${PROJECT_NAME})
 
 if(BUILD_TESTING)

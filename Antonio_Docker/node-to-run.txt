@@ -1,8 +1,29 @@
-# ros2 run tf2_ros static_transform_publisher 0.1 0 0.2 0 0 0 camera_imu_optical_frame base_link 
+# **************  statick tf  *************
+
+# ros2 run tf2_ros static_transform_publisher 0 0 0.83  0 0 0  base_link camera_link
+# ros2 run tf2_ros static_transform_publisher 0 0 0 0 0 0 camera_accel_optical_frame camera_depth_optical_frame
+
+#********************************
+
 
 #    ros2 launch realsense2_camera rs_launch.py pointcloud.enable:=true enable_accel:=true enable_gyro:=true unite_imu_method:=1
 # or ros2 launch realsense2_camera rs_launch.py pointcloud.enable:=true enable_accel:=true enable_gyro:=true unite_imu_method:=2 
 
 # ros2 launch octomap_server octomap_mapping.launch.xml
 
+# ros2 run imu_filter_madgwick imu_filter_madgwick_node --ros-args -p use_mag:=false -r /imu/data_raw:=/camera/accel/sample -p fixed_frame:=/camera_link
+or
 # ros2 run imu_filter_madgwick imu_filter_madgwick_node --ros-args -p use_mag:=false -r /imu/data_raw:=/camera/imu
+
+#  sudo usermod -aG plugdev $USER 
+
+#  maping   *********************
+
+# ros2 launch nav2_bringup navigation_launch.py
+or  ros2 launch nav2_bringup bringup_launch.py use_sim_time:=False autostart:=False map:=/home/antonio/antonio_ws/install/antonio_description/share/antonio_description/map/map.yaml
+or 
+
+# ros2 launch slam_toolbox online_async_launch.py slam_params_file:=/home/antonio/antonio_ws/config/mapper_params_online_async.yaml 
+# or ros2 launch slam_toolbox online_async_launch.py
+
+

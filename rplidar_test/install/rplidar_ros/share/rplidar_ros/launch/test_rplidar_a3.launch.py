@@ -1,1 +1,0 @@
-/home/antonio/antonio_ws/Antonio/rplidar_test/src/rplidar_ros2/launch/test_rplidar_a3.launch.py

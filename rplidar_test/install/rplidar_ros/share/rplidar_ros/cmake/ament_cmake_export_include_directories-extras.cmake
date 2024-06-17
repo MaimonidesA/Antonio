@@ -1,1 +1,0 @@
-/home/antonio/antonio_ws/Antonio/rplidar_test/build/rplidar_ros/ament_cmake_export_include_directories/ament_cmake_export_include_directories-extras.cmake

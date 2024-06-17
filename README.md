@@ -12,3 +12,4 @@ rplidar_ros2 ripo --> https://github.com/babakhani/rplidar_ros2.git
 
 # Running commands
 micro-ros-agent serial --dev /dev/<Device name Such as ; 'ttyACM0'> -b 115200
+or docker run -it --rm -v /dev:/dev --privileged --net=host microros/micro-ros-agent:humble serial --dev /dev/ttyACM0 -b 115200

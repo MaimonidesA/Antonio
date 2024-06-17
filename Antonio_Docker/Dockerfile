@@ -1,6 +1,6 @@
 FROM ros:humble-ros-base
 
-RUN sudo apt-get update \ 
+RUN apt-get update \ 
     && apt-get install -y \
     nano \
     vim \
@@ -8,7 +8,7 @@ RUN sudo apt-get update \
     && rm -rf /var/lib/apt/lists/*
 
 # Installing rviz2
-RUN sudo apt-get update \ 
+RUN apt-get update \ 
     && apt-get install -y \
     ros-humble-rviz2 ros-humble-rqt \
     && rm -rf /var/lib/apt/lists/*
@@ -43,16 +43,17 @@ RUN apt-get update && apt-get install -y \
    ros-$ROS_DISTRO-octomap-rviz-plugins \
    && rm -rf /var/lib/apt/lists/*
 
-RUN sudo apt-get update \ 
+RUN apt-get update \ 
    && apt-get install -y \
    ros-humble-teleop-twist-keyboard \
+   ros-humble-rqt-graph \
    && rm -rf /var/lib/apt/lists/*
 
 # Example of copying a file
 COPY config/ /site_config/
 
 # Create a non-root user
-ARG USERNAME=ros
+ARG USERNAME=antonio
 ARG USER_UID=1000
 ARG USER_GID=$USER_UID
 

@@ -6,9 +6,9 @@
 		<param name="frame_id" value="odom" />
 
 		<!-- maximum range to integrate (speedup!) -->
-		<param name="sensor_model.max_range" value="5.0" />
+		<param name="sensor_model.max_range" value="4.0" />
 
 		<!-- data source to integrate (PointCloud2) -->
-		<remap from="cloud_in" to="/camera/depth/color/points" />
+		<remap from="cloud_in" to="/camera/depth/color/points" /> # cloud ni topic '/scan' for lidar or '/camera/depth/color/points' for realsens 
 	</node>
 </launch>
