@@ -2,6 +2,6 @@
 	path = rplidar_ros2
 	url = https://github.com/babakhani/rplidar_ros2.git
 [submodule "pointcloud_to_laserscan"]
-	path = pointcloud_to_laserscan
+	path = Antonio_Docker/antonio_ws/src/pointcloud_to_laserscan
 	url = https://github.com/ros-perception/pointcloud_to_laserscan.git
 	branch = humble
