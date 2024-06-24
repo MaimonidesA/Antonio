@@ -28,9 +28,13 @@ class antonioOdomPublisher : public rclcpp::Node
       "/Wheels/odom", 10,
       std::bind(&antonioOdomPublisher::handle_Wheels_odom, this, std::placeholders::_1));
 
-      sub_IMU_ = this->create_subscription<sensor_msgs::msg::Imu>(
-      "/IMU_msgs", 10,
-      std::bind(&antonioOdomPublisher::handle_IMU, this, std::placeholders::_1));
+      sub_Left_IMU_ = this->create_subscription<sensor_msgs::msg::Imu>(
+      "/Left_imu/imu/data", 10,
+      std::bind(&antonioOdomPublisher::handle_IMU_Left, this, std::placeholders::_1));
+
+      sub_right_IMU_ = this->create_subscription<sensor_msgs::msg::Imu>(
+      "/Left_imu/imu/data", 10,
+      std::bind(&antonioOdomPublisher::handle_IMU_right, this, std::placeholders::_1));
     }
 
   private:
@@ -47,7 +51,7 @@ class antonioOdomPublisher : public rclcpp::Node
     double roll = 0, pitch = 0, yaw = 0;
     double yaw_val = 0;
     double acc_x = 0;    
-    int G = 1003;
+    int G = 9.81;
     
     void handle_Wheels_odom(const std::shared_ptr<nav_msgs::msg::Odometry> msg)
     {
@@ -57,13 +61,14 @@ class antonioOdomPublisher : public rclcpp::Node
      wheels_pose_y = msg->pose.pose.position.y;
     }
 
-    void handle_IMU(const std::shared_ptr<sensor_msgs::msg::Imu> msg)
+    void handle_IMU_Left(const std::shared_ptr<sensor_msgs::msg::Imu> msg)
     {
       
       time_stamp_nanosec = msg->header.stamp.nanosec;
  
 
       IMU_yaw_val = msg->angular_velocity.z;
+      odom.twist.twist.angular.z = IMU_yaw_val;
 
       IMU_acc_x = msg->linear_acceleration.x;
       IMU_acc_y = msg->linear_acceleration.y;
@@ -90,14 +95,15 @@ class antonioOdomPublisher : public rclcpp::Node
     m.getRPY(roll, pitch, yaw);
 
     if (yaw < 0 ){yaw += 2*M_PI;}
-    //if (yaw < 2*M_PI ){yaw += 2*M_PI;}
       
-      RCLCPP_INFO(this->get_logger(),"yaw: %f, position_x: %f, position_y: %f,  ",yaw, odom.pose.pose.position.x, odom.pose.pose.position.y);  
+     //RCLCPP_INFO(this->get_logger(),"yaw: %f, position_x: %f, position_y: %f,  ",yaw, odom.pose.pose.position.x, odom.pose.pose.position.y);  
+
       //acceleration X
       acc_x = IMU_acc_x - sin(IMU_pitch) * G;
 
       // velocity X
       x_val = x_val + acc_x * delta_time;
+      odom.twist.twist.linear.x = x_val;
         
      // if (wheels_x_val < 0 && x_val > 0){x_val *= -1;}
     //  if (wheels_x_val > 0 && x_val < 0){x_val *= -1;}
@@ -107,15 +113,14 @@ class antonioOdomPublisher : public rclcpp::Node
       //pose
       odom.pose.pose.position.x += cos(yaw) * x_val * delta_time;
       odom.pose.pose.position.y += sin(yaw) * x_val * delta_time;
-      //odom.pose.pose.position.x = wheels_pose_x; 
-      //odom.pose.pose.position.y = wheels_pose_y;
       
       publisher_->publish(odom);
     }
 
     rclcpp::Publisher<nav_msgs::msg::Odometry>::SharedPtr publisher_;
     rclcpp::Subscription<nav_msgs::msg::Odometry>::SharedPtr sub_Wheels_odom_;
-    rclcpp::Subscription<sensor_msgs::msg::Imu>::SharedPtr sub_IMU_;
+    rclcpp::Subscription<sensor_msgs::msg::Imu>::SharedPtr sub_Left_IMU_;
+    rclcpp::Subscription<sensor_msgs::msg::Imu>::SharedPtr sub_right_IMU_;
     size_t count_;
 };
 
