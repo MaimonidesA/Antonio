@@ -9,3 +9,7 @@
 	path = Antonio_Docker/antonio_ws/src/Xsens
 	url = https://github.com/jiminghe/Xsens_MTi_ROS_Driver_and_Ntrip_Client.git
 	branch = ros2
+[submodule "Antonio_Docker/antonio_ws/src/eigen"]
+	path = Antonio_Docker/antonio_ws/src/eigen
+	url = https://github.com/ros2/eigen3_cmake_module.git
+	branch = humble
