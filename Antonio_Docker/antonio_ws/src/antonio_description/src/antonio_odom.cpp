@@ -4,6 +4,8 @@
 #include <string>
 #include <math.h>
 
+#include "KF.h"
+
 #include "rclcpp/rclcpp.hpp"
 #include "std_msgs/msg/string.hpp"
 #include "tf2/LinearMath/Quaternion.h"
@@ -23,6 +25,9 @@ class antonioOdomPublisher : public rclcpp::Node
     : Node("antonio_odom_Publisher"), count_(0)
     {
       publisher_ = this->create_publisher<nav_msgs::msg::Odometry>("/antonio_odom", 10);
+
+      timer_ = this->create_wall_timer(
+      10ms, std::bind(&antonioOdomPublisher::odom_publisher, this));
       
       sub_Wheels_odom_ = this->create_subscription<nav_msgs::msg::Odometry>(
       "/Wheels/odom", 10,
@@ -53,6 +58,11 @@ class antonioOdomPublisher : public rclcpp::Node
     double acc_x = 0;    
     int G = 9.81;
     
+    void odom_publisher()
+    {
+      RCLCPP_INFO(this->get_logger(),"yaw: %f, position_x: %f, position_y: %f,  ",yaw, odom.pose.pose.position.x, odom.pose.pose.position.y);
+    }
+
     void handle_Wheels_odom(const std::shared_ptr<nav_msgs::msg::Odometry> msg)
     {
      wheels_yaw_val = msg->twist.twist.angular.z;
@@ -60,7 +70,10 @@ class antonioOdomPublisher : public rclcpp::Node
      wheels_pose_x = msg->pose.pose.position.x;
      wheels_pose_y = msg->pose.pose.position.y;
     }
-
+    void handle_IMU_right(const std::shared_ptr<sensor_msgs::msg::Imu> msg)
+    {
+      // Todo
+    }
     void handle_IMU_Left(const std::shared_ptr<sensor_msgs::msg::Imu> msg)
     {
       
@@ -117,6 +130,7 @@ class antonioOdomPublisher : public rclcpp::Node
       publisher_->publish(odom);
     }
 
+    rclcpp::TimerBase::SharedPtr timer_;
     rclcpp::Publisher<nav_msgs::msg::Odometry>::SharedPtr publisher_;
     rclcpp::Subscription<nav_msgs::msg::Odometry>::SharedPtr sub_Wheels_odom_;
     rclcpp::Subscription<sensor_msgs::msg::Imu>::SharedPtr sub_Left_IMU_;

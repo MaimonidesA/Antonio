@@ -13,6 +13,8 @@ find_package(rclcpp REQUIRED)
 find_package(tf2 REQUIRED)
 find_package(tf2_ros REQUIRED)
 find_package(sensor_msgs REQUIRED)
+find_package(eigen3_cmake_module REQUIRED)
+find_package(Eigen3)
 #find_package(rplidar_ros2 REQUIRED)
 # uncomment the following section in order to fill in
 # further dependencies manually.
@@ -62,7 +64,10 @@ ament_target_dependencies(
     tf2_ros
 )
 
-add_executable(antonio_odom src/antonio_odom.cpp)
+add_executable(antonio_odom 
+      src/antonio_odom.cpp
+      src/KF.cpp
+      )
 ament_target_dependencies(
     antonio_odom
     geometry_msgs
@@ -71,6 +76,7 @@ ament_target_dependencies(
     rclcpp
     tf2
     tf2_ros
+    Eigen3
 )
 
 install(
