@@ -8,7 +8,7 @@
 #include <iostream>
 #include <stdexcept>
 
-#include "KF.h"
+#include "KF.hpp"
 
 KalmanFilter::KalmanFilter(
     double dt,

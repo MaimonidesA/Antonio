@@ -129,9 +129,9 @@ def generate_launch_description():
         robot_state_publisher_node,
         #Wheels_odom_broadcaster,
         antonio_odom,
-        #antonio_odom_broadcaster,
+        antonio_odom_broadcaster,
         #rplidar_Node,
-        robot_localization_node,
+        #robot_localization_node,
         rviz_node,        
 	    #map_server_Node,
         
