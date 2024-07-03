@@ -5,7 +5,7 @@
 #include <math.h>
 #include <vector>
 
-#include "KF.hpp"
+//#include "KF.hpp"
 #include <Eigen/Dense>
 
 
@@ -13,10 +13,11 @@
 #include "std_msgs/msg/string.hpp"
 #include "tf2/LinearMath/Quaternion.h"
 #include "nav_msgs/msg/odometry.hpp"
-#include "sensor_msgs/msg/imu.hpp"
+//#include "sensor_msgs/msg/imu.hpp"
 #include "tf2/LinearMath/Matrix3x3.h"
 #include "geometry_msgs/msg/quaternion_stamped.hpp"
 #include "geometry_msgs/msg/vector3_stamped.hpp"
+
 using namespace std::chrono_literals;
 
 class antonioOdomPublisher : public rclcpp::Node
@@ -34,9 +35,9 @@ class antonioOdomPublisher : public rclcpp::Node
       "/Wheels/odom", 10,
       std::bind(&antonioOdomPublisher::handle_Wheels_odom, this, std::placeholders::_1));
 
-      sub_Left_IMU_ = this->create_subscription<sensor_msgs::msg::Imu>(
+      sub_Left_IMU_ = this->create_subscription<geometry_msgs::msg::Vector3Stamped>(
       "/Left_imu/imu/data", 10,
-      std::bind(&antonioOdomPublisher::handle_IMU_Left, this, std::placeholders::_1));
+      std::bind(&antonioOdomPublisher::handle_IMU_Left_acc, this, std::placeholders::_1));
 
       sub_right_IMU_ = this->create_subscription<geometry_msgs::msg::Vector3Stamped>(
       "/right_imu/filter/free_acceleration", 10,
@@ -54,12 +55,12 @@ class antonioOdomPublisher : public rclcpp::Node
   private:
     nav_msgs::msg::Odometry odom;
     double wheels_pose_x, wheels_pose_y;
-    double wheels_yaw_val, wheels_x_val ;
+    double wheels_yaw_val, wheels_x_val = 0;
     double IMU_pitch, IMU_roll, IMU_yaw, wheels_yaw; 
     double IMU_acc_x, IMU_acc_y, IMU_acc_z, IMU_yaw_val ;  
     u_int32_t time_stamp_nanosec;
     double time_stamp_sec;
-    double delta_time = 0.01;
+    
     u_int32_t priv_time;
     double x_val =0;
     double roll = 0, pitch = 0, yaw = 0;
@@ -78,20 +79,48 @@ class antonioOdomPublisher : public rclcpp::Node
     double L_roll = 0, L_pitch = 0, L_yaw = 0;
     
     // rught_imu
-    double R_imu_orientation_x;
+    double R_imu_orientation_x ;
     double R_imu_orientation_y;
     double R_imu_orientation_z;
     double R_imu_orientation_w;
 
-    double R_imu_acceleration_x;
+    double R_imu_acceleration_x = 0;
     
     double R_roll = 0, R_pitch = 0, R_yaw = 0;
 
     // kalman filter parameters
-    int n = 3; // Number of states
-    int m = 3; // Number of measurements
+    typedef Eigen::Matrix<double,3,3> Matrix3X3;
+    typedef Eigen::Matrix<double,3,1> VectorX3;
+     /* Matrices for computation
+          A(n, n); 
+          C(m, n);  
+          Q(n, n);  
+          R(m, m); 
+          P(n, n);  
+     */
+    Matrix3X3 A{{1, dt, 0.5*dt*dt},{ 0, 1, dt}, {0, 0, 1}}; // System dynamics matrix
+    Matrix3X3 C{{1, 0, 0},{.0, 1, 0},{0, 0, 1}};// Output matrix  
+    Matrix3X3 Q{{0.05, 0.05, 0.0}, {0.05, 0.05, 0.0},{ 0.0, 0.0, 0.0}};// Process noise covariance
+    Matrix3X3 R{{0, 0, 5},{0, 1, 0},{0, 0, 1}}; // Measurement noise covariance
+    Matrix3X3 K{{0, 0, 0},{0, 0, 0},{0, 0, 0}};
+    Matrix3X3 P{{.1, .1, .1}, {.1, 10000, 10},{ .1, 10, 100}};// Estimate error covariance
+   // n-size identity
+    Matrix3X3 I{ {1,0,0},{ 0,1,0}, {0,0,1}};
 
+    // n: Number of states - m :Number of measurements
+     int n = 3, m = 3; 
+     // Initial(t0), current(t) and Discrete(dt) time
+    double t0 = 0, t = 0, dt = 0.01;
+  
+    // Estimated states
+    VectorX3 x_hat{0,0,0};
+    VectorX3 x_hat_new{0,0,0};
+    bool is_init_kalman = false;
 
+    VectorX3 y;  // measurements into filter
+    
+
+    
     void handle_right_IMU_quaternion(const std::shared_ptr<geometry_msgs::msg::QuaternionStamped> msg)
     {
       R_imu_orientation_x = msg->quaternion.x;
@@ -108,44 +137,16 @@ class antonioOdomPublisher : public rclcpp::Node
       L_imu_orientation_w = msg->quaternion.w;
     }
 
-    void init_kalman()
+    void antonio_orientation()
     {
-      Eigen::MatrixXd A(n, n); // System dynamics matrix
-      Eigen::MatrixXd C(m, n); // Output matrix
-      Eigen::MatrixXd Q(n, n); // Process noise covariance
-      Eigen::MatrixXd R(m, m); // Measurement noise covariance
-      Eigen::MatrixXd P(n, n); // Estimate error covariance
-      
-      // Discrete LTI projectile motion, measuring position only
-      A << 1, delta_time, 0, 0, 1, delta_time, 0, 0, 1;
-      C << 1, 0, 0;
-      
-      // Reasonable covariance matrices
-      Q << .05, .05, .0, .05, .05, .0, .0, .0, .0;
-      R << 0, 0, 5;
-      P << .1, .1, .1, .1, 10000, 10, .1, 10, 100;
-
-      KalmanFilter kf(delta_time,A, C, Q, R, P);
- 
-      kf.init();
-
-       // Feed measurements into filter, output estimated states
-
-      Eigen::VectorXd y(m);
-    }
-
-    void odom_publisher()
-    {
-      
-
-           //*************************************************************YAW/Orientation
+            //*************************************************************YAW/Orientation
       Eigen::Vector4f L_q_v(
         L_imu_orientation_x,
         L_imu_orientation_y,
         L_imu_orientation_z,
         L_imu_orientation_w);
 
-        Eigen::Vector4f R_q_v(
+      Eigen::Vector4f R_q_v(
         R_imu_orientation_x,
         R_imu_orientation_y,
         R_imu_orientation_z,
@@ -167,22 +168,41 @@ class antonioOdomPublisher : public rclcpp::Node
       odom.pose.pose.orientation.y = ave_quat[1];
       odom.pose.pose.orientation.z = ave_quat[2];
       odom.pose.pose.orientation.w = ave_quat[3];
+    }
+    
+    void KF_update(const VectorX3 y,Matrix3X3 A,Matrix3X3 C,Matrix3X3 Q,Matrix3X3 R,Matrix3X3 P) {
+
+      x_hat_new = A * x_hat;
+      P = A*P*A.transpose() + Q;
+      K = P*C.transpose()*((C*P*C.transpose() + R).inverse());
+      x_hat_new += K * (y - C*x_hat_new); 
+      P = (I - K*C)*P;
+      x_hat = x_hat_new;
+      
+      RCLCPP_INFO(this->get_logger(),"x_hat[0]: %f,",x_hat[0]);
+      RCLCPP_INFO(this->get_logger(),"x_hat[1]: %f,",x_hat[1]);
+      RCLCPP_INFO(this->get_logger(),"x_hat[2]: %f,",x_hat[2]);
+    }
+
+    void odom_publisher()
+    { 
+       y << 0.0, wheels_x_val, R_imu_acceleration_x;
+      KF_update(y,A,C,Q,R,P);
 
       // ********************************************************************velocity X
-      x_val = x_val + R_imu_acceleration_x * delta_time;
+      x_val = x_val + R_imu_acceleration_x * dt;
       odom.twist.twist.linear.x = x_val;
 
       //if (abs(x_val) > abs(wheels_x_val + 0.1) || abs(x_val) < abs(wheels_x_val - 0.1)){x_val = wheels_x_val;}
       //if (x_val != wheels_x_val){RCLCPP_INFO(this->get_logger(),"yahooooooooooooooooooooo  ");}
       if (wheels_x_val == 0){x_val = 0;}
 
-      
       //***********************************************************************pose
-      odom.pose.pose.position.x += cos(yaw) * x_val * delta_time;
-      odom.pose.pose.position.y += sin(yaw) * x_val * delta_time;
+      odom.pose.pose.position.x += cos(yaw) * x_val * dt;
+      odom.pose.pose.position.y += sin(yaw) * x_val * dt;
 
-      RCLCPP_INFO(this->get_logger(),"wheels_x_val: %f, pos.y: %f, pos.x: %f,x_val: %f   ",wheels_x_val, odom.pose.pose.position.y, odom.pose.pose.position.x, x_val);
-     
+      //RCLCPP_INFO(this->get_logger(),"x_hat[0]: %f,x_hat[1]: %f,x_hat[2]: %f",x_hat[0],x_hat[1],x_hat[2]);
+      antonio_orientation();
       publisher_->publish(odom);
     }
    
@@ -250,20 +270,16 @@ class antonioOdomPublisher : public rclcpp::Node
     {
       R_imu_acceleration_x = msg->vector.x;  // unit	m/s2
     }
-    void handle_IMU_Left(const std::shared_ptr<sensor_msgs::msg::Imu> msg)
+   
+    void handle_IMU_Left_acc(const std::shared_ptr<geometry_msgs::msg::Vector3Stamped> msg)
     {
-      time_stamp_nanosec = msg->header.stamp.nanosec;
-
-      IMU_yaw_val = msg->angular_velocity.z;
-      odom.twist.twist.angular.z = IMU_yaw_val;
-
-      IMU_acc_x = msg->linear_acceleration.x;
+      L_imu_acceleration_x = msg->vector.x;  // unit	m/s2
     }
 
     rclcpp::TimerBase::SharedPtr timer_;
     rclcpp::Publisher<nav_msgs::msg::Odometry>::SharedPtr publisher_;
     rclcpp::Subscription<nav_msgs::msg::Odometry>::SharedPtr sub_Wheels_odom_;
-    rclcpp::Subscription<sensor_msgs::msg::Imu>::SharedPtr sub_Left_IMU_;
+    rclcpp::Subscription<geometry_msgs::msg::Vector3Stamped>::SharedPtr sub_Left_IMU_;
     rclcpp::Subscription<geometry_msgs::msg::Vector3Stamped>::SharedPtr sub_right_IMU_;
 
     rclcpp::Subscription<geometry_msgs::msg::QuaternionStamped>::SharedPtr sub_right_IMU_Quaternion_;

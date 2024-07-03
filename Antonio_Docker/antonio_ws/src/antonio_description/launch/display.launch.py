@@ -132,7 +132,7 @@ def generate_launch_description():
         antonio_odom_broadcaster,
         #rplidar_Node,
         #robot_localization_node,
-        rviz_node,        
+        #rviz_node,        
 	    #map_server_Node,
         
    
