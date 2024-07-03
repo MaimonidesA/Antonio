@@ -42,11 +42,16 @@ RUN apt-get update && apt-get install -y \
    ros-$ROS_DISTRO-octomap-mapping \
    ros-$ROS_DISTRO-octomap-rviz-plugins \
    && rm -rf /var/lib/apt/lists/*
-
+# teleop keboard +rqt-graph
 RUN apt-get update \ 
    && apt-get install -y \
    ros-humble-teleop-twist-keyboard \
    ros-humble-rqt-graph \
+   && rm -rf /var/lib/apt/lists/*
+# plotjuggler
+RUN apt-get update \ 
+   && apt-get install -y \
+   ros-$ROS_DISTRO-plotjuggler-ros \
    && rm -rf /var/lib/apt/lists/*
 
 # Example of copying a file
