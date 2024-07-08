@@ -90,22 +90,39 @@ class antonioOdomPublisher : public rclcpp::Node
 
     // kalman filter parameters
     typedef Eigen::Matrix<double,3,3> Matrix3X3;
+    typedef Eigen::Matrix<double,2,2> Matrix2X2;
     typedef Eigen::Matrix<double,3,1> VectorX3;
-     /* Matrices for computation
-          A(n, n); 
-          C(m, n);  
-          Q(n, n);  
-          R(m, m); 
-          P(n, n);  
-     */
-    Matrix3X3 A{{1, dt, 0.5*dt*dt},{ 0, 1, dt}, {0, 0, 1}}; // System dynamics matrix
-    Matrix3X3 C{{1, 0, 0},{.0, 1, 0},{0, 0, 1}};// Output matrix  
-    Matrix3X3 Q{{0.05, 0.05, 0.0}, {0.05, 0.05, 0.0},{ 0.0, 0.0, 0.0}};// Process noise covariance
-    Matrix3X3 R{{0, 0, 5},{0, 1, 0},{0, 0, 1}}; // Measurement noise covariance
-    Matrix3X3 K{{0, 0, 0},{0, 0, 0},{0, 0, 0}};
-    Matrix3X3 P{{.1, .1, .1}, {.1, 10000, 10},{ .1, 10, 100}};// Estimate error covariance
+    typedef Eigen::Matrix<double,2,1> VectorX2;
+     //Matrices for computation
+
+    Matrix2X2 A{{1, dt },
+                {0, 1  }};
+      //          {0, 0,  1}}; // System dynamics matrix
+    
+    Matrix2X2 C{{1, 0},
+                {0, 1}};
+       //         {0, 0, 1}};// Output matrix  
+    
+    Matrix2X2 Q{{0.05, 0.05},
+                {0.05, 0.05}};
+      //          {0.0,  0.0,  0.0}};// Process noise covariance
+    
+    Matrix2X2 R{{0, 0},
+                {0, 1}};
+      //          {0, 0, 1}}; // Measurement noise covariance
+   
+    Matrix2X2 K {{0, 0},
+                 {0, 0}};
+
+    
+    Matrix2X2 P{{.1, .1  },
+                {.1, 10000}};
+      //          {.1, 10,    100}};// Estimate error covariance
+
+
    // n-size identity
-    Matrix3X3 I{ {1,0,0},{ 0,1,0}, {0,0,1}};
+    Matrix2X2 I{{1,0},
+                {0,1}};
 
     // n: Number of states - m :Number of measurements
      int n = 3, m = 3; 
@@ -113,11 +130,11 @@ class antonioOdomPublisher : public rclcpp::Node
     double t0 = 0, t = 0, dt = 0.01;
   
     // Estimated states
-    VectorX3 x_hat{0,0,0};
-    VectorX3 x_hat_new{0,0,0};
+    VectorX2 x_hat{0,0};
+    VectorX2 x_hat_new{0,0};
     bool is_init_kalman = false;
 
-    VectorX3 y;  // measurements into filter
+    VectorX2 y{0,0};  // measurements into filter
     
 
     
@@ -170,7 +187,7 @@ class antonioOdomPublisher : public rclcpp::Node
       odom.pose.pose.orientation.w = ave_quat[3];
     }
     
-    void KF_update(const VectorX3 y,Matrix3X3 A,Matrix3X3 C,Matrix3X3 Q,Matrix3X3 R,Matrix3X3 P) {
+    void KF_update(const VectorX2 y,Matrix2X2 A,Matrix2X2 C,Matrix2X2 Q,Matrix2X2 R,Matrix2X2 P) {
 
       x_hat_new = A * x_hat;
       P = A*P*A.transpose() + Q;
@@ -179,29 +196,24 @@ class antonioOdomPublisher : public rclcpp::Node
       P = (I - K*C)*P;
       x_hat = x_hat_new;
       
-      RCLCPP_INFO(this->get_logger(),"x_hat[0]: %f,",x_hat[0]);
-      RCLCPP_INFO(this->get_logger(),"x_hat[1]: %f,",x_hat[1]);
-      RCLCPP_INFO(this->get_logger(),"x_hat[2]: %f,",x_hat[2]);
+     // RCLCPP_INFO(this->get_logger(),"x_hat[0]: %f,",x_hat[0]);
+     // RCLCPP_INFO(this->get_logger(),"x_hat[1]: %f,",x_hat[1]);
+     // **RCLCPP_INFO(this->get_logger(),"x_hat[2]: %f,",x_hat[2]);
     }
 
     void odom_publisher()
     { 
-       y << 0.0, wheels_x_val, R_imu_acceleration_x;
+       // ********************************************************************velocity X
+      y <<  wheels_x_val, R_imu_acceleration_x;
       KF_update(y,A,C,Q,R,P);
 
-      // ********************************************************************velocity X
-      x_val = x_val + R_imu_acceleration_x * dt;
-      odom.twist.twist.linear.x = x_val;
-
-      //if (abs(x_val) > abs(wheels_x_val + 0.1) || abs(x_val) < abs(wheels_x_val - 0.1)){x_val = wheels_x_val;}
-      //if (x_val != wheels_x_val){RCLCPP_INFO(this->get_logger(),"yahooooooooooooooooooooo  ");}
-      if (wheels_x_val == 0){x_val = 0;}
+      odom.twist.twist.linear.x = x_hat[0];
 
       //***********************************************************************pose
-      odom.pose.pose.position.x += cos(yaw) * x_val * dt;
-      odom.pose.pose.position.y += sin(yaw) * x_val * dt;
+      odom.pose.pose.position.x += cos(yaw) * x_hat[0] * dt;
+      odom.pose.pose.position.y += sin(yaw) * x_hat[0] * dt;
+      //RCLCPP_INFO(this->get_logger(),"dt: %f,",dt);
 
-      //RCLCPP_INFO(this->get_logger(),"x_hat[0]: %f,x_hat[1]: %f,x_hat[2]: %f",x_hat[0],x_hat[1],x_hat[2]);
       antonio_orientation();
       publisher_->publish(odom);
     }

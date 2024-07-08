@@ -20,7 +20,7 @@ or
 #  maping   *********************
 
 # ros2 launch nav2_bringup navigation_launch.py
-or  ros2 launch nav2_bringup bringup_launch.py use_sim_time:=False autostart:=False map:=/home/antonio/antonio_ws/install/antonio_description/share/antonio_description/map/map.yaml
+or  ros2 launch nav2_bringup bringup_launch.py use_sim_time:=False autostart:=False map:=/home/antonio/antonio_ws/install/antonio_description/share/antonio_description/map/map_3.yaml
 or 
 
 # ros2 launch slam_toolbox online_async_launch.py slam_params_file:=/home/antonio/antonio_ws/config/mapper_params_online_async.yaml 

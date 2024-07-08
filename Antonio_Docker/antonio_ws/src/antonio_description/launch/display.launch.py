@@ -54,10 +54,10 @@ def generate_launch_description():
         name='odom_tf2_frame_publisher'
     )
     
-    Wheels_odom_broadcaster = launch_ros.actions.Node(
+    laser_filter_node = launch_ros.actions.Node(
         package='antonio_description',
-        executable='Wheels_odom_tf2_broadcaster',
-        name='broadcaster1'
+        executable='laser_filter',
+        name='scan_F_filter'
     )
     IMU_odom_broadcaster = launch_ros.actions.Node(
             package='antonio_description',
@@ -79,6 +79,14 @@ def generate_launch_description():
         output='screen',
         arguments=['-d', LaunchConfiguration('rvizconfig')],
     )
+    scan_to_pointcloud_node  = launch_ros.actions.Node(
+            package='pointcloud_to_laserscan',
+            executable='laserscan_to_pointcloud_node',
+            name='laserscan_to_pointcloud',
+            remappings=[('scan_in',  '/scan_filtered'),
+                        ('cloud',    '/cloud')],
+            parameters=[{'target_frame': 'Floor_scan', 'transform_tolerance': 0.01}]
+        )
 
 
     return launch.LaunchDescription([
@@ -127,12 +135,13 @@ def generate_launch_description():
         #joint_state_publisher_node,
         #joint_state_publisher_gui_node,
         robot_state_publisher_node,
-        #Wheels_odom_broadcaster,
+        laser_filter_node,
         antonio_odom,
         antonio_odom_broadcaster,
         #rplidar_Node,
         #robot_localization_node,
-        #rviz_node,        
+        scan_to_pointcloud_node,
+        rviz_node,        
 	    #map_server_Node,
         
    
