@@ -15,6 +15,8 @@ Panels:
         - /MarkerArray1/Namespaces1
         - /Map1/Topic1
         - /LaserScan2/Topic1
+        - /OccupancyGrid1
+        - /OccupancyGrid1/Topic1
       Splitter Ratio: 0.5653923749923706
     Tree Height: 793
   - Class: rviz_common/Selection
@@ -138,6 +140,8 @@ Visualization Manager:
           Value: true
         lidar_link:
           Value: true
+        map:
+          Value: true
         odom:
           Value: true
         wheels_center:
@@ -148,6 +152,8 @@ Visualization Manager:
       Show Axes: true
       Show Names: true
       Tree:
+        map:
+          {}
         odom:
           base_link:
             Floor_scan:
@@ -185,9 +191,9 @@ Visualization Manager:
       Enabled: true
       Invert Rainbow: false
       Max Color: 255; 255; 255
-      Max Intensity: 15
+      Max Intensity: 47
       Min Color: 0; 0; 0
-      Min Intensity: 9
+      Min Intensity: 47
       Name: PointCloud2
       Position Transformer: XYZ
       Selectable: true
@@ -219,9 +225,9 @@ Visualization Manager:
       Enabled: true
       Invert Rainbow: false
       Max Color: 255; 255; 255
-      Max Intensity: 47
+      Max Intensity: 15
       Min Color: 0; 0; 0
-      Min Intensity: 47
+      Min Intensity: 9
       Name: LaserScan
       Position Transformer: XYZ
       Selectable: true
@@ -242,7 +248,7 @@ Visualization Manager:
       Enabled: true
       Name: MarkerArray
       Namespaces:
-        {}
+        map: true
       Topic:
         Depth: 5
         Durability Policy: Volatile
@@ -250,23 +256,6 @@ Visualization Manager:
         Reliability Policy: Reliable
         Value: /occupied_cells_vis_array
       Value: true
-    - Class: octomap_rviz_plugins/ColorOccupancyGrid
-      Enabled: true
-      Max. Height Display: 3.4028234663852886e+38
-      Max. Octree Depth: 16
-      Min. Height Display: -3.4028234663852886e+38
-      Name: ColorOccupancyGrid
-      Topic:
-        Depth: 5
-        Durability Policy: Volatile
-        Filter size: 10
-        History Policy: Keep Last
-        Reliability Policy: Reliable
-        Value: /octomap_full
-      Value: true
-      Voxel Alpha: 1
-      Voxel Coloring: Z-Axis
-      Voxel Rendering: Occupied Voxels
     - Alpha: 0.699999988079071
       Class: rviz_default_plugins/Map
       Color Scheme: map
@@ -406,6 +395,23 @@ Visualization Manager:
         Reliability Policy: Reliable
         Value: /plan
       Value: false
+    - Class: octomap_rviz_plugins/OccupancyGrid
+      Enabled: true
+      Max. Height Display: inf
+      Max. Octree Depth: 16
+      Min. Height Display: -inf
+      Name: OccupancyGrid
+      Topic:
+        Depth: 5
+        Durability Policy: Volatile
+        Filter size: 10
+        History Policy: Keep Last
+        Reliability Policy: Reliable
+        Value: /octomap_full
+      Value: true
+      Voxel Alpha: 1
+      Voxel Coloring: Z-Axis
+      Voxel Rendering: Occupied Voxels
   Enabled: true
   Global Options:
     Background Color: 48; 48; 48
@@ -444,25 +450,25 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz_default_plugins/Orbit
-      Distance: 5.729269981384277
+      Distance: 3.1494460105895996
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.05999999865889549
         Stereo Focal Distance: 1
         Swap Stereo Eyes: false
         Value: false
       Focal Point:
-        X: -0.39933979511260986
-        Y: 0.9359035491943359
-        Z: -0.025005728006362915
+        X: 0.2789449989795685
+        Y: 1.0511187314987183
+        Z: -0.18129223585128784
       Focal Shape Fixed Size: true
       Focal Shape Size: 0.05000000074505806
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.009999999776482582
-      Pitch: 1.5697963237762451
+      Pitch: 0.9047966599464417
       Target Frame: <Fixed Frame>
       Value: Orbit (rviz)
-      Yaw: 1.592617154121399
+      Yaw: 5.610802173614502
     Saved: ~
 Window Geometry:
   Displays:

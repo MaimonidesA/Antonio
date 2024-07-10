@@ -36,9 +36,11 @@ private:
 
   void handle_Z_pose(const std::shared_ptr<geometry_msgs::msg::Pose> msg)
   {
-    t.transform.translation.z = (msg->position.z) * 0.01;
+    if (msg->position.z != INFINITY){
+    t.transform.translation.z = (msg->position.z) ;
+  }else{RCLCPP_INFO(this->get_logger(),"***************** No CCD detect ************");}
   }
-
+  
   void handle_Wheels_odom(const std::shared_ptr<nav_msgs::msg::Odometry> msg)
   {
 
