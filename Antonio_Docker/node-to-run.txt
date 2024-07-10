@@ -1,9 +1,6 @@
-# **************  statick tf  *************
 
-# ros2 run tf2_ros static_transform_publisher 0 0 0.83  0 0 0  base_link camera_link
-# ros2 run tf2_ros static_transform_publisher 0 0 0 0 0 0 camera_accel_optical_frame camera_depth_optical_frame
 
-#********************************
+#******************************** Dev Machine
 
 
 #    ros2 launch realsense2_camera rs_launch.py pointcloud.enable:=true enable_accel:=true enable_gyro:=true unite_imu_method:=1
@@ -26,4 +23,15 @@ or
 # ros2 launch slam_toolbox online_async_launch.py slam_params_file:=/home/antonio/antonio_ws/config/mapper_params_online_async.yaml 
 # or ros2 launch slam_toolbox online_async_launch.py
 
+#  octomap   *********************
 
+# ros2 launch antonio_description octomap_antonio_mapping.launch.xml
+
+# colcon build --symlink-install && source install/setup.bash  && ros2 launch antonio_description display.launch.py 
+
+
+#****************************************** antonio-PI 5
+
+ # ros2 launch antonio_description display.launch.py
+ 
+ # ros2 launch xsens_mti_ros2_driver xsens_mti_node.launch.py

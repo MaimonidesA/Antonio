@@ -32,8 +32,8 @@ class antonioScanFilter : public rclcpp::Node
 
   private:
     sensor_msgs::msg::LaserScan scan_F_filtered;
-    float Alpha_min = 0; //1.570796327 = 90 deg
-    float Alpha_max = M_PI;
+    float Alpha_min = 0.019344649044796824; //1.570796327 = 90 deg
+    float Alpha_max = M_PI -0.019344649044796824;
     float liser_in_baf;
     float Alpha = 0;
     void filter_scan_by_angle(const std::shared_ptr<sensor_msgs::msg::LaserScan> msg)
