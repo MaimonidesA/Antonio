@@ -223,7 +223,7 @@
 <joint name="Floor_scan_joint" type="fixed">
   <parent link="base_link"/>
   <child link="Floor_scan"/>
-  <origin xyz="0.17 0 0.135" rpy="0 0.785398163 0"/>
+  <origin xyz="0.17 0 0.135" rpy="0 0.5934 0"/>
 </joint>
 
 

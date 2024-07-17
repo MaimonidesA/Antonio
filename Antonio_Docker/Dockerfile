@@ -31,15 +31,18 @@ RUN apt-get update && apt-get install -y \
 
 # Install  ros-PCL
 RUN apt-get update && apt-get install -y \
+   libpcl-dev \
+   pcl-tools \
    ros-$ROS_DISTRO-pcl-ros \
    ros-$ROS_DISTRO-pcl-msgs \
+   ros-$ROS_DISTRO-pcl-conversions \
    && rm -rf /var/lib/apt/lists/*
 
 # Install OctoMap 
 RUN apt-get update && apt-get install -y \
    ros-$ROS_DISTRO-octomap \
    ros-$ROS_DISTRO-octomap-msgs \
-   ros-$ROS_DISTRO-octomap-mapping \
+#   ros-$ROS_DISTRO-octomap-mapping \
    ros-$ROS_DISTRO-octomap-rviz-plugins \
    && rm -rf /var/lib/apt/lists/*
 # teleop keboard +rqt-graph

@@ -22,27 +22,6 @@ def generate_launch_description():
         parameters=[{'robot_description': Command(['xacro ', LaunchConfiguration('model')])}]
     )
 
-    robot_localization_node = launch_ros.actions.Node(
-       package='robot_localization',
-       executable='ekf_node',
-       name='ekf_filter_node',
-       output='screen',
-       parameters=[os.path.join(pkg_share, 'config/ekf.yaml'), {'use_sim_time': LaunchConfiguration('use_sim_time')}]
-    )
-
-    rplidar_Node = launch_ros.actions.Node(
-        name='rplidar_composition',
-        package='rplidar_ros',
-        executable='rplidar_composition',
-        output='screen',
-        parameters=[{
-            'serial_port': '/dev/ttyUSB0',
-            'serial_baudrate': 115200,  # A1 / A2
-            # 'serial_baudrate': 256000, # A3
-            'frame_id': 'lidar_link',
-            'inverted': False,
-            'angle_compensate': True,}],  
-    )
     antonio_odom = launch_ros.actions.Node(
         package='antonio_description',
         executable='antonio_odom',
@@ -59,11 +38,7 @@ def generate_launch_description():
         executable='laser_filter',
         name='scan_F_filter'
     )
-    IMU_odom_broadcaster = launch_ros.actions.Node(
-            package='antonio_description',
-            executable='imu-base_linck-tf2_brodcaster',
-            name='broadcaster2'
-    )
+
     map_server_Node = launch_ros.actions.Node(
             package='nav2_map_server',
             executable='map_server',
@@ -115,14 +90,6 @@ def generate_launch_description():
    #         parameters=[{'robot_description': default_model_path,}]
    # ),       
 
-
-
-        #Node(
-        #    package='antonio_description',
-        #    executable='imu_camera_link-tf2_brodcaster',
-        #    name='broadcaster3'
-        #),
-
         launch.actions.DeclareLaunchArgument(name='model', default_value=default_model_path,
                                             description='Absolute path to robot urdf file'),
         launch.actions.DeclareLaunchArgument(name='map', default_value=map_file,
@@ -132,17 +99,14 @@ def generate_launch_description():
         launch.actions.DeclareLaunchArgument(name='use_sim_time', default_value='false',
                                             description='Flag to enable use_sim_time'), 
                                    
-        #joint_state_publisher_node,
-        #joint_state_publisher_gui_node,
         robot_state_publisher_node,
         laser_filter_node,
         antonio_odom,
         antonio_odom_broadcaster,
-        #rplidar_Node,
-        #robot_localization_node,
+        map_server_Node,
         scan_to_pointcloud_node,
         rviz_node,        
-	    #map_server_Node,
+	    
         
    
     ])

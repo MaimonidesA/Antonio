@@ -3,8 +3,6 @@
 #******************************** Dev Machine
 
 
-#    ros2 launch realsense2_camera rs_launch.py pointcloud.enable:=true enable_accel:=true enable_gyro:=true unite_imu_method:=1
-# or ros2 launch realsense2_camera rs_launch.py pointcloud.enable:=true enable_accel:=true enable_gyro:=true unite_imu_method:=2 
 
 # ros2 launch octomap_server octomap_mapping.launch.xml
 
@@ -27,11 +25,17 @@ or
 
 # ros2 launch antonio_description octomap_antonio_mapping.launch.xml
 
+ros2 run octomap_server octomap_saver_node --ros-args -p octomap_path:=map.bt
+
 # colcon build --symlink-install && source install/setup.bash  && ros2 launch antonio_description display.launch.py 
 
 
 #****************************************** antonio-PI 5
 
  # ros2 launch antonio_description display.launch.py
- 
+
  # ros2 launch xsens_mti_ros2_driver xsens_mti_node.launch.py
+ 
+                                ----------- realsense2_camera--------------
+ #    ros2 launch realsense2_camera rs_launch.py pointcloud.enable:=true enable_accel:=true enable_gyro:=true unite_imu_method:=1
+# or ros2 launch realsense2_camera rs_launch.py pointcloud.enable:=true enable_accel:=true enable_gyro:=true unite_imu_method:=2 

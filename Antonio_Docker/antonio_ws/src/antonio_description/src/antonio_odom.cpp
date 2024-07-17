@@ -203,6 +203,7 @@ class antonioOdomPublisher : public rclcpp::Node
 
     void odom_publisher()
     { 
+      odom.header.stamp = this->now();
        // ********************************************************************velocity X
       y <<  wheels_x_val, R_imu_acceleration_x;
       KF_update(y,A,C,Q,R,P);
@@ -213,7 +214,7 @@ class antonioOdomPublisher : public rclcpp::Node
       odom.pose.pose.position.x += cos(yaw) * x_hat[0] * dt;
       odom.pose.pose.position.y += sin(yaw) * x_hat[0] * dt;
       //RCLCPP_INFO(this->get_logger(),"dt: %f,",dt);
-
+      
       antonio_orientation();
       publisher_->publish(odom);
     }
