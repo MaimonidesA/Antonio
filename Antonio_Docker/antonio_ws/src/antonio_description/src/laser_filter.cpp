@@ -45,12 +45,13 @@ class antonioScanFilter : public rclcpp::Node
        for (int i = 0; i <  msg->ranges.size() ; i++)
        {
          
-         if (Alpha > Alpha_min && Alpha < Alpha_max)
+         if (Alpha > Alpha_min && Alpha < Alpha_max && msg->ranges[i] < 1.5)
          {
              scan_F_filtered.ranges[i] = msg->ranges[i];
              scan_F_filtered.intensities[i] = msg->intensities[i];
          }
          else {scan_F_filtered.ranges[i] = INFINITY;}
+
 
          Alpha += msg->angle_increment;
          if (Alpha >= M_PI){Alpha -= M_PI*2;}

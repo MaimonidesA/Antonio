@@ -15,13 +15,14 @@ find_package(tf2_ros REQUIRED)
 find_package(sensor_msgs REQUIRED)
 find_package(eigen3_cmake_module REQUIRED)
 find_package(Eigen3)
-find_package(PCL 1.2 REQUIRED)
-find_package(pcl_conversions REQUIRED)
-find_package(pcl_ros REQUIRED)
+#find_package(PCL 1.2 REQUIRED)
+#find_package(pcl_conversions REQUIRED)
+#find_package(pcl_ros REQUIRED)
+find_package(tf2_sensor_msgs REQUIRED)
 
-include_directories(${PCL_INCLUDE_DIRS})
-link_directories(${PCL_LIBRARY_DIRS})
-add_definitions(${PCL_DEFINITIONS})
+#//include_directories(${PCL_INCLUDE_DIRS})
+#//link_directories(${PCL_LIBRARY_DIRS})
+#//add_definitions(${PCL_DEFINITIONS})
 
 
 
@@ -41,18 +42,6 @@ add_definitions(${PCL_DEFINITIONS})
 #    tf2_ros
 #)
 
-add_executable(pcd_write src/pcd_write.cpp)
-ament_target_dependencies(
-    pcd_write
-    pcl_conversions
-    pcl_ros
-    geometry_msgs
-    sensor_msgs
-    nav_msgs
-    rclcpp
-    tf2
-    tf2_ros
-)
 
 add_executable(laser_filter src/laser_filter.cpp)
 ament_target_dependencies(
@@ -96,11 +85,8 @@ install(TARGETS
     antonio_odom
     antonio_odom_tf2_broadcaster
     laser_filter
-    pcd_write
   #  imu-base_linck-tf2_brodcaster  
    DESTINATION lib/${PROJECT_NAME})
-
-target_link_libraries (pcd_write ${PCL_LIBRARIES})
 
 if(BUILD_TESTING)
   find_package(ament_lint_auto REQUIRED)

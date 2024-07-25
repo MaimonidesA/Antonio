@@ -10,7 +10,7 @@
 #include "tf2_ros/transform_broadcaster.h"
 #include "geometry_msgs/msg/pose_stamped.hpp"
 #include "nav_msgs/msg/odometry.hpp"
-#include "sensor_msgs/msg/imu.hpp"
+//#include "sensor_msgs/msg/imu.hpp"
 
 class FramePublisher : public rclcpp::Node
 {
@@ -38,15 +38,15 @@ private:
   {
     if (msg->position.z != INFINITY){
     t.transform.translation.z = (msg->position.z) ;
-  }else{RCLCPP_INFO(this->get_logger(),"***************** No CCD detect ************");}
+  }//else{RCLCPP_INFO(this->get_logger(),"*** No CCD ***");}
   }
   
   void handle_Wheels_odom(const std::shared_ptr<nav_msgs::msg::Odometry> msg)
   {
 
-    t.header.stamp = this->get_clock()->now();
+    t.header.stamp = msg->header.stamp;
     t.header.frame_id = "odom";
-    t.child_frame_id = "base_link";
+    t.child_frame_id = "wheels_center";
 
     t.transform.translation.x = msg->pose.pose.position.x;
     t.transform.translation.y = msg->pose.pose.position.y;
@@ -62,7 +62,7 @@ private:
 
   rclcpp::Subscription<geometry_msgs::msg::Pose>::SharedPtr sub_Z_pose_;
   rclcpp::Subscription<nav_msgs::msg::Odometry>::SharedPtr sub_Wheels_odom_;
-  rclcpp::Subscription<sensor_msgs::msg::Imu>::SharedPtr sub_IMU_;
+  //rclcpp::Subscription<sensor_msgs::msg::Imu>::SharedPtr sub_IMU_;
   std::unique_ptr<tf2_ros::TransformBroadcaster> tf_broadcaster_;
  // std::string turtlename_;
 };

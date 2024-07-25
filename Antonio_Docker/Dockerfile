@@ -42,6 +42,7 @@ RUN apt-get update && apt-get install -y \
 RUN apt-get update && apt-get install -y \
    ros-$ROS_DISTRO-octomap \
    ros-$ROS_DISTRO-octomap-msgs \
+   ros-$ROS_DISTRO-filters \ 
 #   ros-$ROS_DISTRO-octomap-mapping \
    ros-$ROS_DISTRO-octomap-rviz-plugins \
    && rm -rf /var/lib/apt/lists/*

@@ -210,6 +210,9 @@ class antonioOdomPublisher : public rclcpp::Node
 
       odom.twist.twist.linear.x = x_hat[0];
 
+      //**********************************************************************velocity yaw */
+      odom.twist.twist.angular.z = wheels_yaw_val;
+
       //***********************************************************************pose
       odom.pose.pose.position.x += cos(yaw) * x_hat[0] * dt;
       odom.pose.pose.position.y += sin(yaw) * x_hat[0] * dt;

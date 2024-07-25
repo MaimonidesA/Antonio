@@ -10,8 +10,9 @@ Panels:
         - /MarkerArray1/Namespaces1
         - /LaserScan2/Topic1
         - /OccupancyGrid1
+        - /GridMap1
       Splitter Ratio: 0.5653923749923706
-    Tree Height: 529
+    Tree Height: 793
   - Class: rviz_common/Selection
     Name: Selection
 Visualization Manager:
@@ -133,8 +134,6 @@ Visualization Manager:
           Value: false
         lidar_link:
           Value: false
-        map:
-          Value: true
         odom:
           Value: true
         wheels_center:
@@ -145,8 +144,6 @@ Visualization Manager:
       Show Axes: true
       Show Names: true
       Tree:
-        map:
-          {}
         odom:
           base_link:
             Floor_scan:
@@ -220,7 +217,7 @@ Visualization Manager:
       Max Color: 255; 255; 255
       Max Intensity: 15
       Min Color: 0; 0; 0
-      Min Intensity: 8
+      Min Intensity: 9
       Name: LaserScan
       Position Transformer: XYZ
       Selectable: true
@@ -321,10 +318,36 @@ Visualization Manager:
       Voxel Alpha: 1
       Voxel Coloring: Z-Axis
       Voxel Rendering: Occupied Voxels
+    - Alpha: 1
+      Autocompute Intensity Bounds: true
+      Class: grid_map_rviz_plugin/GridMap
+      Color: 200; 200; 200
+      Color Layer: elevation
+      Color Transformer: GridMapLayer
+      Enabled: true
+      Height Layer: elevation
+      Height Transformer: GridMapLayer
+      History Length: 1
+      Invert Rainbow: false
+      Max Color: 255; 255; 255
+      Max Intensity: 10
+      Min Color: 0; 0; 0
+      Min Intensity: 0
+      Name: GridMap
+      Show Grid Lines: true
+      Topic:
+        Depth: 5
+        Durability Policy: Transient Local
+        Filter size: 10
+        History Policy: Keep Last
+        Reliability Policy: Reliable
+        Value: /grid_map_from_raw_pointcloud
+      Use Rainbow: true
+      Value: true
   Enabled: true
   Global Options:
     Background Color: 48; 48; 48
-    Fixed Frame: odom
+    Fixed Frame: map
     Frame Rate: 30
   Name: root
   Tools:
@@ -359,35 +382,35 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz_default_plugins/Orbit
-      Distance: 2.0127503871917725
+      Distance: 5.540494918823242
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.05999999865889549
         Stereo Focal Distance: 1
         Swap Stereo Eyes: false
         Value: false
       Focal Point:
-        X: 0.33584699034690857
-        Y: -0.14055711030960083
-        Z: 0.0897899866104126
+        X: 0.8028569221496582
+        Y: 0.7501471638679504
+        Z: -0.9311054348945618
       Focal Shape Fixed Size: true
       Focal Shape Size: 0.05000000074505806
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.009999999776482582
-      Pitch: 0.44979536533355713
+      Pitch: 1.1147969961166382
       Target Frame: <Fixed Frame>
       Value: Orbit (rviz)
-      Yaw: 5.700799465179443
+      Yaw: 4.875783443450928
     Saved: ~
 Window Geometry:
   Displays:
     collapsed: false
-  Height: 752
+  Height: 1016
   Hide Left Dock: false
   Hide Right Dock: true
-  QMainWindow State: 000000ff00000000fd0000000200000000000002330000029afc0200000001fb000000100044006900730070006c006100790073010000003b0000029a000000c700ffffff000000020000073a000000d6fc0100000001fb0000001200530065006c0065006300740069006f006e02000004f80000035800000273000000d6000003320000029a00000004000000040000000800000008fc0000000100000002000000010000000a0054006f006f006c00730100000000ffffffff0000000000000000
+  QMainWindow State: 000000ff00000000fd000000020000000000000233000003a2fc0200000001fb000000100044006900730070006c006100790073010000003b000003a2000000c700ffffff000000020000073a000000d6fc0100000001fb0000001200530065006c0065006300740069006f006e02000004f80000035800000273000000d600000501000003a200000004000000040000000800000008fc0000000100000002000000010000000a0054006f006f006c00730100000000ffffffff0000000000000000
   Selection:
     collapsed: false
-  Width: 1387
-  X: 129
-  Y: 64
+  Width: 1850
+  X: 70
+  Y: 27

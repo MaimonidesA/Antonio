@@ -4,6 +4,7 @@
 docker run \
  --name ros2_humble -h ros2dk \
  -v $PWD/antonio_ws:/home/antonio/antonio_ws \
+ -v $PWD/gridmap_ws:/home/antonio/gridmap_ws \
   --network host \
  --ipc=host \
  -v /dev/bus/usb:/dev/bus/usb -v /tmp/.X11-unix:/tmp/.X11-unix \

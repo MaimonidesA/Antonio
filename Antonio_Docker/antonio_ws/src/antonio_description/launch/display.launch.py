@@ -103,7 +103,7 @@ def generate_launch_description():
         laser_filter_node,
         antonio_odom,
         antonio_odom_broadcaster,
-        map_server_Node,
+        #map_server_Node,
         scan_to_pointcloud_node,
         rviz_node,        
 	    
